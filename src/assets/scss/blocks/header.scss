@@ -1,0 +1,86 @@
+@import "../vars";
+
+.header {
+    background-color: $white;
+
+    &-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0;
+    }
+
+    &-container {
+        display: flex;
+        align-items: center;
+    }
+
+    &-logo {
+        margin-right: 4rem;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        color: $green;
+        font-weight: $font-reg;
+        max-width: 32rem;
+    }
+
+    &-phone-list {
+        display: flex;
+        list-style: none;
+        gap: 4rem;
+        margin: 0;
+        padding: 0;
+
+        &__item {
+            font-size: 2.4rem;
+        }
+    }
+
+    &-btns {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+.header-menu-btn {
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+
+    &__burger {
+        position: absolute;
+        height: 0.1rem;
+        width: 3rem;
+        background-color: $dark;
+        border-radius: 0.1rem;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            height: 0.1rem;
+            width: 2rem;
+            background-color: $dark;
+            border-radius: 0.1rem;
+            right: 0;
+        }
+
+        &::before {
+            top: 1rem;
+        }
+
+        &::after {
+            bottom: 1rem;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import "./vars";
+
+* {
+    font-family: $font;
+    font-weight: $font-light;
+    color: $dark;
+    font-size: 1.8rem;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 169rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.logo {
+    height: 6rem;
+    width: 14rem;
+
+    &__img {
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+.default-btn {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1rem solid $green;
+    background-color: $green;
+    border-radius: 0.4rem;
+    color: $white;
+    font-weight: $font-reg;
+    height: 4.6rem;
+    min-width: 19.5rem;
+    transition: .3s;
+
+    &:hover {
+        background-color: $white;
+        color: $green;
+    }
+
+    &.default-btn_light {
+        background-color: $white;
+        color: $green;
+
+        &:hover {
+            background-color: $green;
+            color: $white
+        }
+    }
+}

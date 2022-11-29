@@ -1,0 +1,14 @@
+.main {
+    &-gif {
+        height: 67rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        &__img {
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+}
