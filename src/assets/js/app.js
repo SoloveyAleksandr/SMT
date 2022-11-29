@@ -32,3 +32,4 @@ const mainSwiper = new Swiper('.main-swiper', {
 
   scrollbar: false,
 });
+
