@@ -1,20 +1,3 @@
-// class dropDown {
-//   constructor(listElement, buttonElement) {
-//     this.list = typeof listElement === "string" ? document.querySelector(listElement) : listElement
-//     this.button = typeof buttonElement === "string" ? document.querySelector(buttonElement) : buttonElement
-//     this._init()
-//   }
-
-//   _init() {
-//     this.button.addEventListener('click', this.toggleMenu.bind(this))
-//   }
-
-//   toggleMenu() {
-//     this.list.classList.toggle('_open')
-//     this.button.classList.toggle('_open')
-//   }
-// }
-
 const mainSwiper = new Swiper('.main-swiper', {
   direction: 'horizontal',
   loop: true,
@@ -32,4 +15,13 @@ const mainSwiper = new Swiper('.main-swiper', {
 
   scrollbar: false,
 });
+
+const relax = new Rellax('.rellax', {
+  center: true
+});
+
+const headerMenuBtn = document.querySelector('.header-menu-btn');
+headerMenuBtn.onclick = () => {
+  headerMenuBtn.classList.toggle('_active');
+}
 
