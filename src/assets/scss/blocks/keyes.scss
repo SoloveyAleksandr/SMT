@@ -1,0 +1,84 @@
+@import "../vars";
+
+.keyes {
+  margin-bottom: 20rem;
+
+  &-swiper {
+    &-control {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    &-pagination {
+      width: fit-content;
+      position: static;
+      color: $grey;
+    }
+
+    &-btn {
+      position: static;
+      cursor: pointer;
+
+      &__icon {
+        fill: $dark;
+        width: 6rem;
+        height: 2.5rem;
+      }
+    }
+
+    &-slide {
+      height: 96rem;
+      display: flex;
+      align-items: center;
+      gap: 10rem;
+
+      &-box {
+        flex: 1;
+      }
+
+      &-container {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &-img {
+        width: 50vw;
+        height: 96rem;
+        position: absolute;
+        left: 0;
+      }
+
+      &__img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+      &-content {
+        max-width: 74rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &__title {
+        font-size: 5.2rem;
+        margin-bottom: 4rem;
+      }
+
+      &__subtitle {
+        color: $grey;
+        font-weight: $font-reg;
+        margin-bottom: 4rem;
+      }
+
+      &__text {
+        font-weight: $font-reg;
+        line-height: 140%;
+        margin-bottom: 9rem;
+      }
+    }
+  }
+}

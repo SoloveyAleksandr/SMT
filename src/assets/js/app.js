@@ -47,6 +47,22 @@ const samplesSwiper = new Swiper('.samples-swiper', {
   }
 });
 
+const keysSwiper = new Swiper('.keyes-swiper', {
+  direction: 'horizontal',
+  loop: true,
+  effect: 'slide',
+  speed: 500,
+
+  pagination: {
+    el: '.keyes-swiper-pagination',
+    type: 'fraction',
+  },
+
+  navigation: {
+    nextEl: '.keyes-swiper-btn',
+  }
+})
+
 const headerMenuBtn = document.querySelector('.header-menu-btn');
 headerMenuBtn.onclick = () => {
   headerMenuBtn.classList.toggle('_active');
