@@ -1,0 +1,9 @@
+.order {
+  &-container {
+    flex-direction: row-reverse;
+  }
+
+  &-info {
+    margin-right: 10rem;
+  }
+}

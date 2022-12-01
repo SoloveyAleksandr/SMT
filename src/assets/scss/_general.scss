@@ -168,7 +168,7 @@
 
     &__label {
         cursor: pointer;
-        line-height: 100%;
+        line-height: 2rem;
         font-size: 1.4rem;
         font-weight: $font-reg;
         display: flex;
@@ -190,6 +190,91 @@
             width: 2rem;
             height: 2rem;
             fill: $white
+        }
+    }
+}
+
+.custom-select {
+    &-wrapper {
+        width: 100%;
+        position: relative;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &-btn {
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.3rem;
+        background-color: $white;
+        border: 0.1rem solid $grey;
+        border-radius: 0.4rem;
+
+        &__text {
+            pointer-events: none;
+            font-weight: $font-reg;
+            color: $dark;
+        }
+
+        &__icon {
+            pointer-events: none;
+            width: 0.8rem;
+            height: 0.8rem;
+            transform: rotate(-90deg);
+            transition: .3s;
+        }
+
+        &.placeholder &__text {
+            color: $grey;
+        }
+
+        &._open &__icon {
+            transform: rotate(90deg);
+        }
+    }
+
+    &-list {
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.3);
+        background-color: $white;
+        border-radius: 0.5rem;
+        top: calc(100% + 0.5rem);
+        left: 0;
+        transition: .3s;
+        pointer-events: none;
+        opacity: 0;
+
+        &._open {
+            pointer-events: all;
+            opacity: 1;
+        }
+
+        &__item {
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            cursor: pointer;
+            background-color: $white;
+            transition: .3s;
+            font-weight: $font-reg;
+
+            &:hover {
+                background-color: $light-grey;
+            }
+
+            &.placeholder {
+                pointer-events: none;
+                color: $grey;
+            }
         }
     }
 }
