@@ -1,0 +1,124 @@
+@import "../vars";
+
+.footer {
+    background-color: $dark;
+
+    & * {
+        color: $white;
+        font-weight: $font-reg;
+    }
+
+    &-content {
+        padding: 6rem 0;
+    }
+
+    &-logo {
+        height: 6rem;
+        margin-bottom: 4rem;
+
+        &__img {
+            object-fit: contain;
+            height: 100%;
+        }
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__text {
+            color: $grey;
+        }
+    }
+
+    &-icon-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: .3s;
+
+        &__icon {
+            width: 2rem;
+            height: 2rem;
+            fill: $white;
+        }
+
+        &:hover {
+            gap: 1.5rem;
+            opacity: 0.5;
+        }
+    }
+
+    &-list {
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            height: 35rem;
+            max-width: 34rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &__contacts {
+                justify-content: start;
+                gap: 4rem;
+            }
+        }
+    }
+
+    &-links {
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            &__link {
+                transition: .3s;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            &.footer-phone-list {
+                gap: 1rem;
+            }
+        }
+    }
+
+    &-line {
+        height: 0.1rem;
+        background-color: $white;
+        margin: 4rem 0;
+    }
+
+    &-contacts {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-soucial {
+            display: flex;
+            align-items: center;
+            gap: 6rem;
+
+            &__link {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                transition: .3s;
+
+                &:hover {
+                    opacity: .5;
+                }
+            }
+
+            &__img {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+    }
+}
