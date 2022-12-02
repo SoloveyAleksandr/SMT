@@ -299,3 +299,35 @@
         }
     }
 }
+
+.custom-swiper {
+
+    &-control {
+        display: flex;
+        align-items: flex-end;
+        gap: 4rem;
+    }
+
+    &-pagination {
+        font-weight: $font-reg;
+        color: $grey;
+
+        &__current {
+            font-size: 5.2rem;
+            color: $green;
+            font-weight: $font-light;
+        }
+
+        &__total {
+            font-weight: $font-reg;
+            color: $grey;
+        }
+    }
+
+    &-btn {
+        &__icon {
+            width: 6rem;
+            height: 2.5rem;
+        }
+    }
+}

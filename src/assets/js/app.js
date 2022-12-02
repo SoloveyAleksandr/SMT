@@ -6,7 +6,14 @@ const mainSwiper = new Swiper('.main-swiper', {
 
   pagination: {
     el: '.main-swiper-pagination',
-    type: 'fraction',
+    type: 'custom',
+    renderCustom: function (swiper, current, total) {
+      const currEl = document.querySelector('.main-swiper-pagination__current');
+      const totalEl = document.querySelector('.main-swiper-pagination__total');
+
+      currEl.innerHTML = current < 10 ? `0${current}` : current;
+      totalEl.innerHTML = total < 10 ? `0${total}` : total;
+    }
   },
 
   navigation: {
@@ -48,14 +55,24 @@ const samplesSwiper = new Swiper('.samples-swiper', {
 });
 
 const keysSwiper = new Swiper('.keyes-swiper', {
-  direction: 'horizontal',
+  direction: 'vertical',
   loop: true,
-  effect: 'slide',
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
   speed: 500,
 
   pagination: {
     el: '.keyes-swiper-pagination',
-    type: 'fraction',
+    type: 'custom',
+    renderCustom: function (swiper, current, total) {
+      const currEl = document.querySelector('.keyes-swiper-pagination__current');
+      const totalEl = document.querySelector('.keyes-swiper-pagination__total');
+
+      currEl.innerHTML = current < 10 ? `0${current}` : current;
+      totalEl.innerHTML = total < 10 ? `0${total}` : total;
+    }
   },
 
   navigation: {
@@ -119,5 +136,28 @@ class Select {
 
 const orderSquareSelect = new Select('#square-select');
 const orderRegionSelect = new Select('#region-select');
+
+const workSwiper = new Swiper('.work-swiper', {
+  direction: 'horizontal',
+  loop: true,
+  effect: 'cube',
+  speed: 500,
+
+  pagination: {
+    el: '.work-swiper-pagination',
+    type: 'custom',
+    renderCustom: function (swiper, current, total) {
+      const currEl = document.querySelector('.work-swiper-pagination__current');
+      const totalEl = document.querySelector('.work-swiper-pagination__total');
+
+      currEl.innerHTML = current < 10 ? `0${current}` : current;
+      totalEl.innerHTML = total < 10 ? `0${total}` : total;
+    }
+  },
+
+  navigation: {
+    nextEl: '.work-swiper-btn',
+  },
+})
 
 

@@ -2,8 +2,12 @@
 
 .main {
     position: relative;
-    margin-bottom: 39rem;
+    margin-bottom: 20rem;
     min-height: 100vh;
+
+    &-container {
+        position: relative;
+    }
 
     &-gif {
         height: calc(100vh - 19rem);
@@ -23,9 +27,12 @@
 
         &-container {
             position: absolute;
-            bottom: 0;
+            bottom: -19rem;
             left: 0;
             width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
         }
 
         &-controls {
