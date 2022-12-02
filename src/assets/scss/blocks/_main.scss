@@ -64,30 +64,29 @@
             }
         }
 
-        &__slide {
+        &-slide {
             width: 75%;
-        }
 
-        &-img {
-            background-color: rgb(73, 217, 236);
-            height: 38rem;
-            width: 75%;
-            overflow: hidden;
+            &-img {
+                background-color: rgb(73, 217, 236);
+                height: 38rem;
+                width: 75%;
+                overflow: hidden;
+                transform: translateX(-50vw);
+                opacity: 0;
+            }
 
             &__image {
                 object-fit: cover;
                 width: 100%;
                 height: 100%;
             }
+
+            &.swiper-slide-active &-img {
+                transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s;
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
     }
-}
-
-.swiper-pagination-current {
-    font-size: 5.2rem;
-    color: $green;
-}
-
-.swiper-pagination-total {
-    color: $grey;
 }
