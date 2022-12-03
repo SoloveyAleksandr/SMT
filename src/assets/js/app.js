@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     effect: 'slide',
     speed: 500,
     mousewheel: {
-      releaseOnEdges: true
+      releaseOnEdges: true,
+      eventsTarget: '.samples-container'
     },
 
     pagination: {
@@ -51,10 +52,40 @@ document.addEventListener("DOMContentLoaded", () => {
             item.classList.add('_active');
           }
           id === current && item.classList.add('_next');
+
+          // if (current === total) {
+          //   document.querySelector('body').style.overflow = 'auto';
+          // }
+          // if (current === 1) {
+          //   document.querySelector('body').style.overflow = 'auto';
+          // }
         })
       }
     }
   });
+
+  // const samplesContainer = document.querySelector('.samples-container');
+
+  // document.addEventListener('scroll', stopScroll);
+
+  // function stopScroll() {
+  //   const center = samplesContainer.getBoundingClientRect().top + window.scrollY + (samplesContainer.clientHeight / 2);
+
+  //   if (window.scrollY + (window.screen.height / 2) >= center) {
+  //     document.querySelector('body').style.overflow = 'hidden';
+  //     return;
+  //   }
+  // }
+
+  // const samplesObserver = new IntersectionObserver(samplesObserverCallback, {
+  //   rootMargin: '-50% 0% -50% 0%',
+  // });
+
+  // function samplesObserverCallback(entries, observer) {
+  //   console.log(entries);
+  // }
+
+  // samplesObserver.observe(samplesContainer);
 
   const keysSwiper = new Swiper('.keyes-swiper', {
     direction: 'vertical',
