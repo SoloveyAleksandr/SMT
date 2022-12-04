@@ -159,10 +159,37 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  // HEADER
+  const header = document.querySelector('.header');
+  const headerMenu = document.querySelector('.header-menu');
   const headerMenuBtn = document.querySelector('.header-menu-btn');
   headerMenuBtn.onclick = () => {
     headerMenuBtn.classList.toggle('_active');
+    headerMenu.classList.toggle('_active');
   }
+
+  function hideHeaderCallback() {
+    let lastPos = 0;
+
+    return () => {
+      if (window.scrollY <= 100) {
+        header.classList.add('_active');
+      } else {
+        if (lastPos - window.scrollY <= -100 && !headerMenuBtn.classList.contains('_active')) {
+          lastPos = window.scrollY;
+          header.classList.remove('_active');
+        } else if (lastPos - window.scrollY >= 100) {
+          lastPos = window.scrollY;
+          header.classList.add('_active');
+        }
+      }
+    }
+  }
+
+  const hideHeader = hideHeaderCallback();
+
+  document.addEventListener('scroll', hideHeader);
+
 
   class Select {
     constructor(wrapper) {

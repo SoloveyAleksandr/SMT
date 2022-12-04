@@ -2,17 +2,26 @@
 
 .header {
     background-color: $white;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1000;
     width: 100%;
+    top: -100%;
+    transition: .3s;
+
+    &._active {
+        top: 0;
+    }
 
     &-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 2rem 0;
+        position: relative;
+        z-index: 2;
+        background-color: $white;
     }
 
     &-container {
@@ -47,6 +56,79 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+    }
+
+    &-menu {
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        background-color: $white;
+        transition: .3s cubic-bezier(0.95, 0.05, 0.5, 0.035);
+        top: -100vh;
+
+        &._active {
+            top: 100%;
+            transition: .3s cubic-bezier(.41, 1.48, 0, .79);
+        }
+
+        &-list {
+            padding: 6rem 0;
+            display: flex;
+            justify-content: space-between;
+
+            &__title {
+                color: $green;
+                font-weight: $font-reg;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &-nav {
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 47rem;
+
+            &__link {
+                font-weight: $font-reg;
+                transition: .3s;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            &__contacts {
+                background-color: $light-grey;
+                padding: 3rem;
+                width: 32rem;
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+            }
+
+            &__title {
+                font-weight: $font-reg;
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &__link {
+                    font-weight: $font-reg;
+                }
+            }
+        }
     }
 }
 

@@ -196,7 +196,6 @@ function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], cssWatch);
   gulp.watch([path.watch.js], jsWatch);
-  // gulp.watch([path.watch.images], imagesWatch);
   gulp.watch([path.watch.images], images);
   gulp.watch([path.watch.fonts], fonts);
 }
@@ -216,7 +215,6 @@ exports.fonts = fonts;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
-// exports.default = watch;
 exports.default = serverStart;
 exports.cleanWithoutImg = cleanWithoutImg
 exports.start = start
