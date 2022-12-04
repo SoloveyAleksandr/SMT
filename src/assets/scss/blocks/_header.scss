@@ -60,15 +60,17 @@
 
     &-menu {
         width: 100%;
+        max-height: calc(100vh - 10rem);
         position: absolute;
         z-index: 1;
         background-color: $white;
         transition: .3s cubic-bezier(0.95, 0.05, 0.5, 0.035);
         top: -100vh;
+        overflow: auto;
 
         &._active {
             top: 100%;
-            transition: .3s cubic-bezier(.41, 1.48, 0, .79);
+            transition: .3s ease-in-out;
         }
 
         &-list {
@@ -127,6 +129,70 @@
                 &__link {
                     font-weight: $font-reg;
                 }
+            }
+        }
+    }
+
+    @include breakpoint($cos-bp) {
+        &-phone-container {
+            display: none;
+        }
+
+        &-btns {
+            display: none;
+        }
+    }
+
+    @include breakpoint($xl-bp) {
+        &-menu {
+            &-list {
+                flex-wrap: wrap;
+
+                &__item {
+                    width: 50%;
+                    margin-bottom: 4rem;
+                }
+
+                &__info-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        &-nav-info {
+            max-width: 32rem;
+        }
+    }
+
+    @include breakpoint($sm-bp) {
+        &-logo {
+            width: 7rem;
+            height: 3rem;
+        }
+
+        &-menu {
+            &-list {
+                flex-wrap: wrap;
+                padding-top: 4rem;
+
+                &__item {
+                    width: 100%;
+                    margin-bottom: 4rem;
+                }
+
+                &__info-item {
+                    display: block;
+                }
+            }
+        }
+
+        &-nav-info {
+            max-width: 100%;
+
+            &__contacts {
+                width: 100%;
             }
         }
     }

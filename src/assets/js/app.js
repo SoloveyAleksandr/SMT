@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const page = document.querySelector('.page');
 
   const relax = new Rellax('.rellax', {
     center: true
@@ -53,39 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           id === current && item.classList.add('_next');
 
-          // if (current === total) {
-          //   document.querySelector('body').style.overflow = 'auto';
-          // }
-          // if (current === 1) {
-          //   document.querySelector('body').style.overflow = 'auto';
-          // }
         })
       }
     }
   });
-
-  // const samplesContainer = document.querySelector('.samples-container');
-
-  // document.addEventListener('scroll', stopScroll);
-
-  // function stopScroll() {
-  //   const center = samplesContainer.getBoundingClientRect().top + window.scrollY + (samplesContainer.clientHeight / 2);
-
-  //   if (window.scrollY + (window.screen.height / 2) >= center) {
-  //     document.querySelector('body').style.overflow = 'hidden';
-  //     return;
-  //   }
-  // }
-
-  // const samplesObserver = new IntersectionObserver(samplesObserverCallback, {
-  //   rootMargin: '-50% 0% -50% 0%',
-  // });
-
-  // function samplesObserverCallback(entries, observer) {
-  //   console.log(entries);
-  // }
-
-  // samplesObserver.observe(samplesContainer);
 
   const keysSwiper = new Swiper('.keyes-swiper', {
     direction: 'vertical',
@@ -166,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   headerMenuBtn.onclick = () => {
     headerMenuBtn.classList.toggle('_active');
     headerMenu.classList.toggle('_active');
+    page.classList.toggle('_scroll-disabled')
   }
 
   function hideHeaderCallback() {
@@ -242,5 +215,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const orderSquareSelect = new Select('#square-select');
   const orderRegionSelect = new Select('#region-select');
+
+  // sections animation
+
 
 })
