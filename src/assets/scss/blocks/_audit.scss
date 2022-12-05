@@ -3,6 +3,10 @@
 .audit {
   margin-bottom: 10rem;
 
+  @include breakpoint($jb-bp) {
+    margin-bottom: 8rem;
+  }
+
   &-container {
     background-color: $green;
     background-image: url(../images/Ellipse.png), url(../images/Ellipse.png);
@@ -12,6 +16,16 @@
     padding: 4rem;
     display: flex;
     gap: 4rem;
+
+    @include breakpoint($jb-bp) {
+      background-position: 240% -15%, 240% -36%;
+    }
+
+    @include breakpoint($lb-bp) {
+      flex-direction: column;
+      padding: 4rem 2rem;
+      background-position: 25rem 5rem, 25rem 15rem;
+    }
   }
 
   &-info {
@@ -21,16 +35,39 @@
     justify-content: space-between;
     align-items: flex-start;
 
+    @include breakpoint($xl-bp) {
+      max-width: 36rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      gap: 4rem;
+      max-width: none;
+    }
+
     &__title {
       color: $white;
       font-size: 5.2rem;
       line-height: 100%;
       margin-bottom: 2rem;
+
+      @include breakpoint($jb-bp) {
+        font-size: 2.4rem;
+      }
     }
 
     &__description {
       color: $white;
       font-weight: $font-reg;
+
+      @include breakpoint($jb-bp) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &__btn {
+      @include breakpoint($lb-bp) {
+        width: 100%;
+      }
     }
   }
 
@@ -40,6 +77,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint($cos-bp) {
+      height: 37.8rem;
+      width: 61.2rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      height: 30.24rem;
+      width: 48.96rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      width: 100%;
+      height: 30rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      height: 17.7rem;
+    }
 
     &__image {
       object-fit: cover;
