@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const page = document.querySelector('.page');
 
   const relax = new Rellax('.rellax', {
-    center: true
+    center: false,
+    breakpoints: [500],
   });
 
   const mainSwiper = new Swiper('.main-swiper', {

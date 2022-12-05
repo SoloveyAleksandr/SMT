@@ -1,6 +1,10 @@
 .catalog {
   margin-bottom: 20rem;
 
+  @include breakpoint($jb-bp) {
+    margin-bottom: 8rem;
+  }
+
   &__title {
     font-size: 5.2rem;
     margin-bottom: 9rem;
@@ -9,8 +13,36 @@
   &-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 6.5rem;
+
+    @include breakpoint($xl-bp) {
+      gap: 3rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @include breakpoint($sm-bp) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4rem;
+      margin-bottom: 4rem;
+
+      &__item:nth-child(4) {
+        display: none;
+      }
+
+      &__item:nth-child(5) {
+        display: none;
+      }
+
+      &__item:nth-child(6) {
+        display: none;
+      }
+    }
 
     &__item {
       height: 85.5rem;
@@ -19,17 +51,42 @@
       flex-direction: column;
       gap: 2.5rem;
 
-      &.catalog-list__item_lagre {
+      @include breakpoint($xl-bp) {
+        height: 50rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        height: fit-content;
+        width: 100%;
+      }
+
+      &.catalog-list__item_large {
         justify-content: flex-start;
 
         & .catalog-img {
           height: 85.4rem;
+
+          @include breakpoint($xl-bp) {
+            height: 40rem;
+          }
+
+          @include breakpoint($sm-bp) {
+            height: 20rem;
+          }
         }
       }
 
       &.catalog-list__item_medium {
         & .catalog-img {
           height: 54.4rem;
+
+          @include breakpoint($xl-bp) {
+            height: 30rem;
+          }
+
+          @include breakpoint($sm-bp) {
+            height: 20rem;
+          }
         }
       }
 
@@ -37,8 +94,20 @@
         justify-content: flex-end;
         padding-bottom: 10rem;
 
+        @include breakpoint($sm-bp) {
+          padding-bottom: 0;
+        }
+
         & .catalog-img {
           height: 40.4rem;
+
+          @include breakpoint($xl-bp) {
+            height: 20rem;
+          }
+
+          @include breakpoint($sm-bp) {
+            height: 20rem;
+          }
         }
       }
     }
@@ -74,6 +143,10 @@
     &-container {
       display: flex;
       justify-content: flex-end;
+
+      @include breakpoint($sm-bp) {
+        display: block;
+      }
     }
   }
 }

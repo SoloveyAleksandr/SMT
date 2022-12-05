@@ -3,6 +3,7 @@
 
     @include breakpoint($cos-bp) {
         padding: 0;
+        margin-bottom: 20rem;
     }
 
     &-inner {
@@ -76,6 +77,10 @@
         position: relative;
 
         @include breakpoint($cos-bp) {
+            margin: 0 -1.5rem;
+        }
+
+        @include breakpoint($jb-bp) {
             margin: 0 -2.5rem;
         }
 
