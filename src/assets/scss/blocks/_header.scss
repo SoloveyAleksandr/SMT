@@ -144,6 +144,10 @@
     }
 
     @include breakpoint($xl-bp) {
+        &-inner {
+            padding: 1.6rem 0;
+        }
+
         &-menu {
             &-list {
                 flex-wrap: wrap;

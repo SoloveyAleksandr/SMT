@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainSwiper = new Swiper('.main-swiper', {
     direction: 'horizontal',
     loop: true,
-    effect: 'fade',
+    effect: 'slide',
     speed: 500,
 
     pagination: {
