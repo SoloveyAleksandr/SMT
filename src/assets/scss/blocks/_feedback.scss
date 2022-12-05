@@ -2,4 +2,8 @@
 
 .feedback {
   margin-bottom: 20rem;
+
+  @include breakpoint($jb-bp) {
+    margin-bottom: 8rem;
+  }
 }

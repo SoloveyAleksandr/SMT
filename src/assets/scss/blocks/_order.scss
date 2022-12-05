@@ -3,9 +3,29 @@
 
   &-container {
     flex-direction: row-reverse;
+
+    @include breakpoint($xl-bp) {
+      gap: 5rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      gap: 1.5rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      justify-content: flex-end;
+    }
   }
 
   &-info {
     margin-right: 10rem;
+
+    @include breakpoint($cos-bp) {
+      margin-right: 0;
+    }
+
+    @include breakpoint($jb-bp) {
+      margin-right: 5rem;
+    }
   }
 }
