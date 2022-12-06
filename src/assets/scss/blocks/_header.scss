@@ -8,7 +8,7 @@
     z-index: 1000;
     width: 100%;
     top: -100%;
-    transition: .3s;
+    transition: 1s ease;
 
     &._active {
         top: 0;
