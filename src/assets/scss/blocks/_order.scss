@@ -24,10 +24,6 @@
   &-info {
     margin-right: 10rem;
 
-    @include breakpoint($cos-bp) {
-      margin-right: 0;
-    }
-
     @include breakpoint($jb-bp) {
       margin-right: 5rem;
     }

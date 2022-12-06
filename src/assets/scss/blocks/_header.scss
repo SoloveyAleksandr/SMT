@@ -32,6 +32,10 @@
     &-logo {
         margin-right: 4rem;
 
+        @include breakpoint($cos-bp) {
+            height: 4rem;
+        }
+
         @include breakpoint($lb-bp) {
             margin-right: 1.6rem;
         }
@@ -42,6 +46,10 @@
         color: $green;
         font-weight: $font-reg;
         max-width: 32rem;
+
+        @include breakpoint($cos-bp) {
+            font-size: 1.4rem;
+        }
 
         @include breakpoint($lb-bp) {
             font-size: 1.2rem;

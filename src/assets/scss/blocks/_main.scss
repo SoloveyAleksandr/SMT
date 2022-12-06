@@ -58,10 +58,14 @@
 
 
     @include breakpoint ($xl-bp) {
-        margin-bottom: 8rem;
         &-gif {
             padding-bottom: 10rem;
         }
+    }
+
+    @include breakpoint ($cos-bp) {
+        margin-bottom: 8rem;
+        padding-top: 7rem;
     }
 
     @include breakpoint ($jb-bp) {

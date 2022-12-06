@@ -50,7 +50,7 @@
       line-height: 100%;
       margin-bottom: 2rem;
 
-      @include breakpoint($jb-bp) {
+      @include breakpoint($cos-bp) {
         font-size: 2.4rem;
       }
     }
@@ -59,7 +59,7 @@
       color: $white;
       font-weight: $font-reg;
 
-      @include breakpoint($jb-bp) {
+      @include breakpoint($cos-bp) {
         font-size: 1.4rem;
       }
     }
@@ -79,13 +79,13 @@
     justify-content: center;
 
     @include breakpoint($cos-bp) {
-      height: 37.8rem;
-      width: 61.2rem;
+      height: 30rem;
+      width: 58rem;
     }
 
     @include breakpoint($jb-bp) {
-      height: 30.24rem;
-      width: 48.96rem;
+      height: 30rem;
+      width: 48rem;
     }
 
     @include breakpoint($lb-bp) {
