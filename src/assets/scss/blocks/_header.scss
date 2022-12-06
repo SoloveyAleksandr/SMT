@@ -31,6 +31,10 @@
 
     &-logo {
         margin-right: 4rem;
+
+        @include breakpoint($lb-bp) {
+            margin-right: 1.6rem;
+        }
     }
 
     &__title {
@@ -38,6 +42,11 @@
         color: $green;
         font-weight: $font-reg;
         max-width: 32rem;
+
+        @include breakpoint($lb-bp) {
+            font-size: 1.2rem;
+            max-width: 20rem;
+        }
     }
 
     &-phone-list {
@@ -213,6 +222,10 @@
     width: 4rem;
     height: 4rem;
     position: relative;
+
+    @include breakpoint($lb-bp) {
+        margin-left: 0;
+    }
 
     &__burger {
         position: absolute;
