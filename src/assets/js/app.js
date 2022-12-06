@@ -247,6 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // GSAP 
 
+  gsap.registerPlugin(ScrollTrigger);
+
   // partners img animation
   const TL_1 = gsap.timeline({ repeat: -1 })
   TL_1.from(".partners-anim-img_1", {
@@ -254,6 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "-100%",
     y: "-100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_1.to(".partners-anim-img_1", {
     scale: 0,
@@ -261,6 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_1.from(".partners-anim-img_2", {
@@ -268,6 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "-100%",
     y: "-100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_1.to(".partners-anim-img_2", {
     scale: 0,
@@ -275,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_1.from(".partners-anim-img_3", {
@@ -282,6 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "-100%",
     y: "-100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_1.to(".partners-anim-img_3", {
     scale: 0,
@@ -289,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_1.from(".partners-anim-img_4", {
@@ -296,6 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "-100%",
     y: "-100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_1.to(".partners-anim-img_4", {
     scale: 0,
@@ -303,6 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_1.from(".partners-anim-img_5", {
@@ -310,6 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "-100%",
     y: "-100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_1.to(".partners-anim-img_5", {
     scale: 0,
@@ -317,6 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_1.from(".partners-anim-img_6", {
@@ -324,6 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "-100%",
     y: "-100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_1.to(".partners-anim-img_6", {
     scale: 0,
@@ -331,6 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
 
@@ -341,6 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "100%",
     y: "100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_2.to(".clients-anim-img_1", {
     scale: 0,
@@ -348,6 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_2.from(".clients-anim-img_2", {
@@ -355,6 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "100%",
     y: "100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_2.to(".clients-anim-img_2", {
     scale: 0,
@@ -362,6 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_2.from(".clients-anim-img_3", {
@@ -369,6 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "100%",
     y: "100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_2.to(".clients-anim-img_3", {
     scale: 0,
@@ -376,6 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_2.from(".clients-anim-img_4", {
@@ -383,6 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "100%",
     y: "100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_2.to(".clients-anim-img_4", {
     scale: 0,
@@ -390,6 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_2.from(".clients-anim-img_5", {
@@ -397,6 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "100%",
     y: "100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_2.to(".clients-anim-img_5", {
     scale: 0,
@@ -404,6 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_2.from(".clients-anim-img_6", {
@@ -411,6 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "100%",
     y: "100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_2.to(".clients-anim-img_6", {
     scale: 0,
@@ -418,6 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_2.from(".clients-anim-img_7", {
@@ -425,6 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "100%",
     y: "100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_2.to(".clients-anim-img_7", {
     scale: 0,
@@ -432,6 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
   TL_2.from(".clients-anim-img_8", {
@@ -439,6 +467,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x: "100%",
     y: "100%",
     duration: 2,
+    ease: "power3.out",
   })
   TL_2.to(".clients-anim-img_8", {
     scale: 0,
@@ -446,7 +475,49 @@ document.addEventListener("DOMContentLoaded", () => {
     y: "-100%",
     delay: 2,
     duration: 2,
+    ease: "power3.out",
   })
 
+
+  // main swiper 
+  gsap.from(".main-swiper", {
+    x: "-200vh",
+    delay: 0.5,
+    duration: 1,
+    ease: "power3.out",
+  })
+  gsap.from(".main-swiper-control", {
+    x: "200vh",
+    delay: 0.5,
+    duration: 1,
+    ease: "power3.out",
+  })
+
+  // about 
+  gsap.from(".about-anim_1", {
+    duration: 2,
+    x: "-100vh",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about-inner",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "restart reverse restart reverse",
+    },
+  })
+
+  gsap.from(".about-anim_2", {
+    duration: 2,
+    x: "100vh",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".about-inner",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "restart reverse restart reverse",
+    },
+  })
 
 })

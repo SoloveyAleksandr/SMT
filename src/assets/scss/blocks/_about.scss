@@ -1,6 +1,7 @@
 .about {
     padding: 6rem 0;
     margin-bottom: 20rem;
+    overflow: hidden;
 
     @include breakpoint($cos-bp) {
         padding: 0;
