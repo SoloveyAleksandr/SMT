@@ -29,17 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     scrollbar: false,
+
+    autoplay: {
+      delay: 5000,
+    },
   });
 
   const samplesSwiperPagination = document.querySelector('.samples-list');
   const samplesSwiper = new Swiper('.samples-swiper', {
     direction: 'vertical',
     loop: false,
+
     effect: 'slide',
+
     speed: 500,
+
     mousewheel: {
       releaseOnEdges: true,
-      eventsTarget: '.samples-container'
+      // eventsTarget: '.samples-container'
     },
 
     pagination: {
@@ -57,16 +64,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         })
       }
-    }
+    },
+
+    autoplay: {
+      delay: 5000,
+    },
   });
 
   const keysSwiper = new Swiper('.keyes-swiper', {
-    direction: 'vertical',
+    direction: 'horizontal',
     loop: true,
+
     effect: 'fade',
+
     fadeEffect: {
       crossFade: true
     },
+
     speed: 500,
 
     pagination: {
@@ -83,14 +97,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navigation: {
       nextEl: '.keyes-swiper-btn',
-    }
+    },
+
+    autoplay: {
+      delay: 5000,
+    },
   });
 
   const workSwiper = new Swiper('.work-swiper', {
     direction: 'horizontal',
     loop: true,
     effect: 'cube',
-    speed: 500,
+    speed: 1200,
 
     pagination: {
       el: '.work-swiper-pagination',
@@ -106,6 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navigation: {
       nextEl: '.work-swiper-btn',
+    },
+
+    autoplay: {
+      delay: 5000,
     },
   });
 
@@ -129,6 +151,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navigation: {
       nextEl: '.news-swiper-btn',
+    },
+
+    autoplay: {
+      delay: 5000,
     },
   });
 

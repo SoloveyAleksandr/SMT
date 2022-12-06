@@ -33,8 +33,6 @@ html {
   @include breakpoint($xs-bp) {
     font-size: calc(100vw / 375 * 10);
   }
-
-
 }
 
 *,
