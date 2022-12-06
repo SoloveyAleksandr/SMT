@@ -4,7 +4,7 @@
   margin-bottom: 20rem;
   height: 96rem;
   position: relative;
-  
+
 
   @include breakpoint($cos-bp) {
     height: 90rem;
@@ -141,7 +141,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: scale(0.3) rotate(60deg);
+        transform: translate(-100%, 0);
         opacity: 0;
 
         @include breakpoint($jb-bp) {
@@ -231,7 +231,7 @@
       }
 
       &.swiper-slide-active &-img {
-        transition: 1.8s ease .1s;
+        transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) .1s;
         transform: scale(1) rotate(0);
         opacity: 1;
       }
