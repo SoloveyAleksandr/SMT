@@ -5,9 +5,43 @@
   height: 96rem;
   position: relative;
 
+
+  @include breakpoint($cos-bp) {
+    height: 90rem;
+  }
+
+  @include breakpoint($xl-bp) {
+    height: 64rem;
+  }
+
+  @include breakpoint($xl-bp) {
+    height: 57rem;
+    margin-bottom: 8rem;
+  }
+
+  @include breakpoint($jb-bp) {
+    display: flex;
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
+
   &-container {
     padding-left: 50%;
     padding-top: 10rem;
+
+    @include breakpoint($cos-bp) {
+      padding-top: 5rem;
+      padding-left: 55%;
+    }
+
+    @include breakpoint($xl-bp) {
+      padding-top: 0;
+    }
+
+    @include breakpoint($jb-bp) {
+      width: 100%;
+      padding: 0 2.5rem;
+    }
   }
 
   &-info {
@@ -18,9 +52,38 @@
     position: relative;
     z-index: 2;
 
+    @include breakpoint($cos-bp) {
+      gap: 2rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      gap: 1rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      position: absolute;
+      bottom: 7.6rem;
+    }
+
     &__subtitle {
       font-weight: $font-reg;
       color: $grey;
+
+      &_first {
+        @include breakpoint($jb-bp) {
+          display: none;
+        }
+      }
+
+      &_second {
+        display: none;
+
+        @include breakpoint($jb-bp) {
+          display: block;
+          padding: 0rem 2.5rem;
+          margin-bottom: 1rem;
+        }
+      }
     }
   }
 
@@ -31,10 +94,43 @@
     top: 0;
     left: 0;
 
+    @include breakpoint($cos-bp) {
+      height: 90rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      height: 64rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      height: 57rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      position: static;
+      height: fit-content;
+    }
+
     &-slide {
       height: 96rem;
       width: 100%;
       position: relative;
+
+      @include breakpoint($cos-bp) {
+        height: 90rem;
+      }
+
+      @include breakpoint($xl-bp) {
+        height: 64rem;
+      }
+
+      @include breakpoint($xl-bp) {
+        height: 57rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        height: fit-content;
+      }
 
       &-img {
         position: absolute;
@@ -45,8 +141,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: scale(0.3) rotate(60deg);
+        transform: translate(-100%, 0);
         opacity: 0;
+
+        @include breakpoint($jb-bp) {
+          position: static;
+          width: 100%;
+          height: 35rem;
+          margin-bottom: 4rem;
+          transform: translate(-100%);
+        }
+
+        @include breakpoint($sm-bp) {
+          height: 30.5rem;
+        }
       }
 
       &__img {
@@ -55,9 +163,30 @@
         height: 100%;
       }
 
+      &__link {
+        @include breakpoint($sm-bp) {
+          width: 100%;
+        }
+      }
+
       &-container {
         padding-left: 50%;
         padding-top: 25rem;
+
+        @include breakpoint($cos-bp) {
+          padding-top: 20rem;
+          padding-left: 55%;
+        }
+
+        @include breakpoint($xl-bp) {
+          padding-top: 13rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          padding: 0 2.5rem;
+          display: flex;
+          flex-direction: column;
+        }
       }
 
       &-content {
@@ -73,6 +202,10 @@
         line-height: 100%;
         transform: translateY(-15rem);
         opacity: 0;
+
+        @include breakpoint($xl-bp) {
+          font-size: 2.4rem;
+        }
       }
 
       &__description {
@@ -81,22 +214,30 @@
         margin-bottom: 8.9rem;
         transform: translateX(15rem);
         opacity: 0;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          margin-bottom: 12.2rem;
+        }
       }
 
       &.swiper-slide-active &__title {
-        transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s;
+        transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s;
         transform: translateY(0);
         opacity: 1;
       }
 
       &.swiper-slide-active &-img {
-        transition: .8s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s;
+        transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) .1s;
         transform: scale(1) rotate(0);
         opacity: 1;
       }
 
       &.swiper-slide-active &__description {
-        transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
+        transition: .8s cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
         transform: translateX(0);
         opacity: 1;
       }

@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const page = document.querySelector('.page');
 
   const relax = new Rellax('.rellax', {
-    center: true
+    center: false,
+    breakpoints: [500],
   });
 
   const mainSwiper = new Swiper('.main-swiper', {
     direction: 'horizontal',
     loop: true,
-    effect: 'fade',
+    effect: 'slide',
     speed: 500,
 
     pagination: {
@@ -27,17 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
     scrollbar: false,
+
+    autoplay: {
+      delay: 5000,
+    },
   });
 
   const samplesSwiperPagination = document.querySelector('.samples-list');
   const samplesSwiper = new Swiper('.samples-swiper', {
     direction: 'vertical',
     loop: false,
+
     effect: 'slide',
+
     speed: 500,
+
     mousewheel: {
       releaseOnEdges: true,
-      eventsTarget: '.samples-container'
+      // eventsTarget: '.samples-container'
     },
 
     pagination: {
@@ -53,47 +62,25 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           id === current && item.classList.add('_next');
 
-          // if (current === total) {
-          //   document.querySelector('body').style.overflow = 'auto';
-          // }
-          // if (current === 1) {
-          //   document.querySelector('body').style.overflow = 'auto';
-          // }
         })
       }
-    }
+    },
+
+    autoplay: {
+      delay: 5000,
+    },
   });
 
-  // const samplesContainer = document.querySelector('.samples-container');
-
-  // document.addEventListener('scroll', stopScroll);
-
-  // function stopScroll() {
-  //   const center = samplesContainer.getBoundingClientRect().top + window.scrollY + (samplesContainer.clientHeight / 2);
-
-  //   if (window.scrollY + (window.screen.height / 2) >= center) {
-  //     document.querySelector('body').style.overflow = 'hidden';
-  //     return;
-  //   }
-  // }
-
-  // const samplesObserver = new IntersectionObserver(samplesObserverCallback, {
-  //   rootMargin: '-50% 0% -50% 0%',
-  // });
-
-  // function samplesObserverCallback(entries, observer) {
-  //   console.log(entries);
-  // }
-
-  // samplesObserver.observe(samplesContainer);
-
   const keysSwiper = new Swiper('.keyes-swiper', {
-    direction: 'vertical',
+    direction: 'horizontal',
     loop: true,
+
     effect: 'fade',
+
     fadeEffect: {
       crossFade: true
     },
+
     speed: 500,
 
     pagination: {
@@ -110,14 +97,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navigation: {
       nextEl: '.keyes-swiper-btn',
-    }
+    },
+
+    autoplay: {
+      delay: 5000,
+    },
   });
 
   const workSwiper = new Swiper('.work-swiper', {
     direction: 'horizontal',
     loop: true,
     effect: 'cube',
-    speed: 500,
+    speed: 1200,
 
     pagination: {
       el: '.work-swiper-pagination',
@@ -133,6 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navigation: {
       nextEl: '.work-swiper-btn',
+    },
+
+    autoplay: {
+      delay: 5000,
     },
   });
 
@@ -157,6 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
     navigation: {
       nextEl: '.news-swiper-btn',
     },
+
+    autoplay: {
+      delay: 5000,
+    },
   });
 
   // HEADER
@@ -166,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   headerMenuBtn.onclick = () => {
     headerMenuBtn.classList.toggle('_active');
     headerMenu.classList.toggle('_active');
+    page.classList.toggle('_scroll-disabled')
   }
 
   function hideHeaderCallback() {
@@ -242,5 +242,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const orderSquareSelect = new Select('#square-select');
   const orderRegionSelect = new Select('#region-select');
+
+  // sections animation
+
 
 })

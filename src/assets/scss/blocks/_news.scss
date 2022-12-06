@@ -3,9 +3,24 @@
 .news {
     margin-bottom: 20rem;
 
+    @include breakpoint($xl-bp) {
+        margin-bottom: 8rem;
+    }
+
+    &__subtitle {
+        display: none;
+        color: $grey;
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+        padding: 0 2.5rem;
+
+        @include breakpoint($jb-bp) {
+            display: block;
+        }
+    }
+
     &-swiper {
         position: relative;
-        overflow-y: visible;
 
         &-control {
             padding: 4rem;
@@ -13,6 +28,35 @@
             position: absolute;
             right: 0;
             bottom: 0;
+            align-items: center;
+
+            @include breakpoint($cos-bp) {
+                padding: 2rem;
+            }
+
+            @include breakpoint($xl-bp) {
+                padding: 1rem;
+            }
+
+            @include breakpoint($jb-bp) {
+                position: static;
+                padding: 0;
+                margin-top: 4rem;
+            }
+
+            &-box {
+                display: flex;
+                align-items: flex-end;
+                gap: 4rem;
+
+                @include breakpoint($xl-bp) {
+                    gap: 2rem;
+                }
+
+                @include breakpoint($jb-bp) {
+                    margin-bottom: 4rem;
+                }
+            }
         }
 
         &-pagination {
@@ -24,11 +68,60 @@
             position: relative;
             height: 96rem;
 
+            @include breakpoint($cos-bp) {
+                padding-top: 5rem;
+                height: 70rem;
+            }
+
+            @include breakpoint($xl-bp) {
+                padding-top: 2rem;
+                height: 60rem;
+            }
+
+            @include breakpoint($jb-bp) {
+                display: flex;
+                flex-direction: column-reverse;
+                height: fit-content;
+                padding-top: 0;
+            }
+
+            &-container {
+                height: 100%;
+                justify-content: space-between;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            &__link {
+                margin-bottom: 10rem;
+
+                @include breakpoint($xl-bp) {
+                    margin-bottom: 0;
+                }
+
+                @include breakpoint($jb-bp) {
+                    display: none;
+                }
+            }
+
             &-info {
-                max-width: 74rem;
+                width: 74rem;
                 display: flex;
                 flex-direction: column;
                 gap: 4rem;
+
+                @include breakpoint($cos-bp) {
+                    width: 50%;
+                }
+
+                @include breakpoint($cos-bp) {
+                    width: 47%;
+                }
+
+                @include breakpoint($jb-bp) {
+                    width: 100%;
+                }
             }
 
             &__subtitle {
@@ -36,6 +129,14 @@
                 font-weight: $font-reg;
                 opacity: 0;
                 transform: translateY(-15rem);
+
+                @include breakpoint($xl-bp) {
+                    font-size: 1.4rem;
+                }
+
+                @include breakpoint($jb-bp) {
+                    display: none;
+                }
             }
 
             &__title {
@@ -43,12 +144,17 @@
                 line-height: 100%;
                 transform: translateX(-15rem);
                 opacity: 0;
+
+                @include breakpoint($xl-bp) {
+                    font-size: 2.4rem;
+                }
             }
 
             &__text {
                 font-weight: $font-reg;
                 transform: translateX(-15rem);
                 opacity: 0;
+                font-size: 1.4rem;
             }
 
             &__date {
@@ -56,6 +162,7 @@
                 font-weight: $font-reg;
                 transform: translateY(15rem);
                 opacity: 0;
+                font-size: 1.4rem;
             }
 
             &-img {
@@ -67,8 +174,19 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transform: translateX(50vw) rotateZ(45deg);
+                transform: translateX(50vw);
                 opacity: 0;
+
+                @include breakpoint($jb-bp) {
+                    position: static;
+                    width: 100%;
+                    height: 35rem;
+                    margin-bottom: 4rem;
+                }
+
+                @include breakpoint($sm-bp) {
+                    height: 30.5rem;
+                }
             }
 
             &__img {
@@ -78,31 +196,31 @@
             }
 
             &.swiper-slide-active &__subtitle {
-                transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s;
+                transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s;
                 transform: translateY(0);
                 opacity: 1;
             }
 
             &.swiper-slide-active &__title {
-                transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
+                transition: .8s cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
                 opacity: 1;
                 transform: translateX(0);
             }
 
             &.swiper-slide-active &__text {
-                transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .6s;
+                transition: .8s ease .6s;
                 opacity: 1;
                 transform: translateX(0);
             }
 
             &.swiper-slide-active &__date {
-                transition: .3s cubic-bezier(0.175, 0.885, 0.32, 1.275) .8s;
+                transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .8s;
                 opacity: 1;
                 transform: translateY(0);
             }
 
             &.swiper-slide-active &-img {
-                transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transition: 1s ease;
                 transform: translateX(0) rotateZ(0);
                 opacity: 1;
             }
@@ -116,16 +234,52 @@
             bottom: 10rem;
             position: absolute;
             z-index: 2;
+
+            @include breakpoint($jb-bp) {
+                position: static;
+            }
         }
 
         &-container {
             display: flex;
             justify-content: flex-end;
+
+            @include breakpoint($jb-bp) {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        &__link {
+            display: none;
+
+            @include breakpoint($jb-bp) {
+                display: flex;
+            }
+
+            @include breakpoint($sm-bp) {
+                width: 100%;
+            }
         }
 
         &__title {
             font-size: 4rem;
             width: 52rem;
+
+            @include breakpoint($cos-bp) {
+                font-size: 3.2rem;
+                max-width: 35rem;
+            }
+
+            @include breakpoint($xl-bp) {
+                font-size: 2.4rem;
+                max-width: 26rem;
+            }
+
+            @include breakpoint($jb-bp) {
+                display: none;
+            }
         }
     }
 }

@@ -1,11 +1,23 @@
 .partners {
     margin-bottom: 20rem;
 
+    @include breakpoint($xl-bp) {
+        margin-bottom: 8rem;
+    }
+
     &-info {
         margin-bottom: 6rem;
 
+        @include breakpoint($jb-bp) {
+            margin-bottom: 4rem;
+        }
+
         &__title {
             font-size: 5.2rem;
+
+            @include breakpoint($cos-bp) {
+                font-size: 2.4rem;
+            }
         }
     }
 
@@ -25,6 +37,28 @@
             grid-column-end: 5;
         }
 
+        @include breakpoint($jb-bp) {
+            gap: 1.5rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            grid-template-columns: repeat(2, 1fr);
+
+            & :first-child {
+                grid-column-start: 1;
+                grid-column-end: 1;
+            }
+
+            & :last-child {
+                grid-column-start: 2;
+                grid-column-end: 2;
+            }
+        }
+
+        @include breakpoint($sm-bp) {
+            margin-bottom: 4rem;
+        }
+
         &-item {
             border: 0.1rem solid $grey;
             height: 24rem;
@@ -32,12 +66,29 @@
             align-items: center;
             justify-content: center;
 
+            @include breakpoint($jb-bp) {
+                height: 20rem;
+            }
+
+            @include breakpoint($lb-bp) {
+                height: 15rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                height: 9rem;
+            }
+
             &-img {
                 width: 25rem;
                 height: 14rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                @include breakpoint($lb-bp) {
+                    height: 5.2rem;
+                    width: 70%;
+                }
             }
 
             &__img {
