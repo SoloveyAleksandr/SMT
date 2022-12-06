@@ -245,5 +245,208 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // sections animation
 
+  // GSAP 
+
+  // partners img animation
+  const TL_1 = gsap.timeline({ repeat: -1 })
+  TL_1.from(".partners-anim-img_1", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    duration: 2,
+  })
+  TL_1.to(".partners-anim-img_1", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_1.from(".partners-anim-img_2", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    duration: 2,
+  })
+  TL_1.to(".partners-anim-img_2", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_1.from(".partners-anim-img_3", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    duration: 2,
+  })
+  TL_1.to(".partners-anim-img_3", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_1.from(".partners-anim-img_4", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    duration: 2,
+  })
+  TL_1.to(".partners-anim-img_4", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_1.from(".partners-anim-img_5", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    duration: 2,
+  })
+  TL_1.to(".partners-anim-img_5", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_1.from(".partners-anim-img_6", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    duration: 2,
+  })
+  TL_1.to(".partners-anim-img_6", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    delay: 2,
+    duration: 2,
+  })
+
+
+  // clients img animation
+  const TL_2 = gsap.timeline({ repeat: -1 })
+  TL_2.from(".clients-anim-img_1", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    duration: 2,
+  })
+  TL_2.to(".clients-anim-img_1", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_2.from(".clients-anim-img_2", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    duration: 2,
+  })
+  TL_2.to(".clients-anim-img_2", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_2.from(".clients-anim-img_3", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    duration: 2,
+  })
+  TL_2.to(".clients-anim-img_3", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_2.from(".clients-anim-img_4", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    duration: 2,
+  })
+  TL_2.to(".clients-anim-img_4", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_2.from(".clients-anim-img_5", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    duration: 2,
+  })
+  TL_2.to(".clients-anim-img_5", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_2.from(".clients-anim-img_6", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    duration: 2,
+  })
+  TL_2.to(".clients-anim-img_6", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_2.from(".clients-anim-img_7", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    duration: 2,
+  })
+  TL_2.to(".clients-anim-img_7", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    delay: 2,
+    duration: 2,
+  })
+
+  TL_2.from(".clients-anim-img_8", {
+    scale: 0,
+    x: "100%",
+    y: "100%",
+    duration: 2,
+  })
+  TL_2.to(".clients-anim-img_8", {
+    scale: 0,
+    x: "-100%",
+    y: "-100%",
+    delay: 2,
+    duration: 2,
+  })
+
 
 })

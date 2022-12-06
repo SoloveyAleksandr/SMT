@@ -64,6 +64,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
 
             @include breakpoint($jb-bp) {
                 height: 20rem;
@@ -83,6 +85,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                position: absolute;
 
                 @include breakpoint($lb-bp) {
                     height: 5.2rem;
