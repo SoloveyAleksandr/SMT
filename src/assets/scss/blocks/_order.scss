@@ -1,5 +1,6 @@
 .order {
   margin-bottom: 20rem;
+  overflow: hidden;
 
   @include breakpoint($xl-bp) {
     margin-bottom: 8rem;

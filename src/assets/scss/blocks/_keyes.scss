@@ -143,6 +143,7 @@
         justify-content: center;
         transform: translate(-100%, 0);
         opacity: 0;
+        transition: 1.5s;
 
         @include breakpoint($jb-bp) {
           position: static;
@@ -202,6 +203,7 @@
         line-height: 100%;
         transform: translateY(-15rem);
         opacity: 0;
+        transition: .5s;
 
         @include breakpoint($xl-bp) {
           font-size: 2.4rem;
@@ -214,6 +216,7 @@
         margin-bottom: 8.9rem;
         transform: translateX(15rem);
         opacity: 0;
+        transition: .8s;
 
         @include breakpoint($xl-bp) {
           font-size: 1.4rem;
@@ -225,19 +228,19 @@
       }
 
       &.swiper-slide-active &__title {
-        transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .1s;
+        transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .51s;
         transform: translateY(0);
         opacity: 1;
       }
 
       &.swiper-slide-active &-img {
-        transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) .1s;
+        transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) 1.5s;
         transform: scale(1) rotate(0);
         opacity: 1;
       }
 
       &.swiper-slide-active &__description {
-        transition: .8s cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
+        transition: .8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.1s;
         transform: translateX(0);
         opacity: 1;
       }

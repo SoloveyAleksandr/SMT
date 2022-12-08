@@ -503,7 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".about-inner",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "restart reverse restart reverse",
+      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -516,7 +516,205 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".about-inner",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "restart reverse restart reverse",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  // feedback
+  gsap.from(".feedback-anim_1", {
+    duration: 2,
+    x: "-100vh",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".feedback-container",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".feedback-anim_2", {
+    duration: 2,
+    x: "100vh",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".feedback-container",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  // audit 
+  gsap.from(".audit-info__title", {
+    duration: 1.5,
+    y: "-20rem",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".audit-container",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".audit-info__description", {
+    duration: 1.5,
+    delay: 0.5,
+    x: "-20rem",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".audit-container",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".audit-info__btn", {
+    duration: 1,
+    delay: 0.8,
+    y: "20rem",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".audit-container",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".audit-img", {
+    duration: 1.5,
+    delay: 1,
+    x: "20rem",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".audit-container",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  // services
+  gsap.from(".services-list-item_1", {
+    duration: 1.5,
+    delay: 0.5,
+    scale: 0,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".services-list-item_1",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".services-list-item_2", {
+    duration: 1.5,
+    delay: 0.5,
+    scale: 0,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".services-list-item_2",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".services-list-item_3", {
+    duration: 1.5,
+    delay: 0.5,
+    scale: 0,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".services-list-item_3",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".services-list-item_4", {
+    duration: 1.5,
+    delay: 0.5,
+    scale: 0,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".services-list-item_4",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".services-list-item_5", {
+    duration: 1.5,
+    delay: 0.5,
+    scale: 0,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".services-list-item_5",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".services-list-item_6", {
+    duration: 1.5,
+    delay: 0.5,
+    scale: 0,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".services-list-item_6",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+
+  // order
+  gsap.from(".order-info", {
+    duration: 2,
+    delay: 0.5,
+    x: "20rem",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".order-container",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  })
+
+  gsap.from(".order-form-wrapper", {
+    duration: 2,
+    delay: 1.5,
+    x: "-20rem",
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".order-container",
+      start: "top 90%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
     },
   })
 

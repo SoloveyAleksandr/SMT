@@ -2,6 +2,7 @@
 
 .audit {
   margin-bottom: 10rem;
+  overflow: hidden;
 
   @include breakpoint($jb-bp) {
     margin-bottom: 8rem;
