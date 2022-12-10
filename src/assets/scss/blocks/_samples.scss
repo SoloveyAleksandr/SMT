@@ -98,7 +98,7 @@
       border-top: 0.1rem solid $grey;
       background-color: $white;
       border-radius: 0rem;
-      transition: .3s;
+      transition: 0.3s;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -116,7 +116,7 @@
         width: 6rem;
         height: 3rem;
         opacity: 0;
-        transition: .3s;
+        transition: 0.3s;
 
         @include breakpoint($xl-bp) {
           width: 3rem;
@@ -131,7 +131,7 @@
         padding: 3rem;
         font-weight: $font-reg;
         border-top: 0.1rem solid transparent;
-        background-color: #F6F6F6;
+        background-color: #f6f6f6;
         border-radius: 1rem;
 
         .samples-list__item-icon {
@@ -174,6 +174,15 @@
       margin: 0 -2.5rem;
     }
 
+    &-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      height: 4px;
+      background-color: rgba(255, 45, 45, 0.6);
+    }
+
     &__slide {
       height: 100%;
     }
@@ -193,3 +202,43 @@
     }
   }
 }
+// const samplesTL = gsap.timeline({
+//   defaults: {
+//     ease: "none"
+//   },
+//   scrollTrigger: {
+//     trigger: ".samples-container",
+//     start: "top 100px",
+//     // end: "+=2000px",
+//     scrub: true,
+//     pin: true
+//   },
+//   onUpdate: () => {
+//     handleChangeSlides();
+//   }
+// });
+
+// samplesTL.to('.samples-swiper-progress', 0.1, { width: 100 + '%' });
+
+// const samplesHandler = handleSamplesSlide();
+
+// function handleChangeSlides() {
+//   const progress = Number(samplesTL.progress().toFixed(3));
+
+//   samplesHandler(progress);
+// }
+
+// function handleSamplesSlide() {
+//   const step = Number((1 / [...samplesSwiperPagination.children].length).toFixed(3));
+//   let prevValue = 0;
+//   return (value) => {
+//     if (value >= prevValue + step) {
+//       prevValue = prevValue + step;
+//       samplesSwiper.slideNext();
+//       return;
+//     } else if (value <= prevValue) {
+//       prevValue = prevValue - step;
+//       samplesSwiper.slidePrev();
+//     }
+//   }
+// }
