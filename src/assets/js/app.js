@@ -39,16 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const samplesSwiper = new Swiper('.samples-swiper', {
     direction: 'vertical',
     loop: false,
-
     effect: 'slide',
-
     speed: 500,
-
-    mousewheel: {
-      releaseOnEdges: true,
-      // eventsTarget: '.samples-container'
-    },
-
+    allowTouchMove: false,
     pagination: {
       el: '.samples-list',
       type: 'custom',
@@ -61,13 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
             item.classList.add('_active');
           }
           id === current && item.classList.add('_next');
-
         })
       }
-    },
-
-    autoplay: {
-      delay: 5000,
     },
   });
 
@@ -493,6 +481,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
   })
 
+
+
   // about 
   gsap.from(".about-anim_1", {
     duration: 2,
@@ -519,6 +509,49 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play reverse play reverse",
     },
   })
+
+
+  // samples
+  const samplesTL = gsap.timeline({
+    defaults: {
+      ease: "none"
+    },
+    scrollTrigger: {
+      trigger: ".samples-container",
+      scrub: true,
+      pin: true
+    },
+    onUpdate: () => {
+      handleChangeSlides();
+    }
+  });
+
+  samplesTL.to('.samples-swiper-progress', 0.1, { width: 100 + '%' });
+
+  const samplesHandler = handleSamplesSlide();
+
+  function handleChangeSlides() {
+    const progress = Number(samplesTL.progress().toFixed(3));
+
+    samplesHandler(progress);
+  }
+
+  function handleSamplesSlide() {
+    const step = Number((1 / [...samplesSwiperPagination.children].length).toFixed(3));
+    let prevValue = 0;
+    return (value) => {
+      if (value >= prevValue + step) {
+        prevValue = prevValue + step;
+        samplesSwiper.slideNext();
+        return;
+      } else if (value <= prevValue) {
+        prevValue = prevValue - step;
+        samplesSwiper.slidePrev();
+      }
+    }
+  }
+
+
 
   // feedback
   gsap.from(".feedback-anim_1", {
@@ -717,5 +750,10 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play reverse play reverse",
     },
   })
+
+
+
+
+
 
 })
