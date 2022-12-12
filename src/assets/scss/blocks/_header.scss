@@ -9,6 +9,7 @@
     width: 100%;
     top: -100%;
     transition: 1s ease;
+    box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.1);
 
     &._active {
         top: 0;

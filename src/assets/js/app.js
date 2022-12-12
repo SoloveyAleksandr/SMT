@@ -518,6 +518,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     scrollTrigger: {
       trigger: ".samples-container",
+      end: '+=2000px',
       scrub: true,
       pin: true
     },
