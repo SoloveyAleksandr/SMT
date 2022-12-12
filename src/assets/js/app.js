@@ -481,6 +481,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
   })
 
+
+
   // about 
   gsap.from(".about-anim_1", {
     duration: 2,
@@ -507,6 +509,49 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "play reverse play reverse",
     },
   })
+
+
+  // samples
+  const samplesTL = gsap.timeline({
+    defaults: {
+      ease: "none"
+    },
+    scrollTrigger: {
+      trigger: ".samples-container",
+      scrub: true,
+      pin: true
+    },
+    onUpdate: () => {
+      handleChangeSlides();
+    }
+  });
+
+  samplesTL.to('.samples-swiper-progress', 0.1, { width: 100 + '%' });
+
+  const samplesHandler = handleSamplesSlide();
+
+  function handleChangeSlides() {
+    const progress = Number(samplesTL.progress().toFixed(3));
+
+    samplesHandler(progress);
+  }
+
+  function handleSamplesSlide() {
+    const step = Number((1 / [...samplesSwiperPagination.children].length).toFixed(3));
+    let prevValue = 0;
+    return (value) => {
+      if (value >= prevValue + step) {
+        prevValue = prevValue + step;
+        samplesSwiper.slideNext();
+        return;
+      } else if (value <= prevValue) {
+        prevValue = prevValue - step;
+        samplesSwiper.slidePrev();
+      }
+    }
+  }
+
+
 
   // feedback
   gsap.from(".feedback-anim_1", {
@@ -706,46 +751,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   })
 
-  // const samplesTL = gsap.timeline({
-  //   defaults: {
-  //     ease: "none"
-  //   },
-  //   scrollTrigger: {
-  //     trigger: ".samples-container",
-  //     start: "top 100px",
-  //     // end: "+=2000px",
-  //     scrub: true,
-  //     pin: true
-  //   },
-  //   onUpdate: () => {
-  //     handleChangeSlides();
-  //   }
-  // });
 
-  // samplesTL.to('.samples-swiper-progress', 0.1, { width: 100 + '%' });
-
-  // const samplesHandler = handleSamplesSlide();
-
-  // function handleChangeSlides() {
-  //   const progress = Number(samplesTL.progress().toFixed(3));
-
-  //   samplesHandler(progress);
-  // }
-
-  // function handleSamplesSlide() {
-  //   const step = Number((1 / [...samplesSwiperPagination.children].length).toFixed(3));
-  //   let prevValue = 0;
-  //   return (value) => {
-  //     if (value >= prevValue + step) {
-  //       prevValue = prevValue + step;
-  //       samplesSwiper.slideNext();
-  //       return;
-  //     } else if (value <= prevValue) {
-  //       prevValue = prevValue - step;
-  //       samplesSwiper.slidePrev();
-  //     }
-  //   }
-  // }
 
 
 
