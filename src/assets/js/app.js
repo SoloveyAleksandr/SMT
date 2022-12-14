@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     direction: 'horizontal',
     loop: true,
     effect: 'coverflow',
-    speed: 1000,
+    speed: 1300,
 
     pagination: {
       el: '.news-swiper-pagination',
