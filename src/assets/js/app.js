@@ -519,7 +519,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     scrollTrigger: {
       trigger: ".samples-container",
-      start: '-=50px',
       end: '+=2000px',
       scrub: true,
       pin: true
@@ -571,30 +570,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     })
-
-    // item.onclick = () => {
-    //   const itemPos = index ?
-    //     samplesTL.scrollTrigger.start + (2000 / samplesBtns.length * (index + 1))
-    //     : samplesTL.scrollTrigger.start;
-
-    //   // if ()
-    //   gsap.to(window, {
-    //     duration: 1,
-    //     scrollTo: {
-    //       y: itemPos
-    //     }
-    //   });
-    // }
   })
 
   // HEADER
   const header = document.querySelector('.header');
   const headerMenu = document.querySelector('.header-menu');
   const headerMenuBtn = document.querySelector('.header-menu-btn');
-  headerMenuBtn.onclick = () => {
+  const headerMenuBg = document.querySelector('.header-menu-bg');
+  const secondHeaderMenuBg = document.querySelector('.second-menu-bg');
+
+  headerMenuBtn.onclick = toggleMenu;
+  headerMenuBg.onclick = toggleMenu;
+  secondHeaderMenuBg.onclick = toggleMenu;
+
+
+  function toggleMenu() {
     headerMenuBtn.classList.toggle('_active');
     headerMenu.classList.toggle('_active');
-    body.classList.toggle('_scroll-disabled')
+    headerMenuBg.classList.toggle('_active');
   }
 
   function hideHeaderCallback() {
@@ -602,13 +595,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return () => {
       if (window.scrollY < samplesTL.scrollTrigger.start || window.scrollY > samplesTL.scrollTrigger.end) {
-        if (window.scrollY <= 150) {
+        if (window.scrollY <= 300) {
           header.classList.add('_active');
         } else {
-          if (lastPos - window.scrollY <= -100 && !headerMenuBtn.classList.contains('_active')) {
+          if (lastPos - window.scrollY <= -50 && !headerMenuBtn.classList.contains('_active')) {
             lastPos = window.scrollY;
             header.classList.remove('_active');
-          } else if (lastPos - window.scrollY >= 100) {
+          } else if (lastPos - window.scrollY >= 50) {
             lastPos = window.scrollY;
             header.classList.add('_active');
           }

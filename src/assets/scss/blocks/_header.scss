@@ -23,6 +23,24 @@
         position: relative;
         z-index: 2;
         background-color: $white;
+
+        &::before,
+        &::after {
+            content: '';
+            height: 100%;
+            width: 100vw;
+            background-color: $white;
+            position: absolute;
+            top: 0;
+        }
+
+        &::before {
+            right: calc(100% - 0.1rem);
+        }
+
+        &::after {
+            left: calc(100% - 0.1rem);
+        }
     }
 
     &-container {
@@ -39,9 +57,9 @@
     }
 
     &__title {
-        font-size: 1.8rem;
+        font-size: 2.4rem;
         color: $green;
-        font-weight: $font-reg;
+        font-weight: 600;
         max-width: 32rem;
 
         @include breakpoint($cos-bp) {
@@ -62,7 +80,7 @@
         padding: 0;
 
         &__link {
-            font-size: 2.4rem;
+            font-size: 2rem;
         }
     }
 
@@ -85,6 +103,34 @@
         &._active {
             top: 100%;
             transition: .3s ease-in-out;
+        }
+
+        @include breakpoint($xl-bp) {
+            padding-top: 10rem;
+            max-height: none;
+            height: 100vh;
+
+            &._active {
+                top: 0;
+            }
+        }
+
+        &-bg {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: .5s;
+
+            &._active {
+                opacity: 1;
+                pointer-events: all;
+            }
         }
 
         &-list {
@@ -298,6 +344,10 @@
 
     &._active {
         top: 0;
+    }
+
+    &-bg {
+        flex: 1;
     }
 
     &-container {
