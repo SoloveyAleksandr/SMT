@@ -262,7 +262,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  new DropdownBtn('.dropdown-catalog-btn');
+  document.querySelector('.dropdown-catalog-btn') &&
+    new DropdownBtn('.dropdown-catalog-btn');
 
   // sections animation
 
