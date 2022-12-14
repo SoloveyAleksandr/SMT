@@ -127,9 +127,6 @@
             &__subtitle {
                 color: $grey;
                 font-weight: $font-reg;
-                opacity: 0;
-                transform: translateY(-15rem);
-                transition: .5s;
 
                 @include breakpoint($xl-bp) {
                     font-size: 1.4rem;
@@ -143,9 +140,6 @@
             &__title {
                 font-size: 5.2rem;
                 line-height: 100%;
-                transform: translateX(-15rem);
-                opacity: 0;
-                transition: .8s;
 
                 @include breakpoint($xl-bp) {
                     font-size: 2.4rem;
@@ -154,19 +148,12 @@
 
             &__text {
                 font-weight: $font-reg;
-                transform: translateX(-15rem);
-                opacity: 0;
-                font-size: 1.4rem;
-                transition: .8s;
             }
 
             &__date {
                 color: $grey;
                 font-weight: $font-reg;
-                transform: translateY(15rem);
-                opacity: 0;
                 font-size: 1.4rem;
-                transition: .5s;
             }
 
             &-img {
@@ -178,9 +165,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transform: translateX(50vw);
-                opacity: 0;
-                transition: 1s;
 
                 @include breakpoint($jb-bp) {
                     position: static;
@@ -198,36 +182,6 @@
                 object-fit: cover;
                 width: 100%;
                 height: 100%;
-            }
-
-            &.swiper-slide-active &__subtitle {
-                transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .51s;
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            &.swiper-slide-active &__title {
-                transition: .8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.1s;
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            &.swiper-slide-active &__text {
-                transition: .8s ease 1.4s;
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            &.swiper-slide-active &__date {
-                transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.3s;
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            &.swiper-slide-active &-img {
-                transition: 1s ease 1s;
-                transform: translateX(0) rotateZ(0);
-                opacity: 1;
             }
         }
     }

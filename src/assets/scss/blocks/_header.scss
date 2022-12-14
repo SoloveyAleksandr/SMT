@@ -31,11 +31,7 @@
     }
 
     &-logo {
-        margin-right: 4rem;
-
-        @include breakpoint($cos-bp) {
-            height: 4rem;
-        }
+        margin-right: 3rem;
 
         @include breakpoint($lb-bp) {
             margin-right: 1.6rem;

@@ -68,13 +68,11 @@
             font-size: 4rem;
 
             @include breakpoint($xl-bp) {
+                font-size: 2.4rem;
+
                 &_first {
                     display: none;
                 }
-            }
-
-            @include breakpoint($cos-bp) {
-                font-size: 2.4rem;
             }
         }
 
@@ -182,6 +180,7 @@
             justify-content: center;
             background-color: $white;
             border-radius: 50%;
+            box-shadow: 0.2rem 0.4rem 0.3rem rgba(0, 0, 0, 0.5);
 
             @include breakpoint($lb-bp) {
                 width: 6rem;

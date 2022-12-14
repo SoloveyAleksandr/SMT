@@ -65,11 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     effect: 'fade',
 
-    fadeEffect: {
-      crossFade: true
-    },
-
-    speed: 500,
+    speed: 0,
 
     pagination: {
       el: '.keyes-swiper-pagination',
@@ -83,14 +79,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
 
-    navigation: {
-      nextEl: '.keyes-swiper-btn',
-    },
+    // navigation: {
+    //   nextEl: '.keyes-swiper-btn',
+    // },
 
     autoplay: {
       delay: 5000,
     },
   });
+
+  const keysSwiperBtn = document.querySelector('.keyes-swiper-btn');
+  keysSwiperBtn.addEventListener('click', () => {
+    keysSwiper.slideNext();
+    // console.log(keysSwiper.slideNext)
+  })
 
   const workSwiper = new Swiper('.work-swiper', {
     direction: 'horizontal',
@@ -122,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const newsSwiper = new Swiper('.news-swiper', {
     direction: 'horizontal',
     loop: true,
-    effect: 'fade',
-    speed: 500,
+    effect: 'coverflow',
+    speed: 1000,
 
     pagination: {
       el: '.news-swiper-pagination',
@@ -145,39 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
       delay: 5000,
     },
   });
-
-  // HEADER
-  const header = document.querySelector('.header');
-  const headerMenu = document.querySelector('.header-menu');
-  const headerMenuBtn = document.querySelector('.header-menu-btn');
-  headerMenuBtn.onclick = () => {
-    headerMenuBtn.classList.toggle('_active');
-    headerMenu.classList.toggle('_active');
-    body.classList.toggle('_scroll-disabled')
-  }
-
-  function hideHeaderCallback() {
-    let lastPos = 0;
-
-    return () => {
-      if (window.scrollY <= 100) {
-        header.classList.add('_active');
-      } else {
-        if (lastPos - window.scrollY <= -100 && !headerMenuBtn.classList.contains('_active')) {
-          lastPos = window.scrollY;
-          header.classList.remove('_active');
-        } else if (lastPos - window.scrollY >= 100) {
-          lastPos = window.scrollY;
-          header.classList.add('_active');
-        }
-      }
-    }
-  }
-
-  const hideHeader = hideHeaderCallback();
-
-  document.addEventListener('scroll', hideHeader);
-
 
   class Select {
     constructor(wrapper) {
@@ -269,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // GSAP 
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   // partners img animation
   const TL_1 = gsap.timeline({ repeat: -1 })
@@ -527,7 +496,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".about-inner",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -540,7 +508,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".about-inner",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -552,6 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     scrollTrigger: {
       trigger: ".samples-container",
+      start: '-=50px',
       end: '+=2000px',
       scrub: true,
       pin: true
@@ -586,6 +554,73 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  const samplesBtns = gsap.utils.toArray('.samples-list__item');
+
+  samplesBtns.forEach((item, index) => {
+
+    item.addEventListener('click', () => {
+      const itemPos = index ?
+        samplesTL.scrollTrigger.start + (2000 / samplesBtns.length * (index + 1))
+        : samplesTL.scrollTrigger.start;
+
+      gsap.to(window, {
+        duration: 0.5,
+        scrollTo: {
+          y: itemPos,
+          autoKill: true,
+        }
+      });
+    })
+
+    // item.onclick = () => {
+    //   const itemPos = index ?
+    //     samplesTL.scrollTrigger.start + (2000 / samplesBtns.length * (index + 1))
+    //     : samplesTL.scrollTrigger.start;
+
+    //   // if ()
+    //   gsap.to(window, {
+    //     duration: 1,
+    //     scrollTo: {
+    //       y: itemPos
+    //     }
+    //   });
+    // }
+  })
+
+  // HEADER
+  const header = document.querySelector('.header');
+  const headerMenu = document.querySelector('.header-menu');
+  const headerMenuBtn = document.querySelector('.header-menu-btn');
+  headerMenuBtn.onclick = () => {
+    headerMenuBtn.classList.toggle('_active');
+    headerMenu.classList.toggle('_active');
+    body.classList.toggle('_scroll-disabled')
+  }
+
+  function hideHeaderCallback() {
+    let lastPos = 0;
+
+    return () => {
+      if (window.scrollY < samplesTL.scrollTrigger.start || window.scrollY > samplesTL.scrollTrigger.end) {
+        if (window.scrollY <= 150) {
+          header.classList.add('_active');
+        } else {
+          if (lastPos - window.scrollY <= -100 && !headerMenuBtn.classList.contains('_active')) {
+            lastPos = window.scrollY;
+            header.classList.remove('_active');
+          } else if (lastPos - window.scrollY >= 100) {
+            lastPos = window.scrollY;
+            header.classList.add('_active');
+          }
+        }
+      } else header.classList.remove('_active');
+    }
+  }
+
+  const hideHeader = hideHeaderCallback();
+
+  document.addEventListener('scroll', hideHeader);
+
 
 
   // feedback
@@ -598,7 +633,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".feedback-container",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -611,63 +645,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".feedback-container",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
-    },
-  })
-
-  // audit 
-  gsap.from(".audit-info__title", {
-    duration: 1.5,
-    y: "-20rem",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".audit-container",
-      start: "top 90%",
-      end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
-    },
-  })
-
-  gsap.from(".audit-info__description", {
-    duration: 1.5,
-    delay: 0.5,
-    x: "-20rem",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".audit-container",
-      start: "top 90%",
-      end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
-    },
-  })
-
-  gsap.from(".audit-info__btn", {
-    duration: 1,
-    delay: 0.8,
-    y: "20rem",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".audit-container",
-      start: "top 90%",
-      end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
-    },
-  })
-
-  gsap.from(".audit-img", {
-    duration: 1.5,
-    delay: 1,
-    x: "20rem",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".audit-container",
-      start: "top 90%",
-      end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -682,7 +659,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".services-list-item_1",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -696,7 +672,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".services-list-item_2",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -710,7 +685,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".services-list-item_3",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -724,7 +698,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".services-list-item_4",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -738,7 +711,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".services-list-item_5",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
 
@@ -752,42 +724,8 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".services-list-item_6",
       start: "top 90%",
       end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
     },
   })
-
-
-  // order
-  gsap.from(".order-info", {
-    duration: 2,
-    delay: 0.5,
-    x: "20rem",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".order-container",
-      start: "top 90%",
-      end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
-    },
-  })
-
-  gsap.from(".order-form-wrapper", {
-    duration: 2,
-    delay: 1.5,
-    x: "-20rem",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".order-container",
-      start: "top 90%",
-      end: "bottom 10%",
-      toggleActions: "play reverse play reverse",
-    },
-  })
-
-
-
 
 
 
