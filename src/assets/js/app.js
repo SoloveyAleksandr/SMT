@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const page = document.querySelector('.page');
+  const body = document.querySelector('body');
 
   const relax = new Rellax('.rellax', {
     center: false,
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   headerMenuBtn.onclick = () => {
     headerMenuBtn.classList.toggle('_active');
     headerMenu.classList.toggle('_active');
-    page.classList.toggle('_scroll-disabled')
+    body.classList.toggle('_scroll-disabled')
   }
 
   function hideHeaderCallback() {
@@ -230,6 +230,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const orderSquareSelect = new Select('#square-select');
   const orderRegionSelect = new Select('#region-select');
+
+
+  class DropdownBtn {
+    constructor(containerSelector) {
+      this.container = document.querySelector(containerSelector);
+      this.btn = this.container.querySelector('.dropdown-btn');
+      this.content = this.container.querySelector('.dropdown-content');
+
+      this.init();
+    }
+
+    init() {
+      this.btn.onclick = () => {
+        if (this.btn.classList.contains('_active')) {
+          this.closeContent();
+        } else {
+          this.openContent();
+        }
+      }
+    }
+
+    openContent() {
+      this.btn.classList.add('_active');
+      this.content.classList.add('_active');
+    }
+
+    closeContent() {
+      this.btn.classList.remove('_active');
+      this.content.classList.remove('_active');
+    }
+  }
+
+  new DropdownBtn('.dropdown-catalog-btn');
 
   // sections animation
 
