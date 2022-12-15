@@ -778,7 +778,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector('.history')) {
     const TL = gsap.timeline({
       scrollTrigger: {
-        trigger: ".history",
+        trigger: ".history-timeline_grey",
         start: "top 20%",
         end: "bottom 20%",
         scrub: true,
@@ -810,6 +810,31 @@ document.addEventListener("DOMContentLoaded", () => {
           end: "bottom 50%",
         },
       })
+    })
+
+    const minTimeLines = gsap.utils.toArray('.history-list-item-img_green');
+    const minTimeLinesTrigger = gsap.utils.toArray('.history-list-item-img_grey');
+    minTimeLines.forEach((time, index) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: minTimeLinesTrigger[index],
+          start: "top 50%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+        onUpdate: () => {
+          timelineHeightHendler();
+        }
+      });
+
+      tl.to(time, 0.1, { height: 100 + '%' });
+
+      function timelineHeightHendler() {
+        const progress = Number(tl.progress().toFixed(3));
+        tl.set(time, {
+          height: progress * 100 + "%",
+        });
+      }
     })
 
   }
