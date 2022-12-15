@@ -585,9 +585,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function toggleMenu() {
-    headerMenuBtn.classList.toggle('_active');
-    headerMenu.classList.toggle('_active');
-    headerMenuBg.classList.toggle('_active');
+    headerMenuBtn && headerMenuBtn.classList.toggle('_active');
+    headerMenu && headerMenu.classList.toggle('_active');
+    headerMenuBg && headerMenuBg.classList.toggle('_active');
   }
 
   function hideHeaderCallback() {
