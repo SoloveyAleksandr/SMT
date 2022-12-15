@@ -19,7 +19,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 2rem 0;
+        padding: 0.3rem 0;
         position: relative;
         z-index: 2;
         background-color: $white;
@@ -378,7 +378,7 @@
             content: '';
             position: absolute;
             top: 0;
-            left: calc(100% - 1.6rem);
+            left: calc(100% - 1.65rem);
             width: 100vw;
             height: 100%;
             background-color: #fff;

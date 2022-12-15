@@ -50,6 +50,7 @@ svg {
   transition: all 0.1s linear;
 }
 
+// index
 @import "./blocks/header";
 @import "./blocks/main";
 @import "./blocks/about";
@@ -65,3 +66,6 @@ svg {
 @import "./blocks/partners";
 @import "./blocks/news";
 @import "./blocks/footer";
+
+// about
+@import "./blocks/about-screen-info";

@@ -1,9 +1,22 @@
+<style>
+    .index-page-link {
+        color: white;
+        font-size: 2rem;
+        font-weight: 400;
+        transition: .3s;
+    }
+
+    .index-page-link:hover {
+        opacity: 0.8;
+    }
+</style>
+
 <div style="
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
     background: linear-gradient(124deg, rgba(0,107,20,1) 0%, rgba(0,113,91,1) 50%, rgba(0,146,255,1) 100%);
@@ -11,7 +24,11 @@
 
     <h6 style="color: white; font-size: 3rem;">Варианты меню:</h6>
 
-    <a style="color: white; font-size: 2rem; font-weight: 400;" href="menu_v1.html" target="_blank">меню V1</a>
-    <a style="color: white; font-size: 2rem; font-weight: 400;" href="menu_v2.html" target="_blank">меню V2</a>
+    <a class="index-page-link" href="menu_v1.html" target="_blank">меню V1</a>
+    <a class="index-page-link" href="menu_v2.html" target="_blank">меню V2</a>
+
+    <h6 style="color: white; font-size: 3rem;">Страницы сайта:</h6>
+
+    <a class="index-page-link" href="about.html" target="_blank">О компании</a>
 
 </div>

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.querySelector('body');
 
-  const relax = new Rellax('.rellax', {
+  const relax = document.querySelector('.rellax') && new Rellax('.rellax', {
     center: false,
     breakpoints: [500],
   });
@@ -79,20 +79,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
 
-    // navigation: {
-    //   nextEl: '.keyes-swiper-btn',
-    // },
+    navigation: {
+      nextEl: '.keyes-swiper-btn',
+    },
 
     autoplay: {
       delay: 5000,
     },
   });
 
-  const keysSwiperBtn = document.querySelector('.keyes-swiper-btn');
-  keysSwiperBtn.addEventListener('click', () => {
-    keysSwiper.slideNext();
-    // console.log(keysSwiper.slideNext)
-  })
+  // const keysSwiperBtn = document.querySelector('.keyes-swiper-btn');
+  // keysSwiperBtn && keysSwiperBtn.addEventListener('click', () => {
+  //   keysSwiper.slideNext();
+  // })
 
   const workSwiper = new Swiper('.work-swiper', {
     direction: 'horizontal',
@@ -197,8 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  const orderSquareSelect = new Select('#square-select');
-  const orderRegionSelect = new Select('#region-select');
+
+  const orderSquareSelect = document.querySelector('#square-select') && new Select('#square-select');
+  const orderRegionSelect = document.querySelector('#region-select') && new Select('#region-select');
 
 
   class DropdownBtn {
@@ -242,359 +242,411 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // partners img animation
   const TL_1 = gsap.timeline({ repeat: -1 })
-  TL_1.from(".partners-anim-img_1", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_1.to(".partners-anim-img_1", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+  if (document.querySelector('.partners-list')) {
+    TL_1.from(".partners-anim-img_1", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_1.to(".partners-anim-img_1", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_1.from(".partners-anim-img_2", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_1.to(".partners-anim-img_2", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_1.from(".partners-anim-img_2", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_1.to(".partners-anim-img_2", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_1.from(".partners-anim-img_3", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_1.to(".partners-anim-img_3", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_1.from(".partners-anim-img_3", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_1.to(".partners-anim-img_3", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_1.from(".partners-anim-img_4", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_1.to(".partners-anim-img_4", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_1.from(".partners-anim-img_4", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_1.to(".partners-anim-img_4", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_1.from(".partners-anim-img_5", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_1.to(".partners-anim-img_5", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_1.from(".partners-anim-img_5", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_1.to(".partners-anim-img_5", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_1.from(".partners-anim-img_6", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_1.to(".partners-anim-img_6", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
-
+    TL_1.from(".partners-anim-img_6", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_1.to(".partners-anim-img_6", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
+  }
 
   // clients img animation
   const TL_2 = gsap.timeline({ repeat: -1 })
-  TL_2.from(".clients-anim-img_1", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_2.to(".clients-anim-img_1", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+  if (document.querySelector('.clients-list')) {
+    TL_2.from(".clients-anim-img_1", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_2.to(".clients-anim-img_1", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_2.from(".clients-anim-img_2", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_2.to(".clients-anim-img_2", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_2.from(".clients-anim-img_2", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_2.to(".clients-anim-img_2", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_2.from(".clients-anim-img_3", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_2.to(".clients-anim-img_3", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_2.from(".clients-anim-img_3", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_2.to(".clients-anim-img_3", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_2.from(".clients-anim-img_4", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_2.to(".clients-anim-img_4", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_2.from(".clients-anim-img_4", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_2.to(".clients-anim-img_4", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_2.from(".clients-anim-img_5", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_2.to(".clients-anim-img_5", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_2.from(".clients-anim-img_5", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_2.to(".clients-anim-img_5", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_2.from(".clients-anim-img_6", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_2.to(".clients-anim-img_6", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_2.from(".clients-anim-img_6", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_2.to(".clients-anim-img_6", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_2.from(".clients-anim-img_7", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_2.to(".clients-anim-img_7", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_2.from(".clients-anim-img_7", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_2.to(".clients-anim-img_7", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
 
-  TL_2.from(".clients-anim-img_8", {
-    scale: 0,
-    x: "100%",
-    y: "100%",
-    duration: 2,
-    ease: "power3.out",
-  })
-  TL_2.to(".clients-anim-img_8", {
-    scale: 0,
-    x: "-100%",
-    y: "-100%",
-    delay: 2,
-    duration: 2,
-    ease: "power3.out",
-  })
+    TL_2.from(".clients-anim-img_8", {
+      scale: 0,
+      x: "100%",
+      y: "100%",
+      duration: 2,
+      ease: "power3.out",
+    })
+    TL_2.to(".clients-anim-img_8", {
+      scale: 0,
+      x: "-100%",
+      y: "-100%",
+      delay: 2,
+      duration: 2,
+      ease: "power3.out",
+    })
+  }
 
 
   // main swiper 
-  gsap.from(".main-swiper", {
-    x: "-200vh",
-    delay: 0.5,
-    duration: 1,
-    ease: "power3.out",
-  })
-  gsap.from(".main-swiper-control", {
-    x: "200vh",
-    delay: 0.5,
-    duration: 1,
-    ease: "power3.out",
-  })
+  if (document.querySelector('.main-swiper')) {
+    gsap.from(".main-swiper", {
+      x: "-200vh",
+      opacity: 0,
+      delay: 0.5,
+      duration: 1,
+    })
+    gsap.from(".main-swiper-control", {
+      x: "200vh",
+      opacity: 0,
+      delay: 0.5,
+      duration: 1,
+    })
+  }
 
 
 
   // about 
-  gsap.from(".about-anim_1", {
-    duration: 2,
-    x: "-100vh",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".about-inner",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+  if (document.querySelector('.about')) {
+    gsap.from(".about-anim_1", {
+      duration: 2,
+      x: "-100vh",
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".about-inner",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
 
-  gsap.from(".about-anim_2", {
-    duration: 2,
-    x: "100vh",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".about-inner",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+    gsap.from(".about-anim_2", {
+      duration: 2,
+      x: "100vh",
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".about-inner",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
+  }
 
 
   // samples
-  const samplesTL = gsap.timeline({
-    defaults: {
-      ease: "none"
-    },
-    scrollTrigger: {
-      trigger: ".samples-container",
-      end: '+=2000px',
-      scrub: true,
-      pin: true
-    },
-    onUpdate: () => {
-      handleChangeSlides();
+  if (document.querySelector('.samples')) {
+    const samplesTL = gsap.timeline({
+      defaults: {
+        ease: "none"
+      },
+      scrollTrigger: {
+        trigger: ".samples-container",
+        end: '+=2000px',
+        scrub: true,
+        pin: true
+      },
+      onUpdate: () => {
+        handleChangeSlides();
+      }
+    });
+
+    samplesTL.to('.samples-swiper-progress', 0.1, { width: 100 + '%' });
+
+    const samplesHandler = handleSamplesSlide();
+
+    function handleChangeSlides() {
+      const progress = Number(samplesTL.progress().toFixed(3));
+
+      samplesHandler(progress);
     }
-  });
 
-  samplesTL.to('.samples-swiper-progress', 0.1, { width: 100 + '%' });
-
-  const samplesHandler = handleSamplesSlide();
-
-  function handleChangeSlides() {
-    const progress = Number(samplesTL.progress().toFixed(3));
-
-    samplesHandler(progress);
-  }
-
-  function handleSamplesSlide() {
-    const step = Number((1 / [...samplesSwiperPagination.children].length).toFixed(3));
-    let prevValue = 0;
-    return (value) => {
-      if (value >= prevValue + step) {
-        prevValue = prevValue + step;
-        samplesSwiper.slideNext();
-        return;
-      } else if (value <= prevValue) {
-        prevValue = prevValue - step;
-        samplesSwiper.slidePrev();
+    function handleSamplesSlide() {
+      const step = Number((1 / [...samplesSwiperPagination.children].length).toFixed(3));
+      let prevValue = 0;
+      return (value) => {
+        if (value >= prevValue + step) {
+          prevValue = prevValue + step;
+          samplesSwiper.slideNext();
+          return;
+        } else if (value <= prevValue) {
+          prevValue = prevValue - step;
+          samplesSwiper.slidePrev();
+        }
       }
     }
-  }
 
-  const samplesBtns = gsap.utils.toArray('.samples-list__item');
+    const samplesBtns = gsap.utils.toArray('.samples-list__item');
 
-  samplesBtns.forEach((item, index) => {
+    samplesBtns.forEach((item, index) => {
 
-    item.addEventListener('click', () => {
-      const itemPos = index ?
-        samplesTL.scrollTrigger.start + (2000 / samplesBtns.length * (index + 1))
-        : samplesTL.scrollTrigger.start;
+      item.addEventListener('click', () => {
+        const itemPos = index ?
+          samplesTL.scrollTrigger.start + (2000 / samplesBtns.length * (index + 1))
+          : samplesTL.scrollTrigger.start;
 
-      gsap.to(window, {
-        duration: 0.5,
-        scrollTo: {
-          y: itemPos,
-          autoKill: true,
-        }
-      });
+        gsap.to(window, {
+          duration: 0.5,
+          scrollTo: {
+            y: itemPos,
+            autoKill: true,
+          }
+        });
+      })
     })
-  })
 
-  // HEADER
-  const header = document.querySelector('.header');
-  const headerMenu = document.querySelector('.header-menu');
-  const headerMenuBtn = document.querySelector('.header-menu-btn');
-  const headerMenuBg = document.querySelector('.header-menu-bg');
-  const secondHeaderMenuBg = document.querySelector('.second-menu-bg');
+    // HEADER
+    const header = document.querySelector('.header');
+    const headerMenu = document.querySelector('.header-menu');
+    const headerMenuBtn = document.querySelector('.header-menu-btn');
+    const headerMenuBg = document.querySelector('.header-menu-bg');
+    const secondHeaderMenuBg = document.querySelector('.second-menu-bg');
 
-  headerMenuBtn.onclick = toggleMenu;
-  headerMenuBg.onclick = toggleMenu;
-  secondHeaderMenuBg.onclick = toggleMenu;
+    headerMenuBtn.onclick = toggleMenu;
+    headerMenuBg.onclick = toggleMenu;
+
+    if (secondHeaderMenuBg) {
+      secondHeaderMenuBg.onclick = toggleMenu;
+    }
 
 
-  function toggleMenu() {
-    headerMenuBtn && headerMenuBtn.classList.toggle('_active');
-    headerMenu && headerMenu.classList.toggle('_active');
-    headerMenuBg && headerMenuBg.classList.toggle('_active');
-  }
+    function toggleMenu() {
+      headerMenuBtn && headerMenuBtn.classList.toggle('_active');
+      headerMenu && headerMenu.classList.toggle('_active');
+      headerMenuBg && headerMenuBg.classList.toggle('_active');
+    }
 
-  function hideHeaderCallback() {
-    let lastPos = 0;
+    function hideHeaderCallback() {
+      let lastPos = 0;
 
-    return () => {
-      if (window.scrollY < samplesTL.scrollTrigger.start || window.scrollY > samplesTL.scrollTrigger.end) {
+      return () => {
+        if (window.scrollY < samplesTL.scrollTrigger.start || window.scrollY > samplesTL.scrollTrigger.end) {
+          if (window.scrollY <= 300) {
+            header.classList.add('_active');
+          } else {
+            if (lastPos - window.scrollY <= -50 && !headerMenuBtn.classList.contains('_active')) {
+              lastPos = window.scrollY;
+              header.classList.remove('_active');
+            } else if (lastPos - window.scrollY >= 50) {
+              lastPos = window.scrollY;
+              header.classList.add('_active');
+            }
+          }
+        } else header.classList.remove('_active');
+      }
+    }
+
+    const hideHeader = hideHeaderCallback();
+
+    document.addEventListener('scroll', hideHeader);
+  } else {
+    // HEADER
+    const header = document.querySelector('.header');
+    const headerMenu = document.querySelector('.header-menu');
+    const headerMenuBtn = document.querySelector('.header-menu-btn');
+    const headerMenuBg = document.querySelector('.header-menu-bg');
+    const secondHeaderMenuBg = document.querySelector('.second-menu-bg');
+
+    headerMenuBtn.onclick = toggleMenu;
+    headerMenuBg.onclick = toggleMenu;
+    secondHeaderMenuBg.onclick = toggleMenu;
+
+
+    function toggleMenu() {
+      headerMenuBtn && headerMenuBtn.classList.toggle('_active');
+      headerMenu && headerMenu.classList.toggle('_active');
+      headerMenuBg && headerMenuBg.classList.toggle('_active');
+    }
+
+    function hideHeaderCallback() {
+      let lastPos = 0;
+
+      return () => {
         if (window.scrollY <= 300) {
           header.classList.add('_active');
         } else {
@@ -606,119 +658,123 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.add('_active');
           }
         }
-      } else header.classList.remove('_active');
+      }
     }
+
+    const hideHeader = hideHeaderCallback();
+
+    document.addEventListener('scroll', hideHeader);
   }
-
-  const hideHeader = hideHeaderCallback();
-
-  document.addEventListener('scroll', hideHeader);
 
 
 
   // feedback
-  gsap.from(".feedback-anim_1", {
-    duration: 2,
-    x: "-100vh",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".feedback-container",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+  if (document.querySelector('.feedback')) {
+    gsap.from(".feedback-anim_1", {
+      duration: 2,
+      x: "-100vh",
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".feedback-container",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
 
-  gsap.from(".feedback-anim_2", {
-    duration: 2,
-    x: "100vh",
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".feedback-container",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+    gsap.from(".feedback-anim_2", {
+      duration: 2,
+      x: "100vh",
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".feedback-container",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
+  }
 
   // services
-  gsap.from(".services-list-item_1", {
-    duration: 1.5,
-    delay: 0.5,
-    scale: 0,
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".services-list-item_1",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+  if (document.querySelector('.services')) {
+    gsap.from(".services-list-item_1", {
+      duration: 1.5,
+      delay: 0.5,
+      scale: 0,
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".services-list-item_1",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
 
-  gsap.from(".services-list-item_2", {
-    duration: 1.5,
-    delay: 0.5,
-    scale: 0,
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".services-list-item_2",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+    gsap.from(".services-list-item_2", {
+      duration: 1.5,
+      delay: 0.5,
+      scale: 0,
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".services-list-item_2",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
 
-  gsap.from(".services-list-item_3", {
-    duration: 1.5,
-    delay: 0.5,
-    scale: 0,
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".services-list-item_3",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+    gsap.from(".services-list-item_3", {
+      duration: 1.5,
+      delay: 0.5,
+      scale: 0,
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".services-list-item_3",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
 
-  gsap.from(".services-list-item_4", {
-    duration: 1.5,
-    delay: 0.5,
-    scale: 0,
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".services-list-item_4",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+    gsap.from(".services-list-item_4", {
+      duration: 1.5,
+      delay: 0.5,
+      scale: 0,
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".services-list-item_4",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
 
-  gsap.from(".services-list-item_5", {
-    duration: 1.5,
-    delay: 0.5,
-    scale: 0,
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".services-list-item_5",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+    gsap.from(".services-list-item_5", {
+      duration: 1.5,
+      delay: 0.5,
+      scale: 0,
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".services-list-item_5",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
 
-  gsap.from(".services-list-item_6", {
-    duration: 1.5,
-    delay: 0.5,
-    scale: 0,
-    opacity: 0,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".services-list-item_6",
-      start: "top 90%",
-      end: "bottom 10%",
-    },
-  })
+    gsap.from(".services-list-item_6", {
+      duration: 1.5,
+      delay: 0.5,
+      scale: 0,
+      opacity: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".services-list-item_6",
+        start: "top 90%",
+        end: "bottom 10%",
+      },
+    })
+  }
 
 
 
