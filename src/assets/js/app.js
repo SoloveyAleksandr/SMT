@@ -542,7 +542,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function handleChangeSlides() {
       const progress = Number(samplesTL.progress().toFixed(3));
-
       samplesHandler(progress);
     }
 
@@ -776,6 +775,44 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  if (document.querySelector('.history')) {
+    const TL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".history",
+        start: "top 20%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+
+      onUpdate: () => {
+        timelineHeightHendler();
+      }
+    });
+
+    TL.to('.history-timeline_green', 0.1, { height: 100 + '%' });
+
+    function timelineHeightHendler() {
+      const progress = Number(TL.progress().toFixed(3));
+      TL.set(".history-timeline_green", {
+        height: progress * 100 + "%",
+      });
+    }
+
+    const lines = gsap.utils.toArray('.history-list-item__line');
+
+    lines.forEach((line) => {
+      gsap.to(line, {
+        width: '100%',
+        duration: 2,
+        scrollTrigger: {
+          trigger: line,
+          start: "top 50%",
+          end: "bottom 50%",
+        },
+      })
+    })
+
+  }
 
 
 })
