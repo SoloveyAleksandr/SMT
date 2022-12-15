@@ -1,0 +1,52 @@
+@import "../vars";
+
+.experience {
+
+    &-list {
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 25rem;
+            background-color: $white;
+            position: relative;
+
+            &-box {
+                display: flex;
+                align-items: flex-start;
+                gap: 4rem;
+            }
+        }
+
+        &-img {
+            position: absolute;
+            width: 40rem;
+            height: 26rem;
+            bottom: 0.3rem;
+            left: calc(50% - 20rem);
+        }
+
+        &__img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__number {
+            font-size: 1.4rem;
+            font-weight: $font-reg;
+        }
+
+        &__title {
+            font-size: 5.2rem;
+            width: 46rem;
+        }
+
+        &__text {
+            width: 48rem;
+            font-weight: $font-reg;
+            font-size: 2rem;
+        }
+    }
+}
