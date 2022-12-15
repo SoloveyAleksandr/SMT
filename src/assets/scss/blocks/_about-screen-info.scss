@@ -1,15 +1,29 @@
 @import '../vars';
 
 .about-screen-info {
-    padding: 10rem 0 0 0;
+    padding: 6rem 0 0 0;
 
     &-container {
         padding: 0 15.5rem;
         background: linear-gradient($white 0%, $white 50%, $light-grey 50%, $light-grey 0%);
         position: relative;
-    }
 
-    &-content {}
+        @include breakpoint($cos-bp) {
+            padding: 0 10.5rem;
+        }
+
+        @include breakpoint($jb-bp) {
+            padding: 0 7.5rem;
+        }
+
+        @include breakpoint($lb-bp) {
+            padding: 0rem 2.5rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding: 0;
+        }
+    }
 
     &-image {
         height: 60rem;
@@ -17,6 +31,14 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+
+        @include breakpoint($cos-bp) {
+            height: 50rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            height: 40rem;
+        }
 
         &__inner {
             width: 100%;
@@ -27,6 +49,14 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-end;
+
+            @include breakpoint($cos-bp) {
+                padding: 3rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                padding: 2.5rem;
+            }
         }
     }
 
@@ -39,34 +69,72 @@
         &:hover {
             opacity: 0.8;
         }
+
+        @include breakpoint($xl-bp) {
+            font-size: 1.8rem;
+        }
     }
 
     &__title {
         font-size: 5.2rem;
         color: $white;
+
+        @include breakpoint($xl-bp) {
+            font-size: 2.4rem;
+        }
     }
 
     &-main {
         height: 19rem;
-        padding: 0rem calc(50% + 4rem) 0rem 4rem;
+        padding: 4rem calc(50% + 4rem) 0rem 4rem;
         background-color: $white;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
+
+        @include breakpoint($cos-bp) {
+            padding: 3rem calc(50% + 3rem) 0rem 3rem;
+        }
+
+        @include breakpoint($xl-bp) {
+            padding: 3rem 3rem 0rem 3rem;
+            height: 15rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding: 2.5rem 2.5rem 0rem 2.5rem;
+        }
 
         &-item {
             display: flex;
             flex-direction: column;
             width: 16rem;
+
+            @include breakpoint($jb-bp) {
+                width: 11rem;
+            }
+
+            @include breakpoint($xs-bp) {
+                width: fit-content;
+                max-width: 10rem;
+            }
         }
 
         &__title {
             font-size: 5.2rem;
+
+            @include breakpoint($xl-bp) {
+                font-size: 2.8rem;
+            }
         }
 
         &__subtitle {
             font-weight: $font-reg;
             color: $grey;
+
+            @include breakpoint($xl-bp) {
+                font-size: 1.4rem;
+            }
         }
     }
 
@@ -76,17 +144,35 @@
         bottom: 0;
         background-color: $light-grey;
         width: 50%;
-        padding: 4rem 19.5rem 4rem 4rem;
+        padding: 4rem 19.5rem 1.4rem 4rem;
+
+        @include breakpoint($xl-bp) {
+            position: static;
+            width: 100%;
+            padding: 3rem 3rem 3rem 3rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            padding: 3rem 2.5rem 0rem 2.5rem;
+        }
 
         &__title {
             font-weight: $font-reg;
             font-size: 2.4rem;
             margin-bottom: 2rem;
+
+            @include breakpoint($xl-bp) {
+                font-size: 2rem;
+            }
         }
 
         &__text {
             font-weight: $font-reg;
             font-size: 2rem;
+
+            @include breakpoint($xl-bp) {
+                font-size: 1.4rem;
+            }
         }
     }
 }
