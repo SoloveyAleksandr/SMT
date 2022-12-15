@@ -837,6 +837,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
 
+    const historyItems = gsap.utils.toArray('.history-list-item');
+    historyItems.forEach((item, index) => {
+      gsap.from(item, {
+        x: `${index % 2 > 0 ? '' : '-'}100vh`,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 50%',
+        }
+      })
+    })
+
   }
 
 

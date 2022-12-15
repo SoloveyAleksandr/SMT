@@ -1,6 +1,7 @@
 @import '../vars';
 
 .history {
+    overflow-x: hidden;
 
     &-container {
         background-color: $light-grey;
