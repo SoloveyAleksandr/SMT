@@ -1,6 +1,11 @@
 @import "../vars";
 
 .experience {
+    margin-bottom: 20rem;
+
+    @include breakpoint($xl-bp) {
+        margin-bottom: 8rem;
+    }
 
     &-list {
 

@@ -88,11 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // const keysSwiperBtn = document.querySelector('.keyes-swiper-btn');
-  // keysSwiperBtn && keysSwiperBtn.addEventListener('click', () => {
-  //   keysSwiper.slideNext();
-  // })
-
   const workSwiper = new Swiper('.work-swiper', {
     direction: 'horizontal',
     loop: true,
@@ -850,8 +845,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
     })
-
   }
 
+  if (document.querySelector('.certificate-swiper')) {
+    const certificateSwiper = new Swiper('.certificate-swiper', {
+      loop: true,
+      loopedSlides: 4,
+      effect: 'fade',
+
+      pagination: {
+        el: '.certificate-swiper-pagination',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          const currEl = document.querySelector('.certificate-swiper-pagination__current');
+          const totalEl = document.querySelector('.certificate-swiper-pagination__total');
+
+          currEl.innerHTML = current < 10 ? `0${current}` : current;
+          totalEl.innerHTML = total < 10 ? `0${total}` : total;
+        }
+      },
+
+      navigation: {
+        nextEl: '.certificate-swiper-btn',
+      },
+
+    });
+
+    const certificateThumbs = new Swiper('.certificate-thumbs', {
+      slidesPerView: 2,
+      slideToClickedSlide: true,
+      loop: true,
+      loopedSlides: 4,
+    });
+
+    certificateSwiper.controller.control = certificateThumbs;
+    certificateThumbs.controller.control = certificateSwiper;
+  }
 
 })
