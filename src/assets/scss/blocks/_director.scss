@@ -17,7 +17,7 @@
         background-size: 26rem 21rem;
 
         @include breakpoint($cos-bp) {
-            background-position: 60% 10rem;
+            background-position: 45% 4rem;
             background-size: 23.4rem 18.9rem;
         }
 
@@ -68,22 +68,20 @@
         transform: translateY(50%);
 
         @include breakpoint($cos-bp) {
-            width: 65rem;
+            transform: translateY(20%);
         }
 
         @include breakpoint($xl-bp) {
             width: 55rem;
-            transform: translateY(45%);
         }
 
         @include breakpoint($jb-bp) {
             width: 50%;
-            transform: translateY(10%);
+            transform: translateY(0%);
         }
 
-        @include breakpoint($xl-bp) {
+        @include breakpoint($lb-bp) {
             width: 100%;
-            transform: translateY(0);
             padding-top: 4rem;
             margin-bottom: 2rem;
         }

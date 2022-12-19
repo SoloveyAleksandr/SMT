@@ -633,7 +633,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     headerMenuBtn.onclick = toggleMenu;
     headerMenuBg.onclick = toggleMenu;
-    secondHeaderMenuBg.onclick = toggleMenu;
+    if (secondHeaderMenuBg) {
+      secondHeaderMenuBg.onclick = toggleMenu;
+    }
 
 
     function toggleMenu() {
