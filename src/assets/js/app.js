@@ -906,4 +906,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+  if (document.querySelector('.resume-form')) {
+    const fileInput = document.querySelector('.resume-form-resume__input');
+    const fileName = document.querySelector('.resume-form-resume__file');
+
+    fileInput.onchange = () => {
+      if (fileInput.value) {
+        const file = fileInput.value.split('\\');
+        fileName.innerText = file[file.length - 1];
+      }
+    };
+  }
+
+
 })

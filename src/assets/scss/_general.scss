@@ -59,10 +59,15 @@ body {
     font-weight: $font-reg;
     height: 4.6rem;
     transition: .3s;
+    font-size: 2rem;
 
     &:hover {
         background-color: $white;
         color: $green;
+    }
+
+    @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
     }
 
     &.default-btn_light {
@@ -237,8 +242,13 @@ body {
         border-radius: 0.4rem;
         background-color: $white;
         color: $dark;
+        font-size: 2rem;
         font-weight: $font-reg;
         padding: 1rem 1.3rem;
+
+        @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+        }
 
         @include breakpoint($jb-bp) {
             width: 35rem;

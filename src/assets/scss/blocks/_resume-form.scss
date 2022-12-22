@@ -1,0 +1,70 @@
+@import "../vars";
+
+.resume-form {
+  margin-bottom: 20rem;
+  overflow: hidden;
+
+  @include breakpoint($xl-bp) {
+    margin-bottom: 8rem;
+  }
+
+  &-container {
+    flex-direction: row-reverse;
+
+    @include breakpoint($xl-bp) {
+      gap: 5rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      gap: 1.5rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      justify-content: flex-end;
+    }
+  }
+
+  &-info {
+    margin-right: 10rem;
+
+    @include breakpoint($jb-bp) {
+      margin-right: 5rem;
+    }
+  }
+
+  &-resume {
+    &__input {
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &__label {
+      font-size: 2rem;
+      font-weight: $font-reg;
+      color: $green;
+      cursor: pointer;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &__file {
+      color: $grey;
+      font-size: 2rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
