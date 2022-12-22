@@ -626,11 +626,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const headerMenuBg = document.querySelector('.header-menu-bg');
     const secondHeaderMenuBg = document.querySelector('.second-menu-bg');
 
-    headerMenuBtn.onclick = toggleMenu;
-    headerMenuBg.onclick = toggleMenu;
-    if (secondHeaderMenuBg) {
-      secondHeaderMenuBg.onclick = toggleMenu;
-    }
+    if (headerMenuBtn) headerMenuBtn.onclick = toggleMenu;
+    if (headerMenuBg) headerMenuBg.onclick = toggleMenu;
+    if (secondHeaderMenuBg) secondHeaderMenuBg.onclick = toggleMenu;
 
 
     function toggleMenu() {
@@ -880,6 +878,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     certificateSwiper.controller.control = certificateThumbs;
     certificateThumbs.controller.control = certificateSwiper;
+  }
+
+  if (document.querySelector('.vacancy')) {
+
+    class VacancyInfoItem {
+      constructor(container) {
+        this.container = container;
+        this.btn = container.querySelector('.vacancy-list-item__btn');
+        this.infoList = container.querySelector('.vacancy-info-list');
+        this.init();
+      }
+
+      init() {
+        this.btn.addEventListener('click', () => this.toggleOpen.call(this))
+        // console.log(this)
+      }
+
+      toggleOpen() {
+        this.infoList.classList.toggle('_active');
+        this.btn.classList.toggle('_active');
+      }
+    }
+
+    const infoItems = gsap.utils.toArray('.vacancy-list-item');
+    infoItems.forEach(item => new VacancyInfoItem(item));
+
   }
 
 })
