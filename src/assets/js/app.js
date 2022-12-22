@@ -918,5 +918,20 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  if (document.querySelector('.service-for')) {
+    const animItems = gsap.utils.toArray('.service-for__item');
+
+    animItems.forEach(item => {
+      gsap.from(item, {
+        y: '-10rem',
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 50%',
+        }
+      })
+    })
+  }
 
 })
