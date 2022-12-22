@@ -957,4 +957,53 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  if (document.querySelector('.example')) {
+    const btnsSlider = new Swiper('.example-btns-slider', {
+      loop: true,
+      slidesPerView: 'auto',
+      freeMode: true,
+      // watchSlidesProgress: true,
+    });
+
+    const infoSlider = new Swiper('.example-info-slider', {
+      loop: true,
+      effect: 'fade',
+      navigation: {
+        nextEl: '.example-btns__btn-next',
+        prevEl: '.example-btns__btn-prev',
+      },
+      allowTouchMove: false,
+      thumbs: {
+        swiper: btnsSlider,
+      },
+      // watchSlidesProgress: true,
+    });
+
+    const galleryWrappers = gsap.utils.toArray('.example-info-slider-slide');
+    galleryWrappers.forEach(slide => {
+      const gallery = slide.querySelector('.example-info-gallery');
+      const btn = slide.querySelector('.example-info-btn');
+      const pagination = slide.querySelector('.example-info-pagination');
+      const currEl = slide.querySelector('.example-info-pagination__current');
+      const totalEl = slide.querySelector('.example-info-pagination__total');
+
+      new Swiper(gallery, {
+        loop: true,
+
+        navigation: {
+          nextEl: btn,
+        },
+
+        pagination: {
+          el: pagination,
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            currEl.innerHTML = current < 10 ? `0${current}` : current;
+            totalEl.innerHTML = total < 10 ? `0${total}` : total;
+          }
+        },
+      });
+    })
+  }
+
 })

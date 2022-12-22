@@ -25,7 +25,6 @@ html {
     font-size: calc(100vw / 650 * 10);
   }
 
-
   @include breakpoint($sm-bp) {
     font-size: calc(100vw / 500 * 10);
   }
@@ -80,3 +79,6 @@ svg {
 @import "./blocks/service";
 @import "./blocks/service-for";
 @import "./blocks/service-form";
+
+// example
+@import "./blocks/example";
