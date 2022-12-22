@@ -600,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       return () => {
         if (window.scrollY < samplesTL.scrollTrigger.start || window.scrollY > samplesTL.scrollTrigger.end) {
-          if (window.scrollY <= 300) {
+          if (window.scrollY <= 400) {
             header.classList.add('_active');
           } else {
             if (lastPos - window.scrollY <= -50 && !headerMenuBtn.classList.contains('_active')) {
