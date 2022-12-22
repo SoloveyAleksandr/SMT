@@ -934,4 +934,27 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  if (document.querySelector('.service-form')) {
+    gsap.from('.service-form-anim_1', {
+      x: '-100vw',
+      duration: 1.5,
+      ease: 'back.out(1)',
+      scrollTrigger: {
+        trigger: '.service-form',
+        start: 'top 50%',
+      }
+    })
+
+    gsap.from('.service-form-anim_2', {
+      x: '100vw',
+      duration: 1.5,
+      delay: 0.5,
+      ease: 'back.out(1)',
+      scrollTrigger: {
+        trigger: '.service-form',
+        start: 'top 50%',
+      }
+    })
+  }
+
 })
