@@ -10,6 +10,32 @@
       </h3>
     </div>
 
+    <div class="example-select">
+      <button class="example-select-btn" type="button">
+        <span class="example-select-btn__text"></span>
+        <svg class="example-select-btn__icon">
+          <use href="#select-arrow-icon"></use>
+        </svg>
+      </button>
+      <ul class="example-select-list">
+        <li class="pagination-bullet example-select-list__item _active">
+          Автостоянки
+        </li>
+        <li class="pagination-bullet example-select-list__item">
+          Предприятия торговли
+        </li>
+        <li class="pagination-bullet example-select-list__item">
+          Медицинские учреждения
+        </li>
+        <li class="pagination-bullet example-select-list__item">
+          Объекты сельского хозяйства
+        </li>
+        <li class="pagination-bullet example-select-list__item">
+          Склады, логистические комплексы
+        </li>
+      </ul>
+    </div>
+
     <div class="example-btns">
       <button class="example-btns__btn example-btns__btn-prev" type="button">
         <svg width="62" height="15" viewBox="0 0 62 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,352 +64,590 @@
       </button>
     </div>
 
-    <div class="swiper example-info-slider">
-      <div class="swiper-wrapper example-info-slider-wrapper">
-        <div class="swiper-slide example-info-slider-slide">
-          <div class="example-info-box">
-            <h4 class="example-info__title">
-              Автостоянки
-            </h4>
+    <div class="swiper example-slider">
 
-            <ul class="example-info-list">
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Объект
-                </h6>
+      <div class="swiper-wrapper example-slider-wrapper">
 
-                <p class="example-info-item__text">
-                  Минск, Атлант-М Уручье
-                </p>
-              </li>
+        <div class="swiper-slide example-slider-slide">
+          <h4 class="example-slider-slide__title">
+            Автостоянки
+          </h4>
 
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Тип покрытия
-                </h6>
-
-                <p class="example-info-item__text">
-                  Тип №2
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="example-info-gallery">
-            <div class="swiper-wrapper example-info-gallery-wrapper">
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-            </div>
-          </div>
-
-          <div class="example-info-controll">
+          <div class="example-slider-slide-controll">
             <div class="custom-swiper-control">
-              <div class="example-info-pagination custom-swiper-pagination">
-                <span class="example-info-pagination__current custom-swiper-pagination__current"></span>
+              <div class="example-slider-slide-pagination custom-swiper-pagination">
+                <span class="example-slider-slide-pagination__current custom-swiper-pagination__current"></span>
                 /
-                <span class="example-info-pagination__total custom-swiper-pagination__total"></span>
+                <span class="example-slider-slide-pagination__total custom-swiper-pagination__total"></span>
               </div>
-              <div class="example-info-btn custom-swiper-btn">
+              <div class="example-slider-slide-btn custom-swiper-btn">
                 <svg class="custom-swiper-btn__icon">
                   <use href="#arrow-icon"></use>
                 </svg>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="swiper-slide example-info-slider-slide">
-          <div class="example-info-box">
-            <h4 class="example-info__title">
-              Предприятия торговли
-            </h4>
+          <div class="swiper example-slider-slide__swiper">
+            <ul class="swiper-wrapper example-slide-list">
 
-            <ul class="example-info-list">
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Объект
-                </h6>
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
 
-                <p class="example-info-item__text">
-                  Минск, Атлант-М Уручье
-                </p>
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №2
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/example-garage.png" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/example-garage.png" alt="" class="example-slide-list-img__img">
+                </a>
               </li>
 
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Тип покрытия
-                </h6>
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
 
-                <p class="example-info-item__text">
-                  Тип №2
-                </p>
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №3
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-3.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-3.jpg" alt="" class="example-slide-list-img__img">
+                </a>
               </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №4
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-4.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-4.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №5
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-5.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-5.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
             </ul>
           </div>
 
-          <div class="example-info-gallery">
-            <div class="swiper-wrapper example-info-gallery-wrapper">
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
+        </div>
 
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
+        <div class="swiper-slide example-slider-slide">
+          <h4 class="example-slider-slide__title">
+            Предприятия торговли
+          </h4>
 
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-            </div>
-          </div>
-
-          <div class="example-info-controll">
+          <div class="example-slider-slide-controll">
             <div class="custom-swiper-control">
-              <div class="example-info-pagination custom-swiper-pagination">
-                <span class="example-info-pagination__current custom-swiper-pagination__current"></span>
+              <div class="example-slider-slide-pagination custom-swiper-pagination">
+                <span class="example-slider-slide-pagination__current custom-swiper-pagination__current"></span>
                 /
-                <span class="example-info-pagination__total custom-swiper-pagination__total"></span>
+                <span class="example-slider-slide-pagination__total custom-swiper-pagination__total"></span>
               </div>
-              <div class="example-info-btn custom-swiper-btn">
+              <div class="example-slider-slide-btn custom-swiper-btn">
                 <svg class="custom-swiper-btn__icon">
                   <use href="#arrow-icon"></use>
                 </svg>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="swiper-slide example-info-slider-slide">
-          <div class="example-info-box">
-            <h4 class="example-info__title">
-              Медицинские учреждения
-            </h4>
+          <div class="swiper example-slider-slide__swiper">
+            <ul class="swiper-wrapper example-slide-list">
 
-            <ul class="example-info-list">
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Объект
-                </h6>
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
 
-                <p class="example-info-item__text">
-                  Минск, Атлант-М Уручье
-                </p>
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №2
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/example-garage.png" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/example-garage.png" alt="" class="example-slide-list-img__img">
+                </a>
               </li>
 
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Тип покрытия
-                </h6>
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
 
-                <p class="example-info-item__text">
-                  Тип №2
-                </p>
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №3
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-3.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-3.jpg" alt="" class="example-slide-list-img__img">
+                </a>
               </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №4
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-4.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-4.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №5
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-5.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-5.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
             </ul>
           </div>
 
-          <div class="example-info-gallery">
-            <div class="swiper-wrapper example-info-gallery-wrapper">
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
+        </div>
 
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
+        <div class="swiper-slide example-slider-slide">
+          <h4 class="example-slider-slide__title">
+            Медицинские учреждения
+          </h4>
 
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-            </div>
-          </div>
-
-          <div class="example-info-controll">
+          <div class="example-slider-slide-controll">
             <div class="custom-swiper-control">
-              <div class="example-info-pagination custom-swiper-pagination">
-                <span class="example-info-pagination__current custom-swiper-pagination__current"></span>
+              <div class="example-slider-slide-pagination custom-swiper-pagination">
+                <span class="example-slider-slide-pagination__current custom-swiper-pagination__current"></span>
                 /
-                <span class="example-info-pagination__total custom-swiper-pagination__total"></span>
+                <span class="example-slider-slide-pagination__total custom-swiper-pagination__total"></span>
               </div>
-              <div class="example-info-btn custom-swiper-btn">
+              <div class="example-slider-slide-btn custom-swiper-btn">
                 <svg class="custom-swiper-btn__icon">
                   <use href="#arrow-icon"></use>
                 </svg>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="swiper-slide example-info-slider-slide">
-          <div class="example-info-box">
-            <h4 class="example-info__title">
-              Объекты сельского хозяйства
-            </h4>
+          <div class="swiper example-slider-slide__swiper">
+            <ul class="swiper-wrapper example-slide-list">
 
-            <ul class="example-info-list">
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Объект
-                </h6>
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
 
-                <p class="example-info-item__text">
-                  Минск, Атлант-М Уручье
-                </p>
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №2
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/example-garage.png" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/example-garage.png" alt="" class="example-slide-list-img__img">
+                </a>
               </li>
 
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Тип покрытия
-                </h6>
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
 
-                <p class="example-info-item__text">
-                  Тип №2
-                </p>
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №3
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-3.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-3.jpg" alt="" class="example-slide-list-img__img">
+                </a>
               </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №4
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-4.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-4.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №5
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-5.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-5.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
             </ul>
           </div>
 
-          <div class="example-info-gallery">
-            <div class="swiper-wrapper example-info-gallery-wrapper">
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
+        </div>
 
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
+        <div class="swiper-slide example-slider-slide">
+          <h4 class="example-slider-slide__title">
+            Объекты сельского хозяйства
+          </h4>
 
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-            </div>
-          </div>
-
-          <div class="example-info-controll">
+          <div class="example-slider-slide-controll">
             <div class="custom-swiper-control">
-              <div class="example-info-pagination custom-swiper-pagination">
-                <span class="example-info-pagination__current custom-swiper-pagination__current"></span>
+              <div class="example-slider-slide-pagination custom-swiper-pagination">
+                <span class="example-slider-slide-pagination__current custom-swiper-pagination__current"></span>
                 /
-                <span class="example-info-pagination__total custom-swiper-pagination__total"></span>
+                <span class="example-slider-slide-pagination__total custom-swiper-pagination__total"></span>
               </div>
-              <div class="example-info-btn custom-swiper-btn">
+              <div class="example-slider-slide-btn custom-swiper-btn">
                 <svg class="custom-swiper-btn__icon">
                   <use href="#arrow-icon"></use>
                 </svg>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="swiper-slide example-info-slider-slide">
-          <div class="example-info-box">
-            <h4 class="example-info__title">
-              Склады, логистические комплексы
-            </h4>
+          <div class="swiper example-slider-slide__swiper">
+            <ul class="swiper-wrapper example-slide-list">
 
-            <ul class="example-info-list">
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Объект
-                </h6>
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
 
-                <p class="example-info-item__text">
-                  Минск, Атлант-М Уручье
-                </p>
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №2
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/example-garage.png" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/example-garage.png" alt="" class="example-slide-list-img__img">
+                </a>
               </li>
 
-              <li class="example-info-item">
-                <h6 class="example-info-item__title">
-                  Тип покрытия
-                </h6>
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
 
-                <p class="example-info-item__text">
-                  Тип №2
-                </p>
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №3
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-3.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-3.jpg" alt="" class="example-slide-list-img__img">
+                </a>
               </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №4
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-4.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-4.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №5
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-5.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-5.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
             </ul>
           </div>
 
-          <div class="example-info-gallery">
-            <div class="swiper-wrapper example-info-gallery-wrapper">
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
+        </div>
 
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
+        <div class="swiper-slide example-slider-slide">
+          <h4 class="example-slider-slide__title">
+            Склады, логистические комплексы
+          </h4>
 
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-
-              <a href="./assets/images/example-garage.png" class="swiper-slide example-info-img" data-fancybox>
-                <img class="example-info-img__img" src="./assets/images/example-garage.png" alt="garage">
-              </a>
-            </div>
-          </div>
-
-          <div class="example-info-controll">
+          <div class="example-slider-slide-controll">
             <div class="custom-swiper-control">
-              <div class="example-info-pagination custom-swiper-pagination">
-                <span class="example-info-pagination__current custom-swiper-pagination__current"></span>
+              <div class="example-slider-slide-pagination custom-swiper-pagination">
+                <span class="example-slider-slide-pagination__current custom-swiper-pagination__current"></span>
                 /
-                <span class="example-info-pagination__total custom-swiper-pagination__total"></span>
+                <span class="example-slider-slide-pagination__total custom-swiper-pagination__total"></span>
               </div>
-              <div class="example-info-btn custom-swiper-btn">
+              <div class="example-slider-slide-btn custom-swiper-btn">
                 <svg class="custom-swiper-btn__icon">
                   <use href="#arrow-icon"></use>
                 </svg>
               </div>
             </div>
           </div>
+
+          <div class="swiper example-slider-slide__swiper">
+            <ul class="swiper-wrapper example-slide-list">
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №2
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/example-garage.png" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/example-garage.png" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №3
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-3.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-3.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №4
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-4.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-4.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
+              <li class="swiper-slide example-slide-list__item">
+                <ul class="example-slide-list-info">
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Объект</h6>
+                    <p class="example-slide-list-info__text">
+                      Минск, Атлант-М Уручье
+                    </p>
+                  </li>
+
+                  <li class="example-slide-list-info__item">
+                    <h6 class="example-slide-list-info__title">Тип покрытия</h6>
+                    <p class="example-slide-list-info__text">
+                      Тип №5
+                    </p>
+                  </li>
+                </ul>
+
+                <a href="./assets/images/service-5.jpg" class="example-slide-list-img" data-fancybox>
+                  <img src="./assets/images/service-5.jpg" alt="" class="example-slide-list-img__img">
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
         </div>
+
       </div>
     </div>
 

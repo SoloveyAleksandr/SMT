@@ -4,6 +4,18 @@
   margin-top: 19rem;
   margin-bottom: 20rem;
 
+  @include breakpoint($cos-bp) {
+    margin-top: 10rem;
+  }
+
+  @include breakpoint($xl-bp) {
+    margin-bottom: 8rem;
+  }
+
+  @include breakpoint($jb-bp) {
+    margin-top: 6.5rem;
+  }
+
   &-header {
     height: 40rem;
     max-width: 138rem;
@@ -17,6 +29,20 @@
     background-size: cover;
     background-position: center center;
 
+    @include breakpoint($cos-bp) {
+      width: calc(100% + 3rem);
+      margin: 0 -1.5rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      padding: 2.5rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      width: calc(100% + 5rem);
+      margin: 0 -2.5rem;
+    }
+
     &__link {
       font-size: 2rem;
       font-weight: $font-reg;
@@ -27,12 +53,19 @@
       &:hover {
         opacity: 0.8;
       }
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+      }
     }
 
     &__title {
       font-size: 5.2rem;
-      font-weight: $font-reg;
       color: $white;
+
+      @include breakpoint($xl-bp) {
+        font-size: 2.8rem;
+      }
     }
   }
 
@@ -41,6 +74,19 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20rem;
+
+    @include breakpoint($cos-bp) {
+      gap: 8rem;
+      margin-bottom: 8rem;
+    }
+
+    @include breakpoint($xl-bp) {
+      gap: 4rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      display: none;
+    }
 
     &__btn {
       width: 6rem;
@@ -65,7 +111,6 @@
 
     &-slider {
       max-width: 138rem;
-      height: 7rem;
       display: flex;
       overflow: hidden;
       position: relative;
@@ -79,6 +124,7 @@
       //   right: -0.1rem;
       //   top: 0;
       //   box-shadow: 0 0 1rem 1rem $white;
+      //   background-color: $white;
       // }
 
       // &::before {
@@ -90,10 +136,10 @@
       //   left: -0.1rem;
       //   top: 0;
       //   box-shadow: 0 0 1rem 1rem $white;
+      //   background-color: $white;
       // }
 
       &-slide {
-        height: 100%;
         width: fit-content;
         padding: 2rem;
         border: 0.1rem solid $grey;
@@ -107,82 +153,266 @@
           background-color: $green;
           color: $white;
         }
+
+        @include breakpoint($xl-bp) {
+          font-size: 2rem;
+          padding: 1.5rem;
+        }
       }
     }
   }
 
-  &-info {
-    &-slider {
-      &-slide {
-        display: flex;
-        gap: 2rem;
-        position: relative;
-        background-color: $white;
+  &-slider {
+    overflow: hidden;
+    position: relative;
+
+    @include breakpoint($sm-bp) {
+      // width: calc(100% + 5rem);
+      // margin: 0 -2.5rem;
+    }
+
+    &-slide {
+      background-color: $white;
+
+      &__swiper {
+        @include breakpoint($sm-bp) {
+          overflow: visible;
+        }
       }
-    }
-
-    &-box {
-      padding: 10rem 0rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-    }
-
-    &__title {
-      font-size: 5.2rem;
-    }
-
-    &-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    &-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-      border-bottom: 0.1rem solid $grey;
 
       &__title {
-        font-size: 2rem;
-        font-weight: $font-reg;
+        font-size: 5.2rem;
+        max-width: 68rem;
+        position: absolute;
+        z-index: 3;
+        top: 10rem;
+        left: 0;
+
+        @include breakpoint($cos-bp) {
+          max-width: 50%;
+        }
+
+        @include breakpoint($xl-bp) {
+          font-size: 2.8rem;
+          top: 8rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          top: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          position: static;
+          margin-bottom: 2rem;
+          max-width: none;
+        }
+      }
+
+      &-controll {
+        width: 28.2rem;
+        height: 14.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+        background-color: $white;
+
+        @include breakpoint($xl-bp) {
+          width: 25rem;
+          height: 10rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          width: 15.7rem;
+          height: 7.4rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          right: -2.5rem;
+        }
+      }
+    }
+  }
+
+  &-slide {
+
+    &-list {
+
+      &__item {
+        display: flex;
+        gap: 2rem;
+
+        @include breakpoint($sm-bp) {
+          flex-direction: column;
+        }
+      }
+
+      &-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 2rem;
+        padding-bottom: 10rem;
+
+        @include breakpoint($xl-bp) {
+          padding-bottom: 8rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          padding-bottom: 2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          padding: 0;
+        }
+
+        &__item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-bottom: 1rem;
+          border-bottom: 0.1rem solid $grey;
+          background-color: $white;
+        }
+
+        &__title {
+          font-size: 2rem;
+          font-weight: $font-reg;
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+          }
+        }
+
+        &__text {
+          font-size: 2rem;
+          font-weight: $font-reg;
+          color: $green;
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      &-img {
+        width: 96.4rem;
+        height: 80rem;
+        cursor: pointer;
+
+        @include breakpoint($cos-bp) {
+          width: 50%;
+          height: 70rem;
+        }
+
+        @include breakpoint($xl-bp) {
+          height: 50rem;
+        }
+
+        @include breakpoint($jb-bp) {
+          height: 32rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          width: calc(100% + 5rem);
+          margin: 0 -2.5rem;
+        }
+
+        &__img {
+          object-fit: cover;
+          object-position: center center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &-select {
+    display: none;
+    position: relative;
+    margin: 0 -2.5rem 8rem -2.5rem;
+    width: calc(100% + 5rem);
+
+    @include breakpoint($lb-bp) {
+      display: block;
+    }
+
+    &-btn {
+      width: 100%;
+      height: 6.4rem;
+      background-color: $green;
+      border: none;
+      padding: 0 6.4rem 0 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+
+      &._active &__icon {
+        transform: rotate(90deg) scale(2);
       }
 
       &__text {
+        color: $white;
         font-size: 2rem;
         font-weight: $font-reg;
-        color: $green;
+      }
+
+      &__icon {
+        width: 1.4rem;
+        height: 0.7rem;
+        fill: $white;
+        transform: rotate(-90deg) scale(2);
+        position: absolute;
+        right: 2.4rem;
+        transition: .3s;
       }
     }
 
-    &-gallery {
-      width: 96.4rem;
-      height: 80rem;
-      overflow: hidden;
-    }
-
-    &-img {
-      width: 96.4rem;
-      height: 80rem;
-
-      &__img {
-        object-fit: cover;
-        object-position: center center;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &-controll {
-      background-color: $white;
+    &-list {
+      width: 100%;
+      height: fit-content;
       position: absolute;
-      bottom: 0;
-      right: 0;
-      z-index: 2;
-      padding: 4rem;
+      top: 6.5rem;
+      left: 0;
+      z-index: 10;
+      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: .3s;
+      opacity: 0;
+      pointer-events: none;
+
+      &._active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      &__item {
+        background-color: $white;
+        padding: 0 2.4rem;
+        height: 6.5rem;
+        font-size: 2rem;
+        font-weight: $font-reg;
+        cursor: pointer;
+        transition: .3s;
+        border: 0.3rem solid transparent;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          border-color: $green;
+        }
+
+        &._active {
+          background-color: $green;
+          color: $white;
+        }
+      }
     }
   }
 }

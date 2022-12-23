@@ -158,8 +158,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (item.classList.contains('placeholder')) {
           this.btnText.innerHTML = item.innerHTML;
           this.btn.classList.add('placeholder');
+        } else {
+          item.addEventListener('click', this.setValue.bind(this, item));
         }
-        item.addEventListener('click', this.setValue.bind(this, item));
       });
       document.addEventListener('click', (e) => {
         if (e.target !== this.btn) {
@@ -957,17 +958,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  // example
   if (document.querySelector('.example')) {
     const btnsSlider = new Swiper('.example-btns-slider', {
-      loop: true,
       slidesPerView: 'auto',
       freeMode: true,
-      // watchSlidesProgress: true,
+      watchSlidesProgress: true,
     });
 
-    const infoSlider = new Swiper('.example-info-slider', {
+    const infoSlider = new Swiper('.example-slider', {
       loop: true,
-      effect: 'fade',
+      effect: 'slide',
       navigation: {
         nextEl: '.example-btns__btn-next',
         prevEl: '.example-btns__btn-prev',
@@ -976,19 +977,26 @@ document.addEventListener("DOMContentLoaded", () => {
       thumbs: {
         swiper: btnsSlider,
       },
-      // watchSlidesProgress: true,
+      watchSlidesProgress: true,
+      pagination: {
+        el: '.example-select-list',
+        clickable: true,
+        type: 'custom',
+        bulletClass: 'pagination-bullet',
+      },
     });
 
-    const galleryWrappers = gsap.utils.toArray('.example-info-slider-slide');
+    const galleryWrappers = gsap.utils.toArray('.example-slider-slide');
     galleryWrappers.forEach(slide => {
-      const gallery = slide.querySelector('.example-info-gallery');
-      const btn = slide.querySelector('.example-info-btn');
-      const pagination = slide.querySelector('.example-info-pagination');
-      const currEl = slide.querySelector('.example-info-pagination__current');
-      const totalEl = slide.querySelector('.example-info-pagination__total');
+      const slider = slide.querySelector('.example-slider-slide__swiper');
+      const btn = slide.querySelector('.example-slider-slide-btn');
+      const pagination = slide.querySelector('.example-slider-slide-pagination');
+      const currEl = slide.querySelector('.example-slider-slide-pagination__current');
+      const totalEl = slide.querySelector('.example-slider-slide-pagination__total');
 
-      new Swiper(gallery, {
+      new Swiper(slider, {
         loop: true,
+        effect: 'fade',
 
         navigation: {
           nextEl: btn,
@@ -1003,7 +1011,45 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         },
       });
-    })
+    });
+
+    class SliderSelect {
+      constructor(select) {
+        this.container = document.querySelector(select);
+        this.btn = this.container.querySelector('.example-select-btn');
+        this.btnText = this.container.querySelector('.example-select-btn__text');
+        this.list = this.container.querySelector('.example-select-list');
+        this.init();
+      }
+
+      init() {
+        this.btn.onclick = this.toggleActive.bind(this);
+        [...this.list.children].forEach(item => {
+          if (item.classList.contains('_active')) {
+            this.btnText.innerText = item.innerText;
+          }
+          item.onclick = this.selectSlide.bind(this, item);
+        })
+      }
+
+      toggleActive() {
+        this.btn.classList.toggle('_active');
+        this.list.classList.toggle('_active');
+      }
+
+      selectSlide(item) {
+        this.toggleActive();
+        this.btnText.innerText = item.innerText;
+        [...this.list.children].forEach((li, index) => {
+          li.classList.remove('_active');
+          if (li === item) {
+            li.classList.add('_active');
+          }
+        });
+      }
+    }
+
+    new SliderSelect('.example-select');
   }
 
 })
