@@ -1052,4 +1052,36 @@ document.addEventListener("DOMContentLoaded", () => {
     new SliderSelect('.example-select');
   }
 
+  if (document.querySelector('.cases')) {
+    const animList = gsap.utils.toArray('.cases-list-item');
+    animList.forEach((item, index) => {
+      const img = item.querySelector('.cases-list-item-img');
+      const info = item.querySelector('.cases-list-item__info');
+
+      gsap.from(img, {
+        x: index % 2 > 0 ? '100%' : '-100%',
+        opacity: 0,
+        duration: 1,
+
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 50%',
+          end: 'bottom 50%',
+        }
+      })
+
+      gsap.from(info, {
+        x: index % 2 > 0 ? '-100%' : '100%',
+        opacity: 0,
+        duration: 1,
+
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 50%',
+          end: 'bottom 50%',
+        }
+      })
+    })
+  }
+
 })
