@@ -142,7 +142,7 @@
         }
 
         &::before {
-          content: '';
+          content: "";
           width: 1.6rem;
           height: 1.6rem;
           border: 0.2rem solid $green;
@@ -150,6 +150,164 @@
           position: absolute;
           top: 0;
           left: 0;
+        }
+      }
+    }
+  }
+
+  &-materials {
+    margin-bottom: 10rem;
+
+    @include breakpoint($xl-bp) {
+      margin-bottom: 8rem;
+    }
+
+    @include breakpoint($lb-bp) {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6rem;
+
+      @include breakpoint($xl-bp) {
+        margin-bottom: 2rem;
+      }
+
+      @include breakpoint($lb-bp) {
+        justify-content: end;
+      }
+    }
+
+    &__title {
+      font-size: 5.2rem;
+      max-width: 88rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 2.8rem;
+        max-width: 70rem;
+      }
+
+      @include breakpoint($jb-bp) {
+        max-width: 60rem;
+      }
+
+      @include breakpoint($lb-bp) {
+        display: none;
+      }
+
+      &_mob {
+        display: none;
+
+        @include breakpoint($lb-bp) {
+          display: block;
+        }
+      }
+    }
+
+    &-swiper {
+      padding: 1rem;
+      margin: 0 -1rem;
+
+      @include breakpoint($lb-bp) {
+        margin: 0rem -2.5rem;
+        padding: 1rem 2.5rem;
+      }
+
+      &-slide {
+        height: 42rem;
+        box-shadow: 0 0.1rem 1rem rgba(33, 37, 36, 0.15);
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        background-color: $white;
+
+        @include breakpoint($xl-bp) {
+          height: 36rem;
+        }
+
+        &-img {
+          height: 12rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1rem;
+        }
+
+        &__img {
+          object-fit: contain;
+          height: 100%;
+        }
+
+        &__title {
+          font-size: 2.4rem;
+          font-weight: $font-reg;
+          margin-bottom: 1rem;
+
+          @include breakpoint($xl-bp) {
+            font-size: 2rem;
+          }
+        }
+
+        &__subtitle {
+          font-size: 1.4rem;
+          font-weight: $font-reg;
+        }
+
+        &__description {
+          font-size: 2rem;
+          color: $green;
+          flex: 1;
+          display: flex;
+          align-items: flex-end;
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+
+  &-stages {
+    &__title {
+      font-size: 5.2rem;
+      margin-bottom: 2rem;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      &__subtitle {
+        font-size: 2.4rem;
+        font-weight: $font-reg;
+      }
+
+      &__description {
+        font-size: 2rem;
+        font-weight: $font-reg;
+      }
+
+      &-img {
+        height: 96rem;
+
+        &__img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          object-position: center center;
         }
       }
     }

@@ -1084,4 +1084,58 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  if (document.querySelector('.case')) {
+    const materialsSwiper = new Swiper('.case-materials-swiper', {
+      direction: 'horizontal',
+      loop: true,
+      effect: 'slide',
+      speed: 800,
+
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 50,
+
+      pagination: {
+        el: '.case-swiper-pagination',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          const currEl = document.querySelector('.case-swiper-pagination__current');
+          const totalEl = document.querySelector('.case-swiper-pagination__total');
+
+          currEl.innerHTML = current < 10 ? `0${current}` : current;
+          totalEl.innerHTML = total < 10 ? `0${total}` : total;
+        }
+      },
+
+      navigation: {
+        nextEl: '.case-swiper-btn',
+      },
+
+      autoplay: {
+        delay: 5000,
+      },
+
+      breakpoints: {
+        1331: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+        },
+        1025: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+        851: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          speed: 1300,
+        },
+        651: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 20,
+        }
+      },
+    });
+  }
+
 })
