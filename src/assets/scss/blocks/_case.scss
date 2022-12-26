@@ -277,6 +277,10 @@
     &__title {
       font-size: 5.2rem;
       margin-bottom: 2rem;
+
+      @include breakpoint($xl-bp) {
+        font-size: 2.8rem;
+      }
     }
 
     &-list {
@@ -293,15 +297,39 @@
       &__subtitle {
         font-size: 2.4rem;
         font-weight: $font-reg;
+
+        @include breakpoint($xl-bp) {
+          font-size: 2rem;
+        }
       }
 
       &__description {
         font-size: 2rem;
         font-weight: $font-reg;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+        }
       }
 
       &-img {
         height: 96rem;
+
+        @include breakpoint($xl-bp) {
+          height: 50rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          height: 40rem;
+        }
+
+        @include breakpoint($sm-bp) {
+          height: 30rem;
+        }
+
+        @include breakpoint($xs-bp) {
+          height: 21.7rem;
+        }
 
         &__img {
           object-fit: cover;

@@ -1119,15 +1119,20 @@ document.addEventListener("DOMContentLoaded", () => {
         1331: {
           slidesPerView: 4,
           slidesPerGroup: 4,
+          spaceBetween: 20,
+          speed: 1300,
         },
         1025: {
           slidesPerView: 3,
           slidesPerGroup: 3,
+          spaceBetween: 20,
+          speed: 1300,
         },
         851: {
           slidesPerView: 2,
           slidesPerGroup: 2,
           speed: 1300,
+          spaceBetween: 20,
         },
         651: {
           slidesPerView: 2,
