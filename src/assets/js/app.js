@@ -1,6 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.querySelector('body');
 
+  class VacancyInfoItem {
+    constructor(container) {
+      this.container = container;
+      this.btn = container.querySelector('.vacancy-list-item__btn');
+      this.infoList = container.querySelector('.vacancy-info-list');
+      this.init();
+    }
+
+    init() {
+      this.btn.addEventListener('click', () => this.toggleOpen.call(this))
+    }
+
+    toggleOpen() {
+      this.infoList.classList.toggle('_active');
+      this.btn.classList.toggle('_active');
+    }
+  }
+
   const relax = document.querySelector('.rellax') && new Rellax('.rellax', {
     center: false,
     breakpoints: [500],
@@ -883,25 +901,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelector('.vacancy')) {
 
-    class VacancyInfoItem {
-      constructor(container) {
-        this.container = container;
-        this.btn = container.querySelector('.vacancy-list-item__btn');
-        this.infoList = container.querySelector('.vacancy-info-list');
-        this.init();
-      }
-
-      init() {
-        this.btn.addEventListener('click', () => this.toggleOpen.call(this))
-        // console.log(this)
-      }
-
-      toggleOpen() {
-        this.infoList.classList.toggle('_active');
-        this.btn.classList.toggle('_active');
-      }
-    }
-
     const infoItems = gsap.utils.toArray('.vacancy-list-item');
     infoItems.forEach(item => new VacancyInfoItem(item));
 
@@ -1141,6 +1140,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       },
     });
+  }
+
+  if (document.querySelector('.questions')) {
+    const items = gsap.utils.toArray('.questions-list-item');
+    items.forEach((item, index) => {
+      new VacancyInfoItem(item);
+    })
+  }
+
+  if (document.querySelector('.questions')) {
+    const items = gsap.utils.toArray('.questions-list-item');
+    items.forEach((item, index) => {
+      gsap.from(item, {
+        x: '-100%',
+        opacity: 0,
+        duration: 0.5,
+        delay: index ? 0.3 * index : 0,
+      })
+    })
   }
 
 })

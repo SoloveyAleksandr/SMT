@@ -1,0 +1,148 @@
+@import "../vars";
+
+.questions {
+  margin-top: 19rem;
+  margin-bottom: 20rem;
+
+  @include breakpoint($cos-bp) {
+    margin-top: 10rem;
+  }
+
+  @include breakpoint($xl-bp) {
+    margin-bottom: 8rem;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint($jb-bp) {
+      flex-direction: column;
+      gap: 8rem;
+    }
+  }
+
+  &-inner {
+    width: calc(50% - 16rem);
+    overflow: hidden;
+
+    @include breakpoint($cos-bp) {
+      width: calc(50% - 5rem);
+    }
+
+    @include breakpoint($jb-bp) {
+      width: 100%;
+    }
+  }
+
+  &-link {
+    font-size: 2rem;
+    font-weight: $font-reg;
+    margin-bottom: 1rem;
+
+    @include breakpoint($xl-bp) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &-title {
+    font-size: 5.2rem;
+    margin-bottom: 4rem;
+
+    @include breakpoint($xl-bp) {
+      font-size: 2.8rem;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    @include breakpoint($xl-bp) {
+      gap: 2rem;
+    }
+
+    &-item {
+      &__box {
+        margin-bottom: 0;
+        gap: 0;
+      }
+
+      &__title {
+        max-width: calc(100% - 10rem);
+        font-size: 2.4rem;
+        font-weight: $font-reg;
+
+        @include breakpoint($xl-bp) {
+          font-size: 2rem;
+        }
+
+        @include breakpoint($lb-bp) {
+          max-width: calc(100% - 4rem);
+        }
+      }
+    }
+  }
+
+  &-info {
+    &-list {
+      &-item {
+        &__title {
+          margin-bottom: 2rem;
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+          }
+        }
+
+        &__description {
+          margin-top: 2rem;
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  &-form {
+    padding: 4.6rem 8rem;
+
+    @include breakpoint($lb-bp) {
+      padding: 2rem;
+    }
+
+    &-container {
+      width: 50%;
+      min-height: 100%;
+      position: relative;
+
+      @include breakpoint($jb-bp) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &-wrapper {
+      position: sticky;
+      top: 6rem;
+      right: 0;
+      padding: 9.5rem 13rem;
+
+      @include breakpoint($cos-bp) {
+        padding: 5rem;
+      }
+
+      @include breakpoint($sm-bp) {
+        padding: 2.4rem;
+      }
+    }
+
+    &__input {
+      width: 100%;
+    }
+  }
+}
