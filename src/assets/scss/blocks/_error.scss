@@ -6,6 +6,11 @@
     align-items: center;
     justify-content: center;
 
+    @include breakpoint($xl-bp) {
+        margin-top: 10rem;
+        margin-bottom: 8rem;
+    }
+
     &__title {
         font-size: 5.2rem;
         text-align: center;
@@ -16,18 +21,18 @@
     }
 
     &-code {
-        height: 59rem;
+        height: 65rem;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
 
         @include breakpoint($xl-bp) {
-            height: 26rem;
+            height: 34rem;
         }
 
         @include breakpoint($xs-bp) {
-            height: 22rem;
+            height: 23rem;
         }
 
         &__item {
@@ -59,6 +64,10 @@
                 background-image: url(../images/error-bg-4.png);
                 background-repeat: no-repeat;
                 background-position: 0% 73%;
+            }
+
+            &:nth-child(5) {
+                color: rgba(87, 87, 87, 0.1);
             }
         }
 
