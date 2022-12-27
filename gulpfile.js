@@ -60,7 +60,7 @@ function serve() {
   });
 }
 
-function html(cb) {
+function html() {
   panini.refresh();
   return src(path.src.html, { base: srcPath })
     .pipe(plumber())
@@ -75,11 +75,9 @@ function html(cb) {
     )
     .pipe(dest(path.build.html))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
-function css(cb) {
+function css() {
   return src(path.src.css, { base: srcPath + "assets/scss/" })
     .pipe(
       sass({
@@ -110,11 +108,9 @@ function css(cb) {
     )
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
-function cssWatch(cb) {
+function cssWatch() {
   return src(path.src.css, { base: srcPath + "assets/scss/" })
     .pipe(
       sass({
@@ -129,29 +125,23 @@ function cssWatch(cb) {
     )
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
-function js(cb) {
+function js() {
   return src(path.src.js, { base: srcPath + "assets/js/" })
     .pipe(rigger())
     .pipe(dest(path.build.js))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
-function jsWatch(cb) {
+function jsWatch() {
   return src(path.src.js, { base: srcPath + "assets/js/" })
     .pipe(rigger())
     .pipe(dest(path.build.js))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
-function images(cb) {
+function images() {
   return src(path.src.images)
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 75, progressive: true }),
@@ -167,25 +157,29 @@ function images(cb) {
     .pipe(browserSync.reload({ stream: true }));
 }
 
+function imagesWithoutMin() {
+  return src(path.src.images)
+    .pipe(dest(path.build.images))
+    .pipe(browserSync.reload({ stream: true }));
+}
+
 function video() {
   return src(path.src.video)
     .pipe(dest(path.build.video))
     .pipe(browserSync.reload({ stream: true }));
 }
 
-function fonts(cb) {
+function fonts() {
   return src(path.src.fonts)
     .pipe(dest(path.build.fonts))
     .pipe(browserSync.reload({ stream: true }));
 }
 
-function clean(cb) {
+function clean() {
   return del(path.clean);
-
-  cb();
 }
 
-function cleanWithoutImg(cb) {
+function cleanWithoutImg() {
   return del([`!dist/**/images/**`, 'dist/**/fonts/**', 'dist/**/css/**', 'dist/**/js/**', 'dist/index.html'])
 }
 
@@ -198,10 +192,9 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
-const buildOld = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
 const start = gulp.series(cleanWithoutImg, gulp.parallel(html, css, js, fonts));
 const watch = gulp.parallel(start, watchFiles, serve);
-const build = gulp.parallel(buildOld, watchFiles, serve);
+const build = gulp.series(clean, html, css, js, imagesWithoutMin, video, fonts);
 const serverStart = gulp.series(clean, html, css, js, images, video, fonts, gulp.parallel(watchFiles, serve));
 
 /* Exports Tasks */
