@@ -1260,4 +1260,21 @@ document.addEventListener("DOMContentLoaded", () => {
     new SliderSelect('.contacts');
   }
 
+  if (document.querySelector('.documentation')) {
+    const input = document.getElementById('documentation-input');
+    const list = gsap.utils.toArray('.documentation-list-item');
+
+    input.oninput = (e) => {
+      const value = e.target.value.toLocaleLowerCase();
+      list.forEach(item => {
+        const text = item.querySelector('.documentation-list-item__name').innerText.toLocaleLowerCase();
+        if (!text.includes(value)) {
+          item.style.display = 'none';
+        } else {
+          item.style.display = 'flex';
+        }
+      })
+    }
+  }
+
 })
