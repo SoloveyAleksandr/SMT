@@ -49,6 +49,9 @@ svg {
   transition: all 0.1s linear;
 }
 
+// 404
+@import "./blocks/_error";
+
 // index
 @import "./blocks/header";
 @import "./blocks/main";

@@ -1161,4 +1161,21 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  if (document.querySelector('.error')) {
+    const items = gsap.utils.toArray('.error-code__item');
+    items.forEach((item, index) => {
+      const tl = gsap.timeline({
+        delay: index ? index * 0.2 : 0,
+        duration: 1,
+        repeat: -1,
+      });
+      tl.from(item, {
+        opacity: 0,
+      })
+      tl.to(item, {
+        opacity: 0,
+      })
+    })
+  }
+
 })
