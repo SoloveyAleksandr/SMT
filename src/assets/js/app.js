@@ -1180,4 +1180,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  if (document.querySelector('.news-page')) {
+    const items = gsap.utils.toArray('.news-page-list-item__text');
+    items.forEach(item => {
+      const text = item.innerText;
+      if (text.length > 160) {
+        item.innerText = text.slice(0, 160) + '...';
+      }
+    })
+  }
+
 })
