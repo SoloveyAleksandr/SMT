@@ -192,10 +192,20 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
+function watchFilesDev() {
+  gulp.watch([path.watch.html], html);
+  gulp.watch([path.watch.css], cssWatch);
+  gulp.watch([path.watch.js], jsWatch);
+  gulp.watch([path.watch.images], imagesWithoutMin);
+  gulp.watch([path.watch.video], video);
+  gulp.watch([path.watch.fonts], fonts);
+}
+
 const start = gulp.series(cleanWithoutImg, gulp.parallel(html, css, js, fonts));
 const watch = gulp.parallel(start, watchFiles, serve);
 const build = gulp.series(clean, html, css, js, imagesWithoutMin, video, fonts);
 const serverStart = gulp.series(clean, html, css, js, images, video, fonts, gulp.parallel(watchFiles, serve));
+const dev = gulp.series(clean, html, css, js, imagesWithoutMin, video, fonts, gulp.parallel(watchFiles, serve));
 
 /* Exports Tasks */
 exports.html = html;
@@ -208,5 +218,6 @@ exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.default = serverStart;
+exports.dev = dev;
 exports.cleanWithoutImg = cleanWithoutImg
 exports.start = start

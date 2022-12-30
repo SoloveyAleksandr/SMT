@@ -1277,4 +1277,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  if (document.querySelector('.video')) {
+    new Swiper('.video-swiper', {
+      direction: 'horizontal',
+      loop: true,
+      effect: 'slide',
+      speed: 1500,
+      spaceBetween: 100,
+
+      pagination: {
+        el: '.video-swiper-pagination',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          const currEl = document.querySelector('.video-swiper-pagination__current');
+          const totalEl = document.querySelector('.video-swiper-pagination__total');
+
+          currEl.innerHTML = current < 10 ? `0${current}` : current;
+          totalEl.innerHTML = total < 10 ? `0${total}` : total;
+        }
+      },
+
+      navigation: {
+        nextEl: '.video-swiper-btn',
+      },
+
+      scrollbar: false,
+
+      autoplay: {
+        delay: 5000,
+      },
+    });
+  }
+
 })
