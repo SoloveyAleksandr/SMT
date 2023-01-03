@@ -1309,4 +1309,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (document.querySelector('.materials-nav')) {
+    class Navigation {
+      constructor(list, btn) {
+        this.list = document.querySelector(list);
+        this.btn = document.querySelector(btn);
+        this.init();
+      }
+
+      init() {
+        this.btn.onclick = () => {
+          if (this.list.classList.contains('_active')) {
+            this.list.classList.remove('_active');
+            this.btn.innerText = 'Развернуть...';
+          } else {
+            this.list.classList.add('_active');
+            this.btn.innerText = 'Свернуть...';
+          }
+        }
+      }
+    }
+
+    new Navigation('.materials-nav-list', '.materials-nav__btn');
+  }
+
 })
