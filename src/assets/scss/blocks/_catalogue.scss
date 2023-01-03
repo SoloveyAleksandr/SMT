@@ -49,6 +49,8 @@
 
         @include breakpoint($cos-bp) {
             flex-direction: column-reverse;
+            gap: 8rem;
+            align-items: center;
         }
     }
 
@@ -60,8 +62,8 @@
         position: sticky;
         top: 6.5rem;
 
-        @include breakpoint($cos-bp) {
-            display: none;
+        @include breakpoint($sm-bp) {
+            width: 100%;
         }
 
         &__input {
@@ -71,11 +73,19 @@
         &__title {
             font-size: 2.4rem;
             font-weight: $font-reg;
+
+            @include breakpoint($xl-bp) {
+                font-size: 2rem;
+            }
         }
 
         &__subtitle {
             font-size: 2rem;
             font-weight: $font-reg;
+            
+            @include breakpoint($xl-bp) {
+                font-size: 1.4rem;
+            }
         }
     }
 
