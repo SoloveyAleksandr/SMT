@@ -1,0 +1,175 @@
+@import "../vars";
+
+.type {
+    margin-top: 19rem;
+    margin-bottom: 20rem;
+
+    &-inner {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    &-nav {
+        width: 40rem;
+        padding: 3rem;
+        background-color: $light-grey;
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            transition: .3s;
+
+            &-item {
+                &__title {
+                    display: inline-block;
+                    font-size: 2.4rem;
+                    font-weight: $font-reg;
+                    margin-bottom: 2rem;
+                    transition: .3s;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &._active {
+                        color: $green;
+                    }
+                }
+
+                &__link {
+                    display: inline-block;
+                    width: 100%;
+                    padding: 1rem 2.4rem;
+                    font-size: 1.8rem;
+                    font-weight: $font-reg;
+                    background-color: transparent;
+                    transition: .3s;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    &._active {
+                        background-color: $green;
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        &__btn {
+            display: block;
+            width: 100%;
+            padding: 1rem 2.4rem;
+            font-size: 1.8rem;
+            font-weight: $font-reg;
+            color: $green;
+            text-align: left;
+            border: none;
+            background-color: transparent;
+            transition: .3s;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &-info {
+        &-wrapper {
+            flex: 1;
+        }
+
+        &-head {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+
+            &-img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 89%;
+
+                &:first-child {
+                    top: unset;
+                    right: unset;
+                }
+
+                &-container {
+                    width: 54rem;
+                    height: 43rem;
+                    position: relative;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    padding-bottom: 1rem;
+                }
+
+                &__img {
+                    object-fit: contain;
+                    width: 100%;
+                }
+            }
+
+            &-list {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                border-top: 0.1rem solid $grey;
+
+                &-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 2rem;
+                    border-bottom: 0.1rem solid $grey;
+
+                    &__box {
+                        display: flex;
+                        align-items: center;
+                        gap: 4rem;
+                    }
+
+                    &__text {
+                        font-size: 2rem;
+                        font-weight: $font-reg;
+
+                        &_green {
+                            color: $green;
+                        }
+                    }
+
+                    &__info {
+                        display: inline-block;
+                        width: 14rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.anim-layer {
+    animation: animLayer 5s ease infinite;
+}
+
+@keyframes animLayer {
+    0% {
+        top: var(--layerHeight);
+    }
+
+    30% {
+        top: calc(-2.5rem + var(--layerHeight));
+    }
+
+    70% {
+        top: calc(-2.5rem + var(--layerHeight));
+    }
+
+    100% {
+        top: var(--layerHeight);
+    }
+}
