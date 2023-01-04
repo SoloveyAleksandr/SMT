@@ -98,6 +98,10 @@
                     right: unset;
                 }
 
+                &_animated {
+                    animation: animLayer 5s ease infinite;
+                }
+
                 &-container {
                     width: 54rem;
                     height: 43rem;
@@ -150,10 +154,6 @@
             }
         }
     }
-}
-
-.anim-layer {
-    animation: animLayer 5s ease infinite;
 }
 
 @keyframes animLayer {
