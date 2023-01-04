@@ -41,8 +41,8 @@
 
     @include breakpoint($lb-bp) {
       flex-direction: column;
-      align-items: start;
-      justify-content: end;
+      align-items: flex-start;
+      justify-content: flex-end;
       padding-bottom: 0;
       margin: 0 -2.5rem 0 -2.5rem;
     }

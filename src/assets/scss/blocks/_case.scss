@@ -179,7 +179,7 @@
       }
 
       @include breakpoint($lb-bp) {
-        justify-content: end;
+        justify-content: flex-end;
       }
     }
 

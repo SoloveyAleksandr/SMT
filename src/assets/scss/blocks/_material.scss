@@ -17,7 +17,7 @@
 
     &-main {
         display: flex;
-        align-items: start;
+        align-items: flex-start;
         gap: 2rem;
         margin-bottom: 2rem;
 
@@ -57,7 +57,7 @@
             display: flex;
             flex-direction: column;
             gap: 3.5rem;
-            align-items: start;
+            align-items: flex-start;
 
             @include breakpoint($xl-bp) {
                 gap: 2rem;
@@ -301,8 +301,8 @@
                 height: 16rem;
                 background-color: var(--bgColor);
                 display: flex;
-                align-items: end;
-                justify-content: end;
+                align-items: flex-end;
+                justify-content: flex-end;
                 padding-bottom: 0.7rem;
 
                 @include breakpoint($xl-bp) {
@@ -348,7 +348,7 @@
 
                 @include breakpoint($lb-bp) {
                     display: flex;
-                    justify-content: start;
+                    justify-content: flex-start;
                     max-width: fit-content;
                 }
             }
@@ -436,7 +436,7 @@
 
                 @include breakpoint($jb-bp) {
                     display: flex;
-                    justify-content: start;
+                    justify-content: flex-start;
                     max-width: fit-content;
                 }
             }

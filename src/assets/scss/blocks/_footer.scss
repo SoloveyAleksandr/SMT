@@ -84,7 +84,7 @@
             }
 
             &__contacts {
-                justify-content: start;
+                justify-content: flex-start;
                 gap: 4rem;
 
                 @include breakpoint($xl-bp) {
