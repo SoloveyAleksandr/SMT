@@ -1456,6 +1456,69 @@ document.addEventListener("DOMContentLoaded", () => {
     new MySwiper();
   }
 
+  if (document.querySelector('.object-nav')) {
+    class Navigation {
+      constructor(list, btn) {
+        this.list = document.querySelector(list);
+        this.btn = document.querySelector(btn);
+        this.init();
+      }
+
+      init() {
+        this.minH = [...this.list.children].reduce((acc, item, index) => {
+          if (index <= 2) {
+            return acc + item.clientHeight;
+          }
+          return acc;
+        }, 0) / 10;
+
+        this.maxH = [...this.list.children].reduce((acc, item, index) => {
+          return acc + item.clientHeight;
+        }, 0) / 10;
+
+        const width = window.innerWidth;
+        if (width <= 1330) {
+          this.btn.innerText = 'Развернуть...';
+          this.list.style.maxHeight = `${this.minH}rem`;
+        }
+
+        this.btn.onclick = () => {
+          if (window.innerWidth <= 1330) {
+            if (this.list.classList.contains('_active')) {
+              this.list.classList.remove('_active');
+              this.btn.innerText = 'Развернуть...';
+              this.list.style.maxHeight = `${this.minH}rem`;
+            } else {
+              this.list.classList.add('_active');
+              this.btn.innerText = 'Свернуть...';
+              this.list.style.maxHeight = `${this.maxH}rem`;
+            }
+          }
+        }
+
+        window.addEventListener('resize', (e) => this.widthCheck(e.currentTarget.innerWidth))
+      }
+
+      widthCheck(width) {
+        if (width <= 1330) {
+          if (this.list.classList.contains('_active')) {
+            this.btn.innerText = 'Свернуть...';
+            this.list.style.maxHeight = `${this.maxH}rem`;
+          } else {
+            this.btn.innerText = 'Развернуть...';
+            this.list.style.maxHeight = `${this.minH}rem`;
+          }
+        } else {
+          this.list.classList.add('_active');
+          this.btn.innerText = 'Свернуть...';
+          this.list.style.maxHeight = `${this.maxH}rem`;
+        }
+      }
+    }
+
+    new Navigation('.object-nav-list', '.object-nav__btn');
+  }
+
   if (document.querySelector('.object-type-swiper_eco')) {
     new Swiper('.object-type-swiper_eco', {
       direction: 'horizontal',
