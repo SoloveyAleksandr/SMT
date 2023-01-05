@@ -265,12 +265,12 @@
                 height: 43.5rem;
                 padding: 3rem;
                 position: relative;
-                box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.15);
+                box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
                 transition: .3s;
 
                 &:hover {
-                    transform: translate(-0.5rem, -0.5rem);
-                    box-shadow: 0.3rem 0.4rem 1rem rgba(0, 0, 0, 0.15);
+                    transform: scale(0.98);
+                    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
                 }
 
                 @include breakpoint($xl-bp) {
