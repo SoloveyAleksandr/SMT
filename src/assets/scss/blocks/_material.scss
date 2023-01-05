@@ -82,6 +82,7 @@
                     }
 
                     &_green {
+                        display: inline-block;
                         font-size: inherit;
                         font-weight: inherit;
                         color: $green;
@@ -138,6 +139,11 @@
                         font-size: inherit;
                         font-weight: inherit;
                         color: $green;
+                        transition: .3s;
+
+                        &:hover {
+                            opacity: 0.8;
+                        }
                     }
                 }
             }
@@ -539,7 +545,7 @@
             padding: 4rem;
             background-color: $white;
 
-            @include breakpoint($xl-bp)  {
+            @include breakpoint($xl-bp) {
                 padding: 2rem;
             }
         }
