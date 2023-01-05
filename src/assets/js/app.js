@@ -81,9 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
     direction: 'horizontal',
     loop: true,
 
-    effect: 'fade',
+    effect: 'slide',
 
-    speed: 0,
+    speed: 1000,
 
     pagination: {
       el: '.keyes-swiper-pagination',
