@@ -1665,4 +1665,31 @@ document.addEventListener("DOMContentLoaded", () => {
     new Navigation('.type-nav-list', '.type-nav__btn');
   }
 
+  if (document.querySelector('.material-swiper-container')) {
+    new Swiper('.material-swiper', {
+      direction: 'horizontal',
+      loop: true,
+      effect: 'fade',
+      speed: 800,
+
+      pagination: {
+        el: '.material-swiper-pagination',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          const currEl = document.querySelector('.material-swiper-slide-pagination__current');
+          const totalEl = document.querySelector('.material-swiper-slide-pagination__total');
+
+          currEl.innerHTML = current < 10 ? `0${current}` : current;
+          totalEl.innerHTML = total < 10 ? `0${total}` : total;
+        }
+      },
+
+      navigation: {
+        nextEl: '.material-swiper-btn',
+      },
+
+      scrollbar: false,
+    });
+  }
+
 })
