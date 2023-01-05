@@ -229,6 +229,11 @@
                         font-size: 2rem;
                         font-weight: $font-reg;
                         color: $green;
+                        transition: .3s;
+
+                        &:hover {
+                            opacity: 0.8;
+                        }
 
                         @include breakpoint($xl-bp) {
                             font-size: 1.4rem;
@@ -283,7 +288,7 @@
                 font-size: 2.8rem;
             }
 
-            @include breakpoint($lb-bp)  {
+            @include breakpoint($lb-bp) {
                 margin-bottom: 2rem;
             }
         }
