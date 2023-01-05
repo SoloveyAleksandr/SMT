@@ -1600,4 +1600,69 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (document.querySelector('.type-nav')) {
+    class Navigation {
+      constructor(list, btn) {
+        this.list = document.querySelector(list);
+        this.btn = document.querySelector(btn);
+        this.init();
+      }
+
+      init() {
+        this.setHeight();
+
+        const width = window.innerWidth;
+
+        if (width <= 1330) {
+          this.btn.innerText = 'Развернуть...';
+          this.list.style.maxHeight = `${this.minH}rem`;
+        }
+
+        this.btn.onclick = () => {
+          if (window.innerWidth <= 1330) {
+            if (this.list.classList.contains('_active')) {
+              this.list.classList.remove('_active');
+              this.btn.innerText = 'Развернуть...';
+              this.list.style.maxHeight = `${this.minH}rem`;
+            } else {
+              this.list.classList.add('_active');
+              this.btn.innerText = 'Свернуть...';
+              this.list.style.maxHeight = `${this.maxH}rem`;
+            }
+          }
+        }
+
+        window.addEventListener('resize', (e) => this.widthCheck(e.currentTarget.innerWidth))
+      }
+
+      setHeight() {
+        this.minH = [...this.list.children][0].clientHeight / 10;
+
+        this.maxH = [...this.list.children].reduce((acc, item) => {
+          return acc + item.clientHeight;
+        }, 0) / 10;
+      }
+
+      widthCheck(width) {
+        this.setHeight();
+
+        if (width <= 1330) {
+          if (this.list.classList.contains('_active')) {
+            this.btn.innerText = 'Свернуть...';
+            this.list.style.maxHeight = `${this.maxH}rem`;
+          } else {
+            this.btn.innerText = 'Развернуть...';
+            this.list.style.maxHeight = `${this.minH}rem`;
+          }
+        } else {
+          this.list.classList.add('_active');
+          this.btn.innerText = 'Свернуть...';
+          this.list.style.maxHeight = `${this.maxH}rem`;
+        }
+      }
+    }
+
+    new Navigation('.type-nav-list', '.type-nav__btn');
+  }
+
 })
