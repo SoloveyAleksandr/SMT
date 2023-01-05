@@ -61,7 +61,20 @@
 
     @include breakpoint($jb-bp) {
       position: absolute;
-      bottom: 7.6rem;
+      bottom: 1rem;
+      right: 2.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      left: 2.5rem;
+      bottom: 7rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      left: 0;
+      right: 0;
+      bottom: 7rem;
+      align-items: center;
     }
 
     &__subtitle {
@@ -98,37 +111,30 @@
     }
 
     @include breakpoint($xl-bp) {
-      height: 64rem;
-    }
-
-    @include breakpoint($xl-bp) {
       height: 57rem;
     }
 
     @include breakpoint($jb-bp) {
       position: static;
-      height: fit-content;
+      height: 73rem;
+    }
+
+    @include breakpoint($sm-bp) {
+      height: 80rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      height: 90rem;
     }
 
     &-slide {
-      height: 96rem;
+      height: 100%;
       width: 100%;
       position: relative;
 
-      @include breakpoint($cos-bp) {
-        height: 90rem;
-      }
-
-      @include breakpoint($xl-bp) {
-        height: 64rem;
-      }
-
-      @include breakpoint($xl-bp) {
-        height: 57rem;
-      }
-
       @include breakpoint($jb-bp) {
-        height: fit-content;
+        display: flex;
+        flex-direction: column;
       }
 
       &-img {
@@ -176,6 +182,7 @@
       &-container {
         padding-left: 50%;
         padding-top: 25rem;
+        height: 100%;
 
         @include breakpoint($cos-bp) {
           padding-top: 20rem;
@@ -188,12 +195,14 @@
 
         @include breakpoint($jb-bp) {
           padding: 0 2.5rem;
+          flex: 1;
           display: flex;
           flex-direction: column;
         }
       }
 
       &-content {
+        height: 100%;
         max-width: 74rem;
         display: flex;
         flex-direction: column;
@@ -214,19 +223,15 @@
       }
 
       &__description {
+        flex: 1;
         font-weight: $font-reg;
         line-height: 140%;
-        margin-bottom: 8.9rem;
         transform: translateX(15rem);
         opacity: 0;
         transition: 0.8s;
 
         @include breakpoint($xl-bp) {
           font-size: 1.4rem;
-        }
-
-        @include breakpoint($jb-bp) {
-          margin-bottom: 12.2rem;
         }
       }
 
@@ -247,7 +252,7 @@
         transform: scale(1) rotate(0);
         opacity: 1;
       }
-      
+
       &.swiper-slide-duplicate-active &-img {
         transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) 1.5s;
         transform: scale(1) rotate(0);
@@ -259,7 +264,7 @@
         transform: translateX(0);
         opacity: 1;
       }
-      
+
       &.swiper-slide-duplicate-active &__description {
         transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.1s;
         transform: translateX(0);
@@ -271,7 +276,7 @@
         transform: translateY(0);
         opacity: 1;
       }
-      
+
       &.swiper-slide-duplicate-active &__link {
         transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.6s;
         transform: translateY(0);
