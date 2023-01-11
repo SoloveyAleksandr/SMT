@@ -1692,4 +1692,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // MAIN
+  const video = document.querySelector('.main-gif__img');
+
+  if (video) {
+    video.onclick = () => {
+      video.paused ? video.play() : video.pause();
+    }
+  }
+  // <==
 })
