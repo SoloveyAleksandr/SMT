@@ -1707,4 +1707,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   // <==
+
+  // TYPE 
+  if (document.querySelector('.type-info-head-img_animated-js')) {
+    const animList = gsap.utils.toArray('.type-info-head-img_animated-js');
+    const tl = gsap.timeline({
+      // repeat: -1,
+      delay: 2,
+      // repeatDelay: 1,
+      scrollTrigger: {
+        trigger: ".type-info-head",
+        start: "top top",
+        end: "bottom bottom",
+        toggleActions: "none reverse play none",
+        markers: true,
+      }
+    });
+
+    animList.forEach((item, index) => {
+      tl.from(item, {
+        y: "-=10rem",
+        opacity: 0,
+        duration: 2,
+        delay: index * 0.25,
+        ease: "sine.out"
+      }, 'sin')
+      // .to(item, {
+      //   x: "+=5rem",
+      //   y: "-=3rem",
+      //   opacity: 0,
+      //   delay: 7,
+      //   duration: 2,
+      //   ease: "power1.out",
+      // }, 'sin')
+    })
+
+    tl.play();
+  }
+  //<==
 })
