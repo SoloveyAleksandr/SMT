@@ -1713,14 +1713,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const animList = gsap.utils.toArray('.type-info-head-img_animated-js');
     const tl = gsap.timeline({
       // repeat: -1,
-      delay: 2,
+      delay: 1,
       // repeatDelay: 1,
       scrollTrigger: {
         trigger: ".type-info-head",
         start: "top top",
         end: "bottom bottom",
         toggleActions: "none reverse play none",
-        markers: true,
+        // markers: true,
       }
     });
 
