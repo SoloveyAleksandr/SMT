@@ -912,7 +912,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  if (document.querySelector('.resume-form')) {
+  if (document.querySelector('.resume-form-form')) {
     const fileInput = document.querySelector('.resume-form-resume__input');
     const fileName = document.querySelector('.resume-form-resume__file');
 

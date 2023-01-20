@@ -187,58 +187,41 @@
     </ul>
 
     <div class="vacancy-info">
-      <div class="vacancy-info-wrapper">
-        <div class="vacancy-info-inner">
-          <h3 class="vacancy-info__title">
-            Работать с нами выгодно, потому что:
-          </h3>
+      <div class="resume-form-form-wrapper form-box vacancy-info-form">
+        <form action="#" class="resume-form-form form">
+          <div class="form-send">
+            <h6 class="form-send__title">Спасибо!</h6>
+            <p class="form-send__description">
+              Заявка отправлена. Мы свяжемся с вами в ближайшее время и обсудим детали
+            </p>
+          </div>
+          <div class="vacancy-info-form-inner">
+            <h6 class="vacancy-info-form-inner__title">Хотите у нас работать?</h6>
+            <p class="vacancy-info-form-inner__text">
+              Отправьте резюме, и мы свяжемся с вами
+            </p>
+          </div>
+          <input class="form__input" type="text" placeholder="Имя">
+          <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
 
-          <ul class="vacancy-info__list">
-            <li class="vacancy-info__item">
-              <p class="vacancy-info-list-item__text vacancy-info-list-item__text_mark">
-                Мы стабильная, активно развивающаяся компания;
-              </p>
-            </li>
+          <label class="resume-form-resume__label">
+            + Прикрепить резюме
+            <span class="resume-form-resume__file"></span>
+            <input class="resume-form-resume__input" type="file" name="resume" id="resume-form-resume">
+          </label>
 
-            <li class="vacancy-info__item">
-              <p class="vacancy-info-list-item__text vacancy-info-list-item__text_mark">
-                Официальное трудоустройство с 1-го дня;
-              </p>
-            </li>
-
-            <li class="vacancy-info__item">
-              <p class="vacancy-info-list-item__text vacancy-info-list-item__text_mark">
-                Испытательный срок - 1 месяц;
-              </p>
-            </li>
-
-            <li class="vacancy-info__item">
-              <p class="vacancy-info-list-item__text vacancy-info-list-item__text_mark">
-                Возможность влиять на уровень з/п;
-              </p>
-            </li>
-
-            <li class="vacancy-info__item">
-              <p class="vacancy-info-list-item__text vacancy-info-list-item__text_mark">
-                График работы: с 9.00 до 17.30, при командировках - ненормируемый;
-              </p>
-            </li>
-
-            <li class="vacancy-info__item">
-              <p class="vacancy-info-list-item__text vacancy-info-list-item__text_mark">
-                Комфортный офис в Минске, недалеко от ж.д. вокзала;
-              </p>
-            </li>
-
-            <li class="vacancy-info__item">
-              <p class="vacancy-info-list-item__text vacancy-info-list-item__text_mark">
-                Дружный коллектив.
-              </p>
-            </li>
-          </ul>
-        </div>
+          <input class="form__checkbox" type="checkbox" name="checkbox" id="resume-form-form-checkbox">
+          <label class="form__label" for="resume-form-form-checkbox">
+            <span class="form__label-checkbox">
+              <svg class="form__label-icon">
+                <use href="#check-icon"></use>
+              </svg>
+            </span>
+            Согласен с обработкой персональных данных
+          </label>
+          <button class="form__btn default-btn">Отправить резюме</button>
+        </form>
       </div>
     </div>
-
   </div>
 </section>

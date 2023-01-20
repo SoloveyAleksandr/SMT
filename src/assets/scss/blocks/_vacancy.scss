@@ -118,6 +118,8 @@
   }
 
   &-info {
+    height: 100%;
+
     @include breakpoint($cos-bp) {
       width: 100%;
       display: flex;
@@ -238,6 +240,26 @@
               left: 0;
             }
           }
+        }
+      }
+    }
+
+    &-form {
+
+      &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+        &__title {
+          font-size: 4rem;
+          text-align: center;
+        }
+
+        &__text {
+          text-align: center;
+          font-size: 2rem;
         }
       }
     }
