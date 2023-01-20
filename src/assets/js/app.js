@@ -1217,12 +1217,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const btns = gsap.utils.toArray('.contacts-head-buttons__btn');
+    const map = document.querySelector('.contacts-map__frame');
     btns.forEach(btn => {
       btn.onclick = () => {
         btns.forEach(b => {
           b.classList.remove('_active');
         })
         btn.classList.add('_active');
+        if (map) {
+          const src = btn.getAttribute('data-src');
+          map.src = src;
+        }
       }
     })
 
@@ -1260,6 +1265,10 @@ document.addEventListener("DOMContentLoaded", () => {
             swiper.slideTo(index + 1);
           }
         });
+        if (map) {
+          const src = item.getAttribute('data-src');
+          map.src = src;
+        }
       }
     }
 
