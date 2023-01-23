@@ -1273,6 +1273,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     new SliderSelect('.contacts');
+
+    const mapBtns = gsap.utils.toArray('.contacts-swiper-slide-list-item__btn');
+    const schameContainer = document.querySelector('.contacts-scheme');
+    const schameBg = document.querySelector('.contacts-scheme-bg');
+    const schameBtn = document.querySelector('.contacts-scheme-map__btn');
+    const schameMap = document.querySelector('.contacts-scheme-map__frame');
+
+    if (schameContainer && schameBg && schameBtn && schameMap && mapBtns) {
+      const closeMap = () => {
+        schameContainer.classList.remove('_active');
+      }
+
+      const openMap = (target) => {
+        const src = target.getAttribute('data-src');
+        schameMap.src = src;
+        schameContainer.classList.add('_active');
+      }
+
+      schameBg.onclick = closeMap;
+      schameBtn.onclick = closeMap;
+
+      mapBtns.forEach(btn => {
+        btn.onclick = (e) => openMap(e.target);
+      })
+    }
   }
 
   if (document.querySelector('.documentation')) {
