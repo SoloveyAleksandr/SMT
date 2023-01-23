@@ -1785,5 +1785,44 @@ document.addEventListener("DOMContentLoaded", () => {
       tl.play();
     }
   }
+
+  if (document.querySelector('.type-info-head-img_animated-js_opacity')) {
+    const animList = gsap.utils.toArray('.type-info-head-img_animated-js_opacity');
+
+    if (window.matchMedia("(max-width: 1330px)").matches) {
+      const tl = gsap.timeline({
+        delay: 1,
+      });
+
+      animList.forEach((item, index) => {
+        tl.from(item, {
+          opacity: 0,
+          duration: 2,
+          ease: "sine.out"
+        })
+      })
+
+    } else if (window.matchMedia("(min-width: 1331px)").matches) {
+      const tl = gsap.timeline({
+        delay: 1,
+        scrollTrigger: {
+          trigger: ".type-info-head",
+          start: "top top",
+          end: "bottom bottom",
+          toggleActions: "none reverse play none",
+        }
+      });
+
+      animList.forEach((item, index) => {
+        tl.from(item, {
+          opacity: 0,
+          duration: 2,
+          ease: "sine.out"
+        })
+      })
+
+      tl.play();
+    }
+  }
   //<==
 })
