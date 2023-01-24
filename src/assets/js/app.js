@@ -1293,8 +1293,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const openMap = (target) => {
         const src = target.getAttribute('data-src');
-        schameMap.src = src;
         schameContainer.classList.add('_active');
+        if (schameMap.src !== src) {
+          schameMap.src = src;
+        }
       }
 
       schameBg.onclick = closeMap;
