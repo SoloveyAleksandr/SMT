@@ -12,6 +12,13 @@
 
     <div class="catalog-all-inner">
       <form class="catalogue-form catalog-all-form" action="#">
+        <div class="form-send">
+          <h6 class="form-send__title">Спасибо!</h6>
+          <p class="form-send__description">
+            Заявка отправлена. Мы свяжемся с вами в ближайшее время и обсудим детали
+          </p>
+        </div>
+
         <h5 class="catalogue-form__title">Остались вопросы?</h5>
 
         <h6 class="catalogue-form__subtitle">Заполните форму, и вы свяжемся с вами в течение 2 часов в рабочее
@@ -56,16 +63,16 @@
           </ul>
         </div>
 
-        <input class="form__checkbox" type="checkbox" name="checkbox" id="order-form-checkbox">
-        <label class="form__label" for="order-form-checkbox">
+        <label class="form__label">
           <span class="form__label-checkbox">
             <svg class="form__label-icon">
               <use href="#check-icon"></use>
             </svg>
           </span>
           Согласен с обработкой персональных данных
+          <input class="form__checkbox" type="checkbox" name="checkbox">
         </label>
-        <button class="form__btn default-btn" type="submit">Оставить заявку</button>
+        <button class="form__btn default-btn" type="submit" data-form-send>Оставить заявку</button>
       </form>
 
       <ul class="catalog-all-list">

@@ -274,13 +274,11 @@ body {
   &__checkbox {
     display: none;
 
-    &:checked {
-      +label {
-        .form__label-checkbox {
-          background-color: $green;
-        }
-      }
-    }
+    // &:checked+label {
+    //   .form__label-checkbox {
+    //     background-color: $green;
+    //   }
+    // }
   }
 
   &__label {
@@ -291,6 +289,12 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    &._checked & {
+      &-checkbox {
+        background-color: $green;
+      }
+    }
 
     &-checkbox {
       width: 2rem;

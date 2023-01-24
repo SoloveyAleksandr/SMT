@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   class Select {
     constructor(wrapper) {
-      this.wrapper = document.querySelector(wrapper);
+      this.wrapper = wrapper;
       this.btn = this.wrapper.querySelector('.custom-select-btn');
       this.btnText = this.btn.querySelector('.custom-select-btn__text');
       this.list = this.wrapper.querySelector('.custom-select-list');
@@ -217,8 +217,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  const orderSquareSelect = document.querySelector('#square-select') && new Select('#square-select');
-  const orderRegionSelect = document.querySelector('#region-select') && new Select('#region-select');
+  // const orderSquareSelect = document.querySelector('#square-select') && new Select('#square-select');
+  // const orderRegionSelect = document.querySelector('#region-select') && new Select('#region-select');
+  const customSelectWrappers = gsap.utils.toArray(".custom-select-wrapper");
+  if (customSelectWrappers.length > 0) {
+    customSelectWrappers.forEach(wrapper => {
+      new Select(wrapper);
+    })
+  }
 
 
   class DropdownBtn {
@@ -1838,6 +1844,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     formSubmitBtns.forEach(btn => {
       btn.addEventListener("click", (e) => activeSend(e))
+    })
+  }
+
+  const formLabels = gsap.utils.toArray(".form__label");
+  if (formLabels.length > 0) {
+    formLabels.forEach(label => {
+      const checkbox = label.querySelector(".form__checkbox");
+      label.addEventListener("click", () => {
+        if (checkbox.checked) {
+          label.classList.add("_checked");
+        } else {
+          label.classList.remove("_checked");
+        }
+      })
     })
   }
   //<==

@@ -210,16 +210,17 @@
             <input class="resume-form-resume__input" type="file" name="resume" id="resume-form-resume">
           </label>
 
-          <input class="form__checkbox" type="checkbox" name="checkbox" id="resume-form-form-checkbox">
-          <label class="form__label" for="resume-form-form-checkbox">
+
+          <label class="form__label">
             <span class="form__label-checkbox">
               <svg class="form__label-icon">
                 <use href="#check-icon"></use>
               </svg>
             </span>
             Согласен с обработкой персональных данных
+            <input class="form__checkbox" type="checkbox" name="checkbox">
           </label>
-          <button class="form__btn default-btn">Отправить резюме</button>
+          <button type="submit" class="form__btn default-btn" data-form-send>Отправить резюме</button>
         </form>
       </div>
     </div>

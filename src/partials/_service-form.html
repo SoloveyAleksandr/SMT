@@ -21,16 +21,16 @@
         <h6 class="form__title">Заказать звонок</h6>
         <input class="form__input" type="text" placeholder="Имя">
         <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
-        <input class="form__checkbox" type="checkbox" name="checkbox" id="service-form-form-checkbox">
-        <label class="form__label" for="service-form-form-checkbox">
+        <label class="form__label">
           <span class="form__label-checkbox">
             <svg class="form__label-icon">
               <use href="#check-icon"></use>
             </svg>
           </span>
           Согласен с обработкой персональных данных
+          <input class="form__checkbox" type="checkbox" name="checkbox">
         </label>
-        <button class="form__btn default-btn">Заказать звонок</button>
+        <button type="button" class="form__btn default-btn" data-form-send>Заказать звонок</button>
       </form>
     </div>
   </div>

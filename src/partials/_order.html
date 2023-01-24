@@ -22,7 +22,7 @@
         <input class="form__input" type="text" placeholder="Имя">
         <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
 
-        <div class="custom-select-wrapper order-select-wrapper" id="square-select">
+        <div class="custom-select-wrapper order-select-wrapper">
           <input class="custom-select__input" type="text" name="square">
           <button class="custom-select-btn" type="button">
             <span class="custom-select-btn__text placeholder"></span>
@@ -40,7 +40,7 @@
           </ul>
         </div>
 
-        <div class="custom-select-wrapper order-select-wrapper" id="region-select">
+        <div class="custom-select-wrapper order-select-wrapper">
           <input class="custom-select__input" type="text" name="square">
           <button class="custom-select-btn" type="button">
             <span class="custom-select-btn__text placeholder"></span>
@@ -58,16 +58,16 @@
           </ul>
         </div>
 
-        <input class="form__checkbox" type="checkbox" name="checkbox" id="order-form-checkbox">
-        <label class="form__label" for="order-form-checkbox">
+        <label class="form__label">
           <span class="form__label-checkbox">
             <svg class="form__label-icon">
               <use href="#check-icon"></use>
             </svg>
           </span>
           Согласен с обработкой персональных данных
+          <input class="form__checkbox" type="checkbox" name="checkbox">
         </label>
-        <button class="form__btn default-btn">Заказать звонок</button>
+        <button type="submit" class="form__btn default-btn" data-form-send>Заказать звонок</button>
       </form>
     </div>
   </div>
