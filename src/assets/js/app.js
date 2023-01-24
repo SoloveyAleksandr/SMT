@@ -1826,8 +1826,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //<==
 
+  // FORMS SEND
+  const formSubmitBtns = gsap.utils.toArray("[data-form-send]");
+
+  if (formSubmitBtns.length > 0) {
+    const activeSend = (e) => {
+      e.preventDefault()
+      const send = e.target.parentElement.querySelector(".form-send");
+      send.classList.add("_active");
+    }
+
+    formSubmitBtns.forEach(btn => {
+      btn.addEventListener("click", (e) => activeSend(e))
+    })
+  }
+  //<==
+
   // MODAL FROM
   const requestForm = document.querySelector(".modal-request-form");
+  const priceForm = document.querySelector(".modal-price-form");
 
   class ModalForm {
     constructor(wrapper) {
@@ -1835,6 +1852,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.bg = this.wrapper.querySelector('.modal-form-bg');
       this.btn = this.wrapper.querySelector('.modal-form-btn');
       this.container = this.wrapper.querySelector('.modal-form-container');
+      this.send = this.wrapper.querySelector('.form-send');
       this.init();
     }
 
@@ -1845,6 +1863,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     close() {
       this.wrapper.classList.remove("_active");
+      this.send.classList.remove("_active");
     }
 
     open() {
@@ -1852,11 +1871,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  if (priceForm) {
+    const modalPriceForm = new ModalForm(priceForm);
+    const priceOpenBtns = gsap.utils.toArray("[data-open-price]");
+
+    priceOpenBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        modalPriceForm.open();
+      })
+    })
+  }
+
   if (requestForm) {
     const modalRequestForm = new ModalForm(requestForm);
-    const requestOpenBtns = gsap.utils.toArray("[data-open-request]");
+    const priceOpenBtns = gsap.utils.toArray("[data-open-request]");
 
-    requestOpenBtns.forEach(btn => {
+    priceOpenBtns.forEach(btn => {
       btn.addEventListener("click", () => {
         modalRequestForm.open();
       })

@@ -185,6 +185,7 @@ body {
 
   &-send {
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -198,6 +199,7 @@ body {
     //  _active
     opacity: 0;
     pointer-events: none;
+    transition: .3s;
 
     &__title {
       font-size: 4rem;
