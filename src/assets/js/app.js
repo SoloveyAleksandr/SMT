@@ -1825,4 +1825,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   //<==
+
+  // MODAL FROM
+  const requestForm = document.querySelector(".modal-request-form");
+
+  class ModalForm {
+    constructor(wrapper) {
+      this.wrapper = wrapper;
+      this.bg = this.wrapper.querySelector('.modal-form-bg');
+      this.btn = this.wrapper.querySelector('.modal-form-btn');
+      this.container = this.wrapper.querySelector('.modal-form-container');
+      this.init();
+    }
+
+    init() {
+      this.bg.onclick = this.close.bind(this);
+      this.btn.onclick = this.close.bind(this);
+    }
+
+    close() {
+      this.wrapper.classList.remove("_active");
+    }
+
+    open() {
+      this.wrapper.classList.add("_active");
+    }
+  }
+
+  if (requestForm) {
+    const modalRequestForm = new ModalForm(requestForm);
+    const requestOpenBtns = gsap.utils.toArray("[data-open-request]");
+
+    requestOpenBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        modalRequestForm.open();
+      })
+    })
+  }
+  //<=
 })

@@ -49,6 +49,8 @@ svg {
   transition: all 0.1s linear;
 }
 
+@import "./blocks/modal-form";
+
 // 404
 @import "./blocks/_error";
 

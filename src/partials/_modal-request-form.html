@@ -1,0 +1,70 @@
+<div class="modal-form modal-request-form">
+  <div class="modal-form-bg"></div>
+
+  <div class="modal-form-container">
+    <button type="button" class="modal-form-btn">
+      <svg>
+        <use href="#close-icon"></use>
+      </svg>
+    </button>
+
+    <form action="#" class="order-form form">
+      <div class="form-send">
+        <h6 class="form-send__title">Спасибо!</h6>
+        <p class="form-send__description">
+          Заявка отправлена. Мы свяжемся с вами в ближайшее время и обсудим детали
+        </p>
+      </div>
+      <h6 class="form__title">Оставить заявку</h6>
+      <input class="form__input" type="text" placeholder="Имя">
+      <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
+
+      <div class="custom-select-wrapper order-select-wrapper" id="square-select">
+        <input class="custom-select__input" type="text" name="square">
+        <button class="custom-select-btn" type="button">
+          <span class="custom-select-btn__text placeholder"></span>
+          <svg class="custom-select-btn__icon">
+            <use href="#select-arrow-icon"></use>
+          </svg>
+        </button>
+
+        <ul class="custom-select-list">
+          <li class="custom-select-list__item placeholder">Площадь</li>
+          <li class="custom-select-list__item" data-value="1">1</li>
+          <li class="custom-select-list__item" data-value="2">2</li>
+          <li class="custom-select-list__item" data-value="3">3</li>
+          <li class="custom-select-list__item" data-value="4">4</li>
+        </ul>
+      </div>
+
+      <div class="custom-select-wrapper order-select-wrapper" id="region-select">
+        <input class="custom-select__input" type="text" name="square">
+        <button class="custom-select-btn" type="button">
+          <span class="custom-select-btn__text placeholder"></span>
+          <svg class="custom-select-btn__icon">
+            <use href="#select-arrow-icon"></use>
+          </svg>
+        </button>
+
+        <ul class="custom-select-list">
+          <li class="custom-select-list__item placeholder">Регион</li>
+          <li class="custom-select-list__item" data-value="1">1</li>
+          <li class="custom-select-list__item" data-value="2">2</li>
+          <li class="custom-select-list__item" data-value="3">3</li>
+          <li class="custom-select-list__item" data-value="4">4</li>
+        </ul>
+      </div>
+
+      <input class="form__checkbox" type="checkbox" name="checkbox" id="order-form-checkbox">
+      <label class="form__label" for="order-form-checkbox">
+        <span class="form__label-checkbox">
+          <svg class="form__label-icon">
+            <use href="#check-icon"></use>
+          </svg>
+        </span>
+        Согласен с обработкой персональных данных
+      </label>
+      <button class="form__btn default-btn">Оставить заявку</button>
+    </form>
+  </div>
+</div>
