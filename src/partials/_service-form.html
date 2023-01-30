@@ -21,6 +21,42 @@
         <h6 class="form__title">Заказать звонок</h6>
         <input class="form__input" type="text" placeholder="Имя">
         <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
+        <div class="custom-select-wrapper order-select-wrapper">
+          <input class="custom-select__input" type="text" name="square">
+          <button class="custom-select-btn" type="button">
+            <span class="custom-select-btn__text placeholder"></span>
+            <svg class="custom-select-btn__icon">
+              <use href="#select-arrow-icon"></use>
+            </svg>
+          </button>
+
+          <ul class="custom-select-list">
+            <li class="custom-select-list__item placeholder">Площадь</li>
+            <li class="custom-select-list__item" data-value="1">1</li>
+            <li class="custom-select-list__item" data-value="2">2</li>
+            <li class="custom-select-list__item" data-value="3">3</li>
+            <li class="custom-select-list__item" data-value="4">4</li>
+          </ul>
+        </div>
+
+        <div class="custom-select-wrapper order-select-wrapper">
+          <input class="custom-select__input" type="text" name="square">
+          <button class="custom-select-btn" type="button">
+            <span class="custom-select-btn__text placeholder"></span>
+            <svg class="custom-select-btn__icon">
+              <use href="#select-arrow-icon"></use>
+            </svg>
+          </button>
+
+          <ul class="custom-select-list">
+            <li class="custom-select-list__item placeholder">Регион</li>
+            <li class="custom-select-list__item" data-value="1">1</li>
+            <li class="custom-select-list__item" data-value="2">2</li>
+            <li class="custom-select-list__item" data-value="3">3</li>
+            <li class="custom-select-list__item" data-value="4">4</li>
+          </ul>
+        </div>
+
         <label class="form__label">
           <span class="form__label-checkbox">
             <svg class="form__label-icon">
@@ -30,7 +66,7 @@
           Согласен с обработкой персональных данных
           <input class="form__checkbox" type="checkbox" name="checkbox">
         </label>
-        <button type="button" class="form__btn default-btn" data-form-send>Заказать звонок</button>
+        <button type="submit" class="form__btn default-btn" data-form-send>Заказать звонок</button>
       </form>
     </div>
   </div>
