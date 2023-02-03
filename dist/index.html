@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge unsafe-eval 'unsafe-inline'">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="">
+  <title>DEFAULT</title>
+  
+  
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@800&family=Jost:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.min.css"></head>
+
+<body>
+  <svg style="display: none;">
+  
+    <symbol id="arrow-icon" viewBox="0 0 62 15" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1 6.5C0.447715 6.5 0 6.94772 0 7.5C0 8.05228 0.447715 8.5 1 8.5V6.5ZM61.7071 8.20711C62.0976 7.81658 62.0976 7.18342 61.7071 6.79289L55.3431 0.428932C54.9526 0.0384079 54.3195 0.0384079 53.9289 0.428932C53.5384 0.819456 53.5384 1.45262 53.9289 1.84315L59.5858 7.5L53.9289 13.1569C53.5384 13.5474 53.5384 14.1805 53.9289 14.5711C54.3195 14.9616 54.9526 14.9616 55.3431 14.5711L61.7071 8.20711ZM1 8.5H61V6.5H1V8.5Z" />
+    </symbol>
+  
+    <symbol id="check-icon" enable-background="new 0 0 470 470" viewBox="0 0 470 470" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <g>
+          <path
+            d="m348.2 162.6-127.7 133.3-66.6-63.9c-7.7-7.3-19.8-7.1-27.2.6-7.3 7.7-7.1 19.8.6 27.2l80.5 77.2c7.7 7.3 19.8 7.1 27.2-.6l141-147.2c7.5-7.5 7.4-19.7-.1-27.2s-19.7-7.4-27.2.1c-.1.1-.3.3-.5.5z">
+          </path>
+        </g>
+      </g>
+    </symbol>
+  
+    <symbol id="select-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <g id="Layer_5" data-name="Layer 5">
+        <path
+          d="m28.35 32 19.32-19.33a5.66 5.66 0 1 0 -8-8l-23.34 23.33a5.68 5.68 0 0 0 0 8l23.33 23.34a5.66 5.66 0 0 0 8-8z">
+        </path>
+      </g>
+    </symbol>
+  
+    <symbol id="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 41.999 41.999" xml:space="preserve">
+      <path
+        d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40 c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20 c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z">
+      </path>
+    </symbol>
+  
+    <symbol id="arrow-drop" fill="none" viewBox="0 0 18 10" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 0.5L9 8.5L17 0.5" stroke-linecap="round" />
+    </symbol>
+  
+    <symbol id="arrow-left" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M61 6.5C61.5523 6.5 62 6.94772 62 7.5C62 8.05228 61.5523 8.5 61 8.5V6.5ZM0.292892 8.20711C-0.0976334 7.81658 -0.0976334 7.18342 0.292892 6.79289L6.65685 0.428932C7.04737 0.0384078 7.68054 0.0384078 8.07106 0.428932C8.46159 0.819457 8.46159 1.45262 8.07106 1.84315L2.41421 7.5L8.07106 13.1569C8.46159 13.5474 8.46159 14.1805 8.07106 14.5711C7.68054 14.9616 7.04737 14.9616 6.65685 14.5711L0.292892 8.20711ZM61 8.5H0.999996V6.5H61V8.5Z"
+        fill="#212524" />
+    </symbol>
+  
+    <symbol id="arrow-right" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1 6.5C0.447715 6.5 0 6.94772 0 7.5C0 8.05228 0.447715 8.5 1 8.5V6.5ZM61.7071 8.20711C62.0976 7.81658 62.0976 7.18342 61.7071 6.79289L55.3431 0.428932C54.9526 0.0384078 54.3195 0.0384078 53.9289 0.428932C53.5384 0.819457 53.5384 1.45262 53.9289 1.84315L59.5858 7.5L53.9289 13.1569C53.5384 13.5474 53.5384 14.1805 53.9289 14.5711C54.3195 14.9616 54.9526 14.9616 55.3431 14.5711L61.7071 8.20711ZM1 8.5H61V6.5H1V8.5Z"
+        fill="#212524" />
+    </symbol>
+  
+    <symbol id="close-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24.6654 24.6663L1.33203 1.33301" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M24.6654 1.33301L1.33203 24.6663" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+  
+  </svg>
+  <div class="page">
+
+    <div class="modal-form modal-request-form">
+      <div class="modal-form-bg"></div>
+    
+      <div class="modal-form-container">
+        <button type="button" class="modal-form-btn">
+          <svg>
+            <use href="#close-icon"></use>
+          </svg>
+        </button>
+    
+        <form action="#" class="order-form form">
+          <div class="form-send">
+            <h6 class="form-send__title">Спасибо!</h6>
+            <p class="form-send__description">
+              Заявка отправлена. Мы свяжемся с вами в ближайшее время и обсудим детали
+            </p>
+          </div>
+          <h6 class="form__title">Оставить заявку</h6>
+          <input class="form__input" type="text" placeholder="Имя">
+          <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
+    
+          <div class="custom-select-wrapper order-select-wrapper" id="square-select">
+            <input class="custom-select__input" type="text" name="square">
+            <button class="custom-select-btn" type="button">
+              <span class="custom-select-btn__text placeholder"></span>
+              <svg class="custom-select-btn__icon">
+                <use href="#select-arrow-icon"></use>
+              </svg>
+            </button>
+    
+            <ul class="custom-select-list">
+              <li class="custom-select-list__item placeholder">Площадь</li>
+              <li class="custom-select-list__item" data-value="1">1</li>
+              <li class="custom-select-list__item" data-value="2">2</li>
+              <li class="custom-select-list__item" data-value="3">3</li>
+              <li class="custom-select-list__item" data-value="4">4</li>
+            </ul>
+          </div>
+    
+          <div class="custom-select-wrapper order-select-wrapper" id="region-select">
+            <input class="custom-select__input" type="text" name="square">
+            <button class="custom-select-btn" type="button">
+              <span class="custom-select-btn__text placeholder"></span>
+              <svg class="custom-select-btn__icon">
+                <use href="#select-arrow-icon"></use>
+              </svg>
+            </button>
+    
+            <ul class="custom-select-list">
+              <li class="custom-select-list__item placeholder">Регион</li>
+              <li class="custom-select-list__item" data-value="1">1</li>
+              <li class="custom-select-list__item" data-value="2">2</li>
+              <li class="custom-select-list__item" data-value="3">3</li>
+              <li class="custom-select-list__item" data-value="4">4</li>
+            </ul>
+          </div>
+    
+          <label class="form__label">
+            <span class="form__label-checkbox">
+              <svg class="form__label-icon">
+                <use href="#check-icon"></use>
+              </svg>
+            </span>
+            Согласен с обработкой персональных данных
+            <input class="form__checkbox" type="checkbox" name="checkbox">
+          </label>
+          <button type="submit" class="form__btn default-btn" data-form-send>Оставить заявку</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-form modal-price-form">
+      <div class="modal-form-bg"></div>
+    
+      <div class="modal-form-container">
+        <button type="button" class="modal-form-btn">
+          <svg>
+            <use href="#close-icon"></use>
+          </svg>
+        </button>
+    
+        <form action="#" class="order-form form">
+          <div class="form-send">
+            <h6 class="form-send__title">Спасибо!</h6>
+            <p class="form-send__description">
+              Заявка отправлена. Мы свяжемся с вами в ближайшее время и обсудим детали
+            </p>
+          </div>
+          <h6 class="form__title">Заказать звонок</h6>
+          <input class="form__input" type="text" placeholder="Имя">
+          <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
+    
+          <label class="form__label">
+            <span class="form__label-checkbox">
+              <svg class="form__label-icon">
+                <use href="#check-icon"></use>
+              </svg>
+            </span>
+            Согласен с обработкой персональных данных
+            <input class="form__checkbox" type="checkbox" name="checkbox">
+          </label>
+          <button type="submit" class="form__btn default-btn" data-form-send>Заказать звонок</button>
+        </form>
+      </div>
+    </div>
+    <style>
+      .index-page-link {
+        color: white;
+        font-size: 2rem;
+        font-weight: 400;
+        transition: .3s;
+      }
+    
+      .index-page-link:hover {
+        opacity: 0.8;
+      }
+    </style>
+    
+    <div style="
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(124deg, rgba(0,107,20,1) 0%, rgba(0,113,91,1) 50%, rgba(0,146,255,1) 100%);
+    ">
+    
+      <h6 style="color: white; font-size: 3rem;">Варианты меню:</h6>
+    
+      <a class="index-page-link" href="menu.html" target="_blank">меню</a>
+    
+      <h6 style="color: white; font-size: 3rem;">Страницы сайта:</h6>
+    
+      <a class="index-page-link" href="error.html" target="_blank">404</a>
+    
+      <a class="index-page-link" href="about.html" target="_blank">О компании</a>
+    
+      <a class="index-page-link" href="service.html" target="_blank">Услуги</a>
+    
+      <a class="index-page-link" href="example.html" target="_blank">Пирмеры работ</a>
+    
+      <a class="index-page-link" href="cases.html" target="_blank">Кейсы</a>
+    
+      <a class="index-page-link" href="case-info.html" target="_blank">Информация по кейсу</a>
+    
+      <a class="index-page-link" href="questions.html" target="_blank">Вопрос-ответ</a>
+    
+      <a class="index-page-link" href="news.html" target="_blank">Все новости</a>
+    
+      <a class="index-page-link" href="news-item.html" target="_blank">Новость</a>
+    
+      <a class="index-page-link" href="contacts.html" target="_blank">Контакты</a>
+    
+      <a class="index-page-link" href="documentation.html" target="_blank">Техническая документация</a>
+    
+      <a class="index-page-link" href="video.html" target="_blank">Видео</a>
+    
+      <a class="index-page-link" href="catalogue.html" target="_blank">Каталог (разводящая страница)</a>
+    
+      <a class="index-page-link" href="catalog-all.html" target="_blank">Каталог материалов и инструментов (категории)</a>
+    
+      <a class="index-page-link" href="materials.html" target="_blank">Каталог материалов и инструментов (выбрана
+        категория)</a>
+    
+      <a class="index-page-link" href="material.html" target="_blank">Конкретный материал</a>
+    
+      <a class="index-page-link" href="solutions.html" target="_blank"> Готовые решения</a>
+    
+      <a class="index-page-link" href="object.html" target="_blank"> Каталог объектов - выбран объект </a>
+    
+      <a class="index-page-link" href="type.html" target="_blank"> Типовые конструкции</a>
+    
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>

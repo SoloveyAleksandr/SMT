@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge unsafe-eval 'unsafe-inline'">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="">
+  <title>DEFAULT</title>
+  
+  
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@800&family=Jost:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.min.css"></head>
+
+<body>
+  <svg style="display: none;">
+  
+    <symbol id="arrow-icon" viewBox="0 0 62 15" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1 6.5C0.447715 6.5 0 6.94772 0 7.5C0 8.05228 0.447715 8.5 1 8.5V6.5ZM61.7071 8.20711C62.0976 7.81658 62.0976 7.18342 61.7071 6.79289L55.3431 0.428932C54.9526 0.0384079 54.3195 0.0384079 53.9289 0.428932C53.5384 0.819456 53.5384 1.45262 53.9289 1.84315L59.5858 7.5L53.9289 13.1569C53.5384 13.5474 53.5384 14.1805 53.9289 14.5711C54.3195 14.9616 54.9526 14.9616 55.3431 14.5711L61.7071 8.20711ZM1 8.5H61V6.5H1V8.5Z" />
+    </symbol>
+  
+    <symbol id="check-icon" enable-background="new 0 0 470 470" viewBox="0 0 470 470" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <g>
+          <path
+            d="m348.2 162.6-127.7 133.3-66.6-63.9c-7.7-7.3-19.8-7.1-27.2.6-7.3 7.7-7.1 19.8.6 27.2l80.5 77.2c7.7 7.3 19.8 7.1 27.2-.6l141-147.2c7.5-7.5 7.4-19.7-.1-27.2s-19.7-7.4-27.2.1c-.1.1-.3.3-.5.5z">
+          </path>
+        </g>
+      </g>
+    </symbol>
+  
+    <symbol id="select-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <g id="Layer_5" data-name="Layer 5">
+        <path
+          d="m28.35 32 19.32-19.33a5.66 5.66 0 1 0 -8-8l-23.34 23.33a5.68 5.68 0 0 0 0 8l23.33 23.34a5.66 5.66 0 0 0 8-8z">
+        </path>
+      </g>
+    </symbol>
+  
+    <symbol id="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 41.999 41.999" xml:space="preserve">
+      <path
+        d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40 c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20 c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z M7.5,39.095V2.904l26.239,18.096L7.5,39.095z">
+      </path>
+    </symbol>
+  
+    <symbol id="arrow-drop" fill="none" viewBox="0 0 18 10" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 0.5L9 8.5L17 0.5" stroke-linecap="round" />
+    </symbol>
+  
+    <symbol id="arrow-left" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M61 6.5C61.5523 6.5 62 6.94772 62 7.5C62 8.05228 61.5523 8.5 61 8.5V6.5ZM0.292892 8.20711C-0.0976334 7.81658 -0.0976334 7.18342 0.292892 6.79289L6.65685 0.428932C7.04737 0.0384078 7.68054 0.0384078 8.07106 0.428932C8.46159 0.819457 8.46159 1.45262 8.07106 1.84315L2.41421 7.5L8.07106 13.1569C8.46159 13.5474 8.46159 14.1805 8.07106 14.5711C7.68054 14.9616 7.04737 14.9616 6.65685 14.5711L0.292892 8.20711ZM61 8.5H0.999996V6.5H61V8.5Z"
+        fill="#212524" />
+    </symbol>
+  
+    <symbol id="arrow-right" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1 6.5C0.447715 6.5 0 6.94772 0 7.5C0 8.05228 0.447715 8.5 1 8.5V6.5ZM61.7071 8.20711C62.0976 7.81658 62.0976 7.18342 61.7071 6.79289L55.3431 0.428932C54.9526 0.0384078 54.3195 0.0384078 53.9289 0.428932C53.5384 0.819457 53.5384 1.45262 53.9289 1.84315L59.5858 7.5L53.9289 13.1569C53.5384 13.5474 53.5384 14.1805 53.9289 14.5711C54.3195 14.9616 54.9526 14.9616 55.3431 14.5711L61.7071 8.20711ZM1 8.5H61V6.5H1V8.5Z"
+        fill="#212524" />
+    </symbol>
+  
+    <symbol id="close-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24.6654 24.6663L1.33203 1.33301" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M24.6654 1.33301L1.33203 24.6663" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+  
+  </svg>
+  <div class="page">
+
+    <div class="modal-form modal-request-form">
+      <div class="modal-form-bg"></div>
+    
+      <div class="modal-form-container">
+        <button type="button" class="modal-form-btn">
+          <svg>
+            <use href="#close-icon"></use>
+          </svg>
+        </button>
+    
+        <form action="#" class="order-form form">
+          <div class="form-send">
+            <h6 class="form-send__title">Спасибо!</h6>
+            <p class="form-send__description">
+              Заявка отправлена. Мы свяжемся с вами в ближайшее время и обсудим детали
+            </p>
+          </div>
+          <h6 class="form__title">Оставить заявку</h6>
+          <input class="form__input" type="text" placeholder="Имя">
+          <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
+    
+          <div class="custom-select-wrapper order-select-wrapper" id="square-select">
+            <input class="custom-select__input" type="text" name="square">
+            <button class="custom-select-btn" type="button">
+              <span class="custom-select-btn__text placeholder"></span>
+              <svg class="custom-select-btn__icon">
+                <use href="#select-arrow-icon"></use>
+              </svg>
+            </button>
+    
+            <ul class="custom-select-list">
+              <li class="custom-select-list__item placeholder">Площадь</li>
+              <li class="custom-select-list__item" data-value="1">1</li>
+              <li class="custom-select-list__item" data-value="2">2</li>
+              <li class="custom-select-list__item" data-value="3">3</li>
+              <li class="custom-select-list__item" data-value="4">4</li>
+            </ul>
+          </div>
+    
+          <div class="custom-select-wrapper order-select-wrapper" id="region-select">
+            <input class="custom-select__input" type="text" name="square">
+            <button class="custom-select-btn" type="button">
+              <span class="custom-select-btn__text placeholder"></span>
+              <svg class="custom-select-btn__icon">
+                <use href="#select-arrow-icon"></use>
+              </svg>
+            </button>
+    
+            <ul class="custom-select-list">
+              <li class="custom-select-list__item placeholder">Регион</li>
+              <li class="custom-select-list__item" data-value="1">1</li>
+              <li class="custom-select-list__item" data-value="2">2</li>
+              <li class="custom-select-list__item" data-value="3">3</li>
+              <li class="custom-select-list__item" data-value="4">4</li>
+            </ul>
+          </div>
+    
+          <label class="form__label">
+            <span class="form__label-checkbox">
+              <svg class="form__label-icon">
+                <use href="#check-icon"></use>
+              </svg>
+            </span>
+            Согласен с обработкой персональных данных
+            <input class="form__checkbox" type="checkbox" name="checkbox">
+          </label>
+          <button type="submit" class="form__btn default-btn" data-form-send>Оставить заявку</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-form modal-price-form">
+      <div class="modal-form-bg"></div>
+    
+      <div class="modal-form-container">
+        <button type="button" class="modal-form-btn">
+          <svg>
+            <use href="#close-icon"></use>
+          </svg>
+        </button>
+    
+        <form action="#" class="order-form form">
+          <div class="form-send">
+            <h6 class="form-send__title">Спасибо!</h6>
+            <p class="form-send__description">
+              Заявка отправлена. Мы свяжемся с вами в ближайшее время и обсудим детали
+            </p>
+          </div>
+          <h6 class="form__title">Заказать звонок</h6>
+          <input class="form__input" type="text" placeholder="Имя">
+          <input class="form__input" type="text" placeholder="+375 (29) 000-00-00">
+    
+          <label class="form__label">
+            <span class="form__label-checkbox">
+              <svg class="form__label-icon">
+                <use href="#check-icon"></use>
+              </svg>
+            </span>
+            Согласен с обработкой персональных данных
+            <input class="form__checkbox" type="checkbox" name="checkbox">
+          </label>
+          <button type="submit" class="form__btn default-btn" data-form-send>Заказать звонок</button>
+        </form>
+      </div>
+    </div>
+    <header class="header _active">
+      <div class="header-menu-bg"></div>
+      <div class="container">
+        <div class="header-inner">
+          <a href="#" class="header-container header-logo-container">
+            <div class="header-logo logo">
+              <img class="logo__img" src="assets/images/logo.svg" alt="logotype">
+            </div>
+    
+            <h3 class="header__title">
+              Современные <br> материалы и технологии
+            </h3>
+          </a>
+    
+          <div class="header-container header-phone-container">
+            <ul class="header-phone-list">
+              <li class="header-phone-list__item">
+                <a class="header-phone-list__link" href="tel:+375173433353">+375 17 343-33-53</a>
+              </li>
+              <li class="header-phone-list__item">
+                <a class="header-phone-list__link" href="tel:+375297705703">+375 29 770-57-03</a>
+              </li>
+              <li class="header-phone-list__item">
+                <a class="header-phone-list__link" href="tel:+375291699394">+375 29 169-93-94</a>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="header-container">
+            <div class="header-btns">
+              <button class="header-btns__btn default-btn" type="button" data-open-request>Оставить заявку</button>
+              <button class="header-btns__btn default-btn default-btn_light" type="button">Онлайн оплата</button>
+            </div>
+    
+            <button class="header-menu-btn">
+              <span class="header-menu-btn__burger"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <nav class="header-menu">
+        <div class="container">
+          <ul class="header-menu-list">
+            <li class="header-menu-list__item">
+              <a href="#" class="header-nav-list__link">
+                <h6 class="header-menu-list__title">Компания</h6>
+              </a>
+              <ul class="header-nav-list">
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    О компании
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Услуги
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Кейсы
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Фотогалерея
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Видео
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Вопрос-ответ
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Новости
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-list__item">
+              <a href="#" class="header-nav-list__link">
+                <h6 class="header-menu-list__title">Продукция</h6>
+              </a>
+              <ul class="header-nav-list">
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Грунтовки, пропитки
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Ремонтные составы
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Наливные составы
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Краски, лаки
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Разметка
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Полиуретан-цементные составы
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Связующие
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Антистатические покрытия
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Спортивные покрытия
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Кварцевый песок
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Доп. материалы
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Упрочнители бетона
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Сухие смеси
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Мембранообразователи
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-list__item">
+              <a href="#" class="header-nav-list__link">
+                <h6 class="header-menu-list__title">Готовые решения для</h6>
+              </a>
+              <ul class="header-nav-list">
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Автостоянки
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Предприятия торговли
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Медицинские учреждения
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Объекты сельского хозяйства
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Склады, логистические комплексы
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Производственные помещения с высокими химическими и термическими нагрузками
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Холодильники, морозильные камеры
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Производственные помещения с сухими и умеренно влажными технологическими процессами
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Производственные помещения с особо влажными технологическими процессами
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Административные здания и сооружения
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Спортивные сооружения
+                  </a>
+                </li>
+                <li class="header-nav-list__item">
+                  <a href="#" class="header-nav-list__link">
+                    Подготовка оснований
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-menu-list__item header-menu-list__info-item">
+              <div class="header-nav-info">
+                <div class="header-nav-info__contacts">
+                  <h6 class="header-nav-info__title">
+                    220028, г. Минск,
+                    ул. Маяковского 115-615
+                  </h6>
+    
+                  <a href="#" class="header-nav-info__title">
+                    cmt@cmt.by
+                  </a>
+    
+                  <ul class="header-nav-info-list">
+                    <li class="header-nav-info-list__item">
+                      <a href="tel:+375173433353" class="header-nav-info-list__link">
+                        +375 17 343-33-53
+                      </a>
+                    </li>
+                    <li class="header-nav-info-list__item">
+                      <a href="tel:+375297705703" class="header-nav-info-list__link">
+                        +375 29 770-57-03
+                      </a>
+                    </li>
+                    <li class="header-nav-info-list__item">
+                      <a href="tel:+375291699394" class="header-nav-info-list__link">
+                        +375 29 169-93-94
+                      </a>
+                    </li>
+                  </ul>
+                  <button class="header-nav-info-list__btn default-btn" type="button" data-open-request>
+                    Оставить заявку
+                  </button>
+                </div>
+                <a href="#" class="header-nav-info__link default-btn default-btn_light">
+                  Техническая документация
+                </a>
+                <a href="#" class="header-nav-info__link default-btn default-btn_light">
+                  Типовые конструкции
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="news-page">
+        <div class="container">
+    
+            <div class="example-header news-page-head">
+                <a href="index.html" class="example-header__link">
+                    Главная >
+                </a>
+                <h3 class="example-header__title">
+                    Новости
+                </h3>
+            </div>
+    
+            <ul class="news-page-list">
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/service-4.jpg" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            27 мая 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Состоялся ещё один демонстрационно — практический семинар!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            26.05.2022 прошёл очередной семинар для наших клиентов и представителей проектных организаций
+                            на тему «Полимерные покрытия полов для общественно-административных помещений и предприятий
+                            торговли».
+                        </p>
+                    </a>
+                </li>
+    
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/service-1.jpg" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            22 сентября 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Полимерному покрытию СМТ 23 года!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            23 года назад в подземном паркинге было выполнено полимерное эпоксидное покрытие материалами
+                            компании СМТ марки Ризопокс.
+                        </p>
+                    </a>
+                </li>
+    
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/case-5.png" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            19 августа 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Гаражная система на службе Minsk Marriott Hotel!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            Реализован очередной объект с использованием материалов компании СМТ – паркинг
+                            спортивно-развлекательного комплекса «Falcon Club» (Minsk Marriott Hotel).
+                        </p>
+                    </a>
+                </li>
+    
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/service-4.jpg" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            27 мая 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Состоялся ещё один демонстрационно — практический семинар!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            26.05.2022 прошёл очередной семинар для наших клиентов и представителей проектных организаций
+                            на тему «Полимерные покрытия полов для общественно-административных помещений и предприятий
+                            торговли».
+                        </p>
+                    </a>
+                </li>
+    
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/service-1.jpg" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            22 сентября 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Полимерному покрытию СМТ 23 года!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            23 года назад в подземном паркинге было выполнено полимерное эпоксидное покрытие материалами
+                            компании СМТ марки Ризопокс.
+                        </p>
+                    </a>
+                </li>
+    
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/case-5.png" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            19 августа 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Гаражная система на службе Minsk Marriott Hotel!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            Реализован очередной объект с использованием материалов компании СМТ – паркинг
+                            спортивно-развлекательного комплекса «Falcon Club» (Minsk Marriott Hotel).
+                        </p>
+                    </a>
+                </li>
+    
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/service-4.jpg" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            27 мая 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Состоялся ещё один демонстрационно — практический семинар!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            26.05.2022 прошёл очередной семинар для наших клиентов и представителей проектных организаций
+                            на тему «Полимерные покрытия полов для общественно-административных помещений и предприятий
+                            торговли».
+                        </p>
+                    </a>
+                </li>
+    
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/service-1.jpg" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            22 сентября 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Полимерному покрытию СМТ 23 года!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            23 года назад в подземном паркинге было выполнено полимерное эпоксидное покрытие материалами
+                            компании СМТ марки Ризопокс.
+                        </p>
+                    </a>
+                </li>
+    
+                <li class="news-page-list-item">
+                    <a href="#" class="news-page-list-item__link">
+                        <div class="news-page-list-item-img">
+                            <img src="assets/images/case-5.png" alt="news" class="news-page-list-item-img__img">
+                        </div>
+    
+                        <p class="news-page-list-item__date">
+                            19 августа 2022
+                        </p>
+    
+                        <h4 class="news-page-list-item__title">
+                            Гаражная система на службе Minsk Marriott Hotel!
+                        </h4>
+    
+                        <p class="news-page-list-item__text">
+                            Реализован очередной объект с использованием материалов компании СМТ – паркинг
+                            спортивно-развлекательного комплекса «Falcon Club» (Minsk Marriott Hotel).
+                        </p>
+                    </a>
+                </li>
+            </ul>
+    
+            <div class="news-page-btn">
+                <button class="default-btn news-page-btn__btn">Загрузить ещё</button>
+            </div>
+    
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-logo">
+                    <img src="assets/images/logo_white.svg" alt="logo" class="footer-logo__img">
+                </div>
+    
+                <ul class="footer-list">
+                    <li class="footer-list-item footer-list-item__address">
+                        <h3 class="footer__title">
+                            Материалы для устройства и ремонта промышленных полов
+                        </h3>
+    
+                        <div class="footer-info">
+                            <p class="footer-info__text">
+                                Св-во о гос. регистрации № 191116661,
+                                <br>
+                                выд. Мингорисполкомом 14.05.2009г
+                            </p>
+                            <p class="footer-info__text">
+                                Сайт не является интернет-магазином
+                            </p>
+                        </div>
+                    </li>
+    
+                    <li class="footer-list-item">
+                        <ul class="footer-links-list">
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Наливные полы</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Полиуретановые полы Purcem</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Ремонт наливного пола и бетона</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Стяжка пола, самонивелиры</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Краски и лак для бетона</a>
+                            </li>
+                        </ul>
+    
+                        <a class="footer-icon-link" href="#">
+                            Посмотреть все категории
+                            <svg class="footer-icon-link__icon">
+                                <use href="#arrow-icon"></use>
+                            </svg>
+                        </a>
+                    </li>
+    
+                    <li class="footer-list-item">
+                        <ul class="footer-links-list">
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">О компании</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Материалы</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Применение</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Примеры работ</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Вопрос-ответ</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Новости и статьи</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li class="footer-list-item footer-list-item__contacts">
+                        <h4 class="footer__title">
+                            Юридический и почтовый
+                            <br>
+                            адрес: 220028, г. Минск,
+                            <br>
+                            ул. Маяковского 115-615
+                        </h4>
+                        <ul class="footer-links-list footer-phone-list">
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="tel:+375173433353">+375 17 343-33-53</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="tel:+375297705703">+375 29 770-57-03</a>
+                            </li>
+                            <li class="footer-links-list__item">
+                                <a class="footer-links-list__link" href="tel:+375291699394">+375 29 169-93-94</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+    
+                <div class="footer-line footer-line_first"></div>
+    
+                <div class="footer-contacts">
+                    <h6 class="footer-contacts__title footer-contacts__title_first">
+                        ©2016-2021 ЗАО «СМТ-Белмаркет Трейд»
+                    </h6>
+    
+                    <div class="footer-contacts-info">
+                        <h6 class="footer-contacts-info__title">
+                            Юридический и почтовый адрес: 220028, г. Минск, ул. Маяковского 115-615
+                        </h6>
+    
+                        <ul class="footer-contacts-info-list">
+                            <li class="footer-contacts-info-list__item">
+                                <a href="tel:+375173433353" class="footer-contacts-info-list__link">
+                                    +375 17 343-33-53
+                                </a>
+                            </li>
+                            <li class="footer-contacts-info-list__item">
+                                <a href="tel:+375297705703" class="footer-contacts-info-list__link">
+                                    +375 29 770-57-03
+                                </a>
+                            </li>
+                            <li class="footer-contacts-info-list__item">
+                                <a href="tel:+375291699394" class="footer-contacts-info-list__link">
+                                    +375 29 169-93-94
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <ul class="footer-contacts-soucial">
+                        <li class="footer-contacts-soucial__item">
+                            <a href="#" class="footer-contacts-soucial__link">
+                                <img class="footer-contacts-soucial__img" src="assets/images/Instagram.svg" alt="Instagram">
+                                Instagram
+                            </a>
+                        </li>
+                        <li class="footer-contacts-soucial__item">
+                            <a href="#" class="footer-contacts-soucial__link">
+                                <img class="footer-contacts-soucial__img" src="assets/images/VK.svg" alt="ВКонтакте">
+                                ВКонтакте
+                            </a>
+                        </li>
+                        <li class="footer-contacts-soucial__item">
+                            <a href="#" class="footer-contacts-soucial__link">
+                                <img class="footer-contacts-soucial__img" src="assets/images/Meta.svg" alt="Meta">
+                                Meta
+                            </a>
+                        </li>
+                        <li class="footer-contacts-soucial__item">
+                            <a href="#" class="footer-contacts-soucial__link">
+                                <img class="footer-contacts-soucial__img" src="assets/images/Youtube.svg" alt="YouTube">
+                                YouTube
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="footer-line footer-line_second"></div>
+    
+                <ul class="footer-company-info-list">
+                    <li class="footer-company-info-list__item">
+                        <p class="footer-company-info-list__text">
+                            Св-во о гос. регистрации № 191116661, выд. Мингорисполкомом 14.05.2009г
+                        </p>
+                    </li>
+                    <li class="footer-company-info-list__item">
+                        <p class="footer-company-info-list__text">
+                            Сайт не является интернет-магазином
+                        </p>
+                    </li>
+                    <li class="footer-company-info-list__item">
+                        <p class="footer-company-info-list__text">
+                            ©2016-2021 ЗАО «СМТ-Белмаркет Трейд»
+                        </p>
+                    </li>
+                </ul>
+    
+            </div>
+        </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+  <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
