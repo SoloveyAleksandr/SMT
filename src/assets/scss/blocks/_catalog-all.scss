@@ -17,7 +17,7 @@
 
   &-form {
     @include breakpoint($xl-bp) {
-      position: static;
+      position: relative;
     }
   }
 

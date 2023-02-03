@@ -424,7 +424,6 @@
           <input class="form__input questions-form__input" type="text" placeholder="+375 (29) 000-00-00">
           <input class="form__input questions-form__input" type="text" placeholder="Текст вопроса">
 
-          <input class="form__checkbox" type="checkbox" name="checkbox" id="order-form-checkbox">
           <label class="form__label" for="order-form-checkbox">
             <span class="form__label-checkbox">
               <svg class="form__label-icon">
@@ -432,8 +431,9 @@
               </svg>
             </span>
             Согласен с обработкой персональных данных
+            <input class="form__checkbox" type="checkbox" name="checkbox" id="order-form-checkbox">
           </label>
-          <button class="form__btn default-btn">Отправить</button>
+          <button type="submit" class="form__btn default-btn" data-form-send>Отправить</button>
         </form>
       </div>
     </div>

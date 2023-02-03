@@ -1,459 +1,465 @@
 @import "./vars";
 
 * {
-    font-family: $font;
-    font-weight: $font-light;
-    color: $dark;
-    font-size: 1.8rem;
-    line-height: 110%;
-    padding: 0;
-    margin: 0;
+  font-family: $font;
+  font-weight: $font-light;
+  color: $dark;
+  font-size: 1.8rem;
+  line-height: 110%;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    &._scroll-disabled {
-        overflow: hidden;
-    }
+  &._scroll-disabled {
+    overflow: hidden;
+  }
 }
 
 .container {
-    max-width: 169rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+  max-width: 169rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 
-    @include breakpoint ($jb-bp) {
-        padding: 0 2.5rem;
-    }
+  @include breakpoint ($jb-bp) {
+    padding: 0 2.5rem;
+  }
 }
 
 .logo {
-    width: 21rem;
+  width: 21rem;
 
-    @include breakpoint($cos-bp) {
-        width: 13.3rem;
-    }
+  @include breakpoint($cos-bp) {
+    width: 13.3rem;
+  }
 
-    @include breakpoint($xl-bp) {
-        width: 10.5rem;
-    }
+  @include breakpoint($xl-bp) {
+    width: 10.5rem;
+  }
 
-    @include breakpoint($jb-bp) {
-        width: 9.3rem;
-    }
+  @include breakpoint($jb-bp) {
+    width: 9.3rem;
+  }
 
-    &__img {
-        object-fit: contain;
-        width: 100%;
-    }
+  &__img {
+    object-fit: contain;
+    width: 100%;
+  }
 }
 
 .default-btn {
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0.1rem solid $green;
-    background-color: $green;
-    border-radius: 0.4rem;
-    color: $white;
-    font-weight: $font-reg;
-    height: 4.6rem;
-    transition: .3s;
-    font-size: 2rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1rem solid $green;
+  background-color: $green;
+  border-radius: 0.4rem;
+  color: $white;
+  font-weight: $font-reg;
+  height: 4.6rem;
+  transition: .3s;
+  font-size: 2rem;
+
+  &:hover {
+    background-color: $white;
+    color: $green;
+  }
+
+  @include breakpoint($xl-bp) {
+    font-size: 1.4rem;
+  }
+
+  &.default-btn_light {
+    background-color: $white;
+    color: $green;
 
     &:hover {
-        background-color: $white;
-        color: $green;
+      background-color: $green;
+      color: $white
     }
+  }
 
-    @include breakpoint($xl-bp) {
-        font-size: 1.4rem;
+  &.default-btn_invert {
+    border: 0.1rem solid $white;
+    background-color: $white;
+    border-radius: 0.4rem;
+    color: $green;
+
+    &:hover {
+      background-color: $green;
+      color: $white
     }
 
     &.default-btn_light {
+      background-color: transparent;
+      color: $white;
+
+      &:hover {
         background-color: $white;
         color: $green;
-
-        &:hover {
-            background-color: $green;
-            color: $white
-        }
+      }
     }
-
-    &.default-btn_invert {
-        border: 0.1rem solid $white;
-        background-color: $white;
-        border-radius: 0.4rem;
-        color: $green;
-
-        &:hover {
-            background-color: $green;
-            color: $white
-        }
-
-        &.default-btn_light {
-            background-color: transparent;
-            color: $white;
-
-            &:hover {
-                background-color: $white;
-                color: $green;
-            }
-        }
-    }
+  }
 }
 
 .form {
-    position: relative;
-    padding: 6rem 8rem;
-    background-color: $white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3rem;
+  position: relative;
+  padding: 6rem 8rem;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+
+  @include breakpoint($cos-bp) {
+    padding: 6rem 6rem;
+  }
+
+  @include breakpoint($xl-bp) {
+    padding: 4rem 2rem;
+    gap: 2rem;
+  }
+
+  &-wrapper {
+    background: linear-gradient(0deg, $white 6rem, $light-grey 6rem, $light-grey calc(100% - 6rem), $white calc(100% - 6rem));
+
+    @include breakpoint($lb-bp) {
+      background: none;
+    }
+  }
+
+  &-box {
+    padding: 12rem 12rem;
+    background-color: $green;
 
     @include breakpoint($cos-bp) {
-        padding: 6rem 6rem;
+      padding: 6rem 10rem;
     }
 
     @include breakpoint($xl-bp) {
-        padding: 4rem 2rem;
-        gap: 2rem;
+      padding: 2.4rem;
     }
 
-    &-wrapper {
-        background: linear-gradient(0deg, $white 6rem, $light-grey 6rem, $light-grey calc(100% - 6rem), $white calc(100% - 6rem));
 
-        @include breakpoint($lb-bp) {
-            background: none;
-        }
+    @include breakpoint($lb-bp) {
+      width: calc(100% + 5rem);
+      margin: 0 -2.5rem;
     }
+  }
 
-    &-box {
-        padding: 12rem 20rem;
-        background-color: $green;
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
 
-        @include breakpoint($cos-bp) {
-            padding: 6rem 10rem;
-        }
-
-        @include breakpoint($xl-bp) {
-            padding: 2.4rem;
-        }
-
-
-        @include breakpoint($lb-bp) {
-            width: calc(100% + 5rem);
-            margin: 0 -2.5rem;
-        }
+    @include breakpoint($lb-bp) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 4rem;
     }
+  }
 
-    &-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
-
-        @include breakpoint($lb-bp) {
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            gap: 4rem;
-        }
-    }
-
-    &-info {
-        max-width: 50rem;
-
-        &__title {
-            font-size: 5.2rem;
-            margin-bottom: 2rem;
-
-            @include breakpoint($xl-bp) {
-                font-size: 2.4rem;
-            }
-        }
-
-        &__description {
-            font-weight: $font-reg;
-            line-height: 140%;
-
-            @include breakpoint($xl-bp) {
-                font-size: 1.4rem;
-            }
-        }
-    }
-
-    &-send {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-        //  _active
-        opacity: 0;
-        pointer-events: none;
-
-        &__title {
-            font-size: 4rem;
-            width: 100%;
-            text-align: center;
-
-            @include breakpoint($xl-bp) {
-                font-size: 2.4rem;
-            }
-        }
-
-        &__description {
-            font-weight: $font-reg;
-            max-width: 36rem;
-            text-align: center;
-
-            @include breakpoint($xl-bp) {
-                font-size: 1.4rem;
-            }
-        }
-
-        &._active {
-            opacity: 1;
-            pointer-events: all;
-        }
-    }
+  &-info {
+    max-width: 50rem;
 
     &__title {
-        font-size: 4rem;
-        width: 100%;
-        text-align: center;
+      font-size: 5.2rem;
+      margin-bottom: 2rem;
 
-        @include breakpoint($xl-bp) {
-            font-size: 2.4rem;
-        }
+      @include breakpoint($xl-bp) {
+        font-size: 2.4rem;
+      }
     }
 
-    &__input {
-        width: 40rem;
-        height: 4rem;
-        border: 0.1rem solid $grey;
-        border-radius: 0.4rem;
-        background-color: $white;
-        color: $dark;
-        font-size: 2rem;
-        font-weight: $font-reg;
-        padding: 1rem 1.3rem;
+    &__description {
+      font-weight: $font-reg;
+      line-height: 140%;
 
-        @include breakpoint($xl-bp) {
-            font-size: 1.4rem;
-        }
-
-        @include breakpoint($jb-bp) {
-            width: 35rem;
-        }
-
-
-        @include breakpoint($lb-bp) {
-            width: 100%;
-        }
-
-        &:focus {
-            outline: 0.1rem solid $dark;
-        }
-
-        &::placeholder {
-            color: $grey;
-            font-weight: $font-reg;
-        }
-    }
-
-    &__checkbox {
-        display: none;
-
-        &:checked {
-            +label {
-                .form__label-checkbox {
-                    background-color: $green;
-                }
-            }
-        }
-    }
-
-    &__label {
-        cursor: pointer;
-        line-height: 2rem;
+      @include breakpoint($xl-bp) {
         font-size: 1.4rem;
-        font-weight: $font-reg;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+      }
+    }
+  }
 
-        &-checkbox {
-            width: 2rem;
-            height: 2rem;
-            border: 0.1rem solid $green;
-            border-radius: 0.4rem;
-            background-color: $white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  &-send {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    //  _active
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
 
-        &-icon {
-            width: 2rem;
-            height: 2rem;
-            fill: $white
-        }
+    &__title {
+      font-size: 4rem;
+      width: 100%;
+      text-align: center;
+
+      @include breakpoint($xl-bp) {
+        font-size: 2.4rem;
+      }
     }
 
-    &__btn {
-        @include breakpoint($lb-bp) {
-            width: 100%;
-        }
+    &__description {
+      font-weight: $font-reg;
+      max-width: 36rem;
+      text-align: center;
+
+      @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+      }
     }
+
+    &._active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__title {
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+
+    @include breakpoint($xl-bp) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__input {
+    width: 40rem;
+    height: 4rem;
+    border: 0.1rem solid $grey;
+    border-radius: 0.4rem;
+    background-color: $white;
+    color: $dark;
+    font-size: 2rem;
+    font-weight: $font-reg;
+    padding: 1rem 1.3rem;
+
+    @include breakpoint($xl-bp) {
+      font-size: 1.4rem;
+    }
+
+    @include breakpoint($jb-bp) {
+      width: 35rem;
+    }
+
+
+    @include breakpoint($lb-bp) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: 0.1rem solid $dark;
+    }
+
+    &::placeholder {
+      color: $grey;
+      font-weight: $font-reg;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    // &:checked+label {
+    //   .form__label-checkbox {
+    //     background-color: $green;
+    //   }
+    // }
+  }
+
+  &__label {
+    cursor: pointer;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    font-weight: $font-reg;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &._checked & {
+      &-checkbox {
+        background-color: $green;
+      }
+    }
+
+    &-checkbox {
+      width: 2rem;
+      height: 2rem;
+      border: 0.1rem solid $green;
+      border-radius: 0.4rem;
+      background-color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: $white
+    }
+  }
+
+  &__btn {
+    @include breakpoint($lb-bp) {
+      width: 100%;
+    }
+  }
 }
 
 .custom-select {
-    &-wrapper {
-        width: 100%;
-        position: relative;
+  &-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &-btn {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.3rem;
+    background-color: $white;
+    border: 0.1rem solid $grey;
+    border-radius: 0.4rem;
+
+    &__text {
+      pointer-events: none;
+      font-weight: $font-reg;
+      color: $dark;
     }
 
-    &__input {
-        display: none;
+    &__icon {
+      pointer-events: none;
+      width: 0.8rem;
+      height: 0.8rem;
+      transform: rotate(-90deg);
+      transition: .3s;
     }
 
-    &-btn {
-        width: 100%;
-        height: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 1.3rem;
-        background-color: $white;
-        border: 0.1rem solid $grey;
-        border-radius: 0.4rem;
-
-        &__text {
-            pointer-events: none;
-            font-weight: $font-reg;
-            color: $dark;
-        }
-
-        &__icon {
-            pointer-events: none;
-            width: 0.8rem;
-            height: 0.8rem;
-            transform: rotate(-90deg);
-            transition: .3s;
-        }
-
-        &.placeholder &__text {
-            color: $grey;
-        }
-
-        &._open &__icon {
-            transform: rotate(90deg);
-        }
+    &.placeholder &__text {
+      color: $grey;
     }
 
-    &-list {
-        position: absolute;
-        z-index: 10;
-        width: 100%;
-        box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.3);
-        background-color: $white;
-        border-radius: 0.5rem;
-        top: calc(100% + 0.5rem);
-        left: 0;
-        transition: .3s;
+    &._open &__icon {
+      transform: rotate(90deg);
+    }
+  }
+
+  &-list {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.3);
+    background-color: $white;
+    border-radius: 0.5rem;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    transition: .3s;
+    pointer-events: none;
+    opacity: 0;
+
+    &._open {
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    &__item {
+      width: 100%;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      cursor: pointer;
+      background-color: $white;
+      transition: .3s;
+      font-weight: $font-reg;
+
+      &:hover {
+        background-color: $light-grey;
+      }
+
+      &.placeholder {
         pointer-events: none;
-        opacity: 0;
-
-        &._open {
-            pointer-events: all;
-            opacity: 1;
-        }
-
-        &__item {
-            width: 100%;
-            height: 4rem;
-            display: flex;
-            align-items: center;
-            padding: 0 1rem;
-            cursor: pointer;
-            background-color: $white;
-            transition: .3s;
-            font-weight: $font-reg;
-
-            &:hover {
-                background-color: $light-grey;
-            }
-
-            &.placeholder {
-                pointer-events: none;
-                color: $grey;
-            }
-        }
+        color: $grey;
+      }
     }
+  }
 }
 
 .custom-swiper {
 
-    &-control {
-        display: flex;
-        align-items: flex-end;
-        gap: 4rem;
+  &-control {
+    display: flex;
+    align-items: flex-end;
+    gap: 4rem;
+  }
+
+  &-pagination {
+    font-weight: $font-reg;
+    color: $grey;
+
+    @include breakpoint($jb-bp) {
+      font-size: 1.4rem;
     }
 
-    &-pagination {
-        font-weight: $font-reg;
-        color: $grey;
+    &__current {
+      font-size: 5.2rem;
+      color: $green;
+      font-weight: $font-light;
 
-        @include breakpoint($jb-bp) {
-            font-size: 1.4rem;
-        }
-
-        &__current {
-            font-size: 5.2rem;
-            color: $green;
-            font-weight: $font-light;
-
-            @include breakpoint($jb-bp) {
-                font-size: 2.8rem;
-            }
-        }
-
-        &__total {
-            font-weight: $font-reg;
-            color: $grey;
-
-            @include breakpoint($jb-bp) {
-                font-size: 1.4rem;
-            }
-        }
+      @include breakpoint($jb-bp) {
+        font-size: 2.8rem;
+      }
     }
 
-    &-btn {
-        cursor: pointer;
+    &__total {
+      font-weight: $font-reg;
+      color: $grey;
 
-        &__icon {
-            width: 6rem;
-            height: 2.5rem;
-
-            @include breakpoint($jb-bp) {
-                width: 3rem;
-            }
-        }
+      @include breakpoint($jb-bp) {
+        font-size: 1.4rem;
+      }
     }
+  }
+
+  &-btn {
+    cursor: pointer;
+
+    &__icon {
+      width: 6rem;
+      height: 2.5rem;
+
+      @include breakpoint($jb-bp) {
+        width: 3rem;
+      }
+    }
+  }
 }
 
 .flex-start {
-    align-items: start;
+  align-items: start;
 }
 
 .flex-end {
-    align-items: end;
+  align-items: end;
 }

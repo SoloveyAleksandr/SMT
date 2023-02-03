@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   class Select {
     constructor(wrapper) {
-      this.wrapper = document.querySelector(wrapper);
+      this.wrapper = wrapper;
       this.btn = this.wrapper.querySelector('.custom-select-btn');
       this.btnText = this.btn.querySelector('.custom-select-btn__text');
       this.list = this.wrapper.querySelector('.custom-select-list');
@@ -217,8 +217,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  const orderSquareSelect = document.querySelector('#square-select') && new Select('#square-select');
-  const orderRegionSelect = document.querySelector('#region-select') && new Select('#region-select');
+  // const orderSquareSelect = document.querySelector('#square-select') && new Select('#square-select');
+  // const orderRegionSelect = document.querySelector('#region-select') && new Select('#region-select');
+  const customSelectWrappers = gsap.utils.toArray(".custom-select-wrapper");
+  if (customSelectWrappers.length > 0) {
+    customSelectWrappers.forEach(wrapper => {
+      new Select(wrapper);
+    })
+  }
 
 
   class DropdownBtn {
@@ -912,7 +918,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  if (document.querySelector('.resume-form')) {
+  if (document.querySelector('.resume-form-form')) {
     const fileInput = document.querySelector('.resume-form-resume__input');
     const fileName = document.querySelector('.resume-form-resume__file');
 
@@ -1217,12 +1223,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     const btns = gsap.utils.toArray('.contacts-head-buttons__btn');
+    const map = document.querySelector('.contacts-map__frame');
     btns.forEach(btn => {
       btn.onclick = () => {
         btns.forEach(b => {
           b.classList.remove('_active');
         })
         btn.classList.add('_active');
+        if (map) {
+          const src = btn.getAttribute('data-src');
+          map.src = src;
+        }
       }
     })
 
@@ -1260,10 +1271,41 @@ document.addEventListener("DOMContentLoaded", () => {
             swiper.slideTo(index + 1);
           }
         });
+        if (map) {
+          const src = item.getAttribute('data-src');
+          map.src = src;
+        }
       }
     }
 
     new SliderSelect('.contacts');
+
+    const mapBtns = gsap.utils.toArray('.contacts-swiper-slide-list-item__btn');
+    const schameContainer = document.querySelector('.contacts-scheme');
+    const schameBg = document.querySelector('.contacts-scheme-bg');
+    const schameBtn = document.querySelector('.contacts-scheme-map__btn');
+    const schameMap = document.querySelector('.contacts-scheme-map__frame');
+
+    if (schameContainer && schameBg && schameBtn && schameMap && mapBtns) {
+      const closeMap = () => {
+        schameContainer.classList.remove('_active');
+      }
+
+      const openMap = (target) => {
+        const src = target.getAttribute('data-src');
+        schameContainer.classList.add('_active');
+        if (schameMap.src !== src) {
+          schameMap.src = src;
+        }
+      }
+
+      schameBg.onclick = closeMap;
+      schameBtn.onclick = closeMap;
+
+      mapBtns.forEach(btn => {
+        btn.onclick = (e) => openMap(e.target);
+      })
+    }
   }
 
   if (document.querySelector('.documentation')) {
@@ -1751,5 +1793,126 @@ document.addEventListener("DOMContentLoaded", () => {
       tl.play();
     }
   }
+
+  if (document.querySelector('.type-info-head-img_animated-js_opacity')) {
+    const animList = gsap.utils.toArray('.type-info-head-img_animated-js_opacity');
+
+    if (window.matchMedia("(max-width: 1330px)").matches) {
+      const tl = gsap.timeline({
+        delay: 1,
+      });
+
+      animList.forEach((item, index) => {
+        tl.from(item, {
+          opacity: 0,
+          duration: 2,
+          ease: "sine.out"
+        })
+      })
+
+    } else if (window.matchMedia("(min-width: 1331px)").matches) {
+      const tl = gsap.timeline({
+        delay: 1,
+        scrollTrigger: {
+          trigger: ".type-info-head",
+          start: "top top",
+          end: "bottom bottom",
+          toggleActions: "none reverse play none",
+        }
+      });
+
+      animList.forEach((item, index) => {
+        tl.from(item, {
+          opacity: 0,
+          duration: 2,
+          ease: "sine.out"
+        })
+      })
+
+      tl.play();
+    }
+  }
   //<==
+
+  // FORMS SEND
+  const formSubmitBtns = gsap.utils.toArray("[data-form-send]");
+
+  if (formSubmitBtns.length > 0) {
+    const activeSend = (e) => {
+      e.preventDefault()
+      const send = e.target.parentElement.querySelector(".form-send");
+      send.classList.add("_active");
+    }
+
+    formSubmitBtns.forEach(btn => {
+      btn.addEventListener("click", (e) => activeSend(e))
+    })
+  }
+
+  const formLabels = gsap.utils.toArray(".form__label");
+  if (formLabels.length > 0) {
+    formLabels.forEach(label => {
+      const checkbox = label.querySelector(".form__checkbox");
+      label.addEventListener("click", () => {
+        if (checkbox.checked) {
+          label.classList.add("_checked");
+        } else {
+          label.classList.remove("_checked");
+        }
+      })
+    })
+  }
+  //<==
+
+  // MODAL FROM
+  const requestForm = document.querySelector(".modal-request-form");
+  const priceForm = document.querySelector(".modal-price-form");
+
+  class ModalForm {
+    constructor(wrapper) {
+      this.wrapper = wrapper;
+      this.bg = this.wrapper.querySelector('.modal-form-bg');
+      this.btn = this.wrapper.querySelector('.modal-form-btn');
+      this.container = this.wrapper.querySelector('.modal-form-container');
+      this.send = this.wrapper.querySelector('.form-send');
+      this.init();
+    }
+
+    init() {
+      this.bg.onclick = this.close.bind(this);
+      this.btn.onclick = this.close.bind(this);
+    }
+
+    close() {
+      this.wrapper.classList.remove("_active");
+      this.send.classList.remove("_active");
+    }
+
+    open() {
+      this.wrapper.classList.add("_active");
+    }
+  }
+
+  if (priceForm) {
+    const modalPriceForm = new ModalForm(priceForm);
+    const priceOpenBtns = gsap.utils.toArray("[data-open-price]");
+
+    priceOpenBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        modalPriceForm.open();
+      })
+    })
+  }
+
+  if (requestForm) {
+    const modalRequestForm = new ModalForm(requestForm);
+    const priceOpenBtns = gsap.utils.toArray("[data-open-request]");
+
+    priceOpenBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        modalRequestForm.open();
+      })
+    })
+  }
+  //<=
 })
