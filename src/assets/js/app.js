@@ -112,6 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  const workSwiperTitleList = gsap.utils.toArray(".work-swiper .work-swiper__title");
+  const workSwiperInfoTitles = gsap.utils.toArray(".work .work-info__title");
+
   const workSwiper = new Swiper('.work-swiper', {
     direction: 'horizontal',
     loop: true,
@@ -127,6 +130,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currEl.innerHTML = current < 10 ? `0${current}` : current;
         totalEl.innerHTML = total < 10 ? `0${total}` : total;
+
+        if (workSwiperTitleList.length <= total) {
+          workSwiperInfoTitles.forEach(title => {
+            title.innerText = workSwiperTitleList[current - 1].innerText;
+          })
+        }
       }
     },
 
