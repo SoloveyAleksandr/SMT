@@ -267,237 +267,74 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   // partners img animation
-  const TL_1 = gsap.timeline({ repeat: -1 })
-  if (document.querySelector('.partners-list')) {
-    TL_1.from(".partners-anim-img_1", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_1.to(".partners-anim-img_1", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
+  if (document.querySelector(".partners")) {
+    const templateImgs = document.querySelector(".partners template").content.children;
+    const animItems = document.querySelectorAll(".partners .partners-list-item");
+    console.log(animItems);
 
-    TL_1.from(".partners-anim-img_2", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_1.to(".partners-anim-img_2", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
+    for (let i = 0; i < animItems.length; i++) {
+      const tl = gsap.timeline({ repeat: -1 });
+      const fragment = document.createDocumentFragment();
 
-    TL_1.from(".partners-anim-img_3", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_1.to(".partners-anim-img_3", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
+      for (let img = 0; img < templateImgs.length; img++) {
+        const index = (i + img) % templateImgs.length;
+        const newImg = templateImgs[index].cloneNode(true);
+        fragment.appendChild(newImg);
+        tl.from(newImg, {
+          scale: 0,
+          x: "-100%",
+          y: "-100%",
+          duration: 2,
+          ease: "power3.out",
+        })
+        tl.to(newImg, {
+          scale: 0,
+          x: "100%",
+          y: "100%",
+          delay: 2,
+          duration: 2,
+          ease: "power3.out",
+        })
+      }
 
-    TL_1.from(".partners-anim-img_4", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_1.to(".partners-anim-img_4", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
-
-    TL_1.from(".partners-anim-img_5", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_1.to(".partners-anim-img_5", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
-
-    TL_1.from(".partners-anim-img_6", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_1.to(".partners-anim-img_6", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
+      animItems[i].appendChild(fragment);
+    }
   }
 
   // clients img animation
-  const TL_2 = gsap.timeline({ repeat: -1 })
-  if (document.querySelector('.clients-list')) {
-    TL_2.from(".clients-anim-img_1", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_2.to(".clients-anim-img_1", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
+  if (document.querySelector(".clients")) {
+    const templateImgs = document.querySelector(".clients template").content.children;
+    const animItems = document.querySelectorAll(".clients .clients-list-item");
+    console.log(animItems);
 
-    TL_2.from(".clients-anim-img_2", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_2.to(".clients-anim-img_2", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
+    for (let i = 0; i < animItems.length; i++) {
+      const tl = gsap.timeline({ repeat: -1 });
+      const fragment = document.createDocumentFragment();
 
-    TL_2.from(".clients-anim-img_3", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_2.to(".clients-anim-img_3", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
+      for (let img = 0; img < templateImgs.length; img++) {
+        const index = (i + img) % templateImgs.length;
+        const newImg = templateImgs[index].cloneNode(true);
+        fragment.appendChild(newImg);
+        tl.from(newImg, {
+          scale: 0,
+          x: "100%",
+          y: "100%",
+          duration: 2,
+          ease: "power3.out",
+        })
+        tl.to(newImg, {
+          scale: 0,
+          x: "-100%",
+          y: "-100%",
+          delay: 2,
+          duration: 2,
+          ease: "power3.out",
+        })
+      }
 
-    TL_2.from(".clients-anim-img_4", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_2.to(".clients-anim-img_4", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
-
-    TL_2.from(".clients-anim-img_5", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_2.to(".clients-anim-img_5", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
-
-    TL_2.from(".clients-anim-img_6", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_2.to(".clients-anim-img_6", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
-
-    TL_2.from(".clients-anim-img_7", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_2.to(".clients-anim-img_7", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
-
-    TL_2.from(".clients-anim-img_8", {
-      scale: 0,
-      x: "100%",
-      y: "100%",
-      duration: 2,
-      ease: "power3.out",
-    })
-    TL_2.to(".clients-anim-img_8", {
-      scale: 0,
-      x: "-100%",
-      y: "-100%",
-      delay: 2,
-      duration: 2,
-      ease: "power3.out",
-    })
+      animItems[i].appendChild(fragment);
+    }
   }
-
 
   // main swiper 
   if (document.querySelector('.main-swiper')) {
