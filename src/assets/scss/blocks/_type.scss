@@ -300,50 +300,103 @@
         flex-direction: column;
         gap: 2rem;
 
-        &__text {
-          font-size: 2rem;
-          font-weight: $font-reg;
+        // &__text {
+        //   font-size: 2rem;
+        //   font-weight: $font-reg;
 
-          &_green {
-            color: $green;
-            transition: .3s;
+        //   &_green {
+        //     color: $green;
+        //     transition: .3s;
 
-            &:hover {
-              opacity: 0.8;
+        //     &:hover {
+        //       opacity: 0.8;
+        //     }
+        //   }
+
+        //   @include breakpoint($xl-bp) {
+        //     font-size: 1.4rem;
+        //   }
+        // }
+
+        // &-info {
+        //   display: flex;
+        //   flex-direction: column;
+        //   gap: 1rem;
+        // }
+
+        // &__info {
+        //   display: flex;
+        //   align-items: center;
+
+        //   &::before {
+        //     content: "";
+        //     width: 1.6rem;
+        //     height: 1.6rem;
+        //     border: 0.2rem solid $green;
+        //     border-radius: 50%;
+        //     margin-right: 1.6rem;
+        //     flex: none;
+        //   }
+        // }
+
+        // &__link {
+        //   width: fit-content;
+
+        //   @include breakpoint($sm-bp) {
+        //     width: 100%;
+        //   }
+        // }
+
+        &> {
+          h4 {
+            font-size: 4rem;
+
+            @include breakpoint($xl-bp) {
+              font-size: 2.8rem;
             }
           }
 
-          @include breakpoint($xl-bp) {
-            font-size: 1.4rem;
+          p {
+            font-size: 2rem;
+            font-weight: $font-reg;
+
+            @include breakpoint($xl-bp) {
+              font-size: 1.4rem;
+            }
           }
-        }
 
-        &-info {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-        }
+          ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
 
-        &__info {
-          display: flex;
-          align-items: center;
+            &>li {
+              font-size: 2rem;
+              font-weight: $font-reg;
 
-          &::before {
-            content: "";
-            width: 1.6rem;
-            height: 1.6rem;
-            border: 0.2rem solid $green;
-            border-radius: 50%;
-            margin-right: 1.6rem;
-            flex: none;
+              @include breakpoint($xl-bp) {
+                font-size: 1.4rem;
+              }
+
+              &>a {
+                font-size: inherit;
+                font-weight: inherit;
+                color: $green;
+                transition: .3s;
+
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+            }
           }
-        }
 
-        &__link {
-          width: fit-content;
+          button {
+            width: fit-content;
 
-          @include breakpoint($sm-bp) {
-            width: 100%;
+            @include breakpoint($sm-bp) {
+              width: 100%;
+            }
           }
         }
       }
