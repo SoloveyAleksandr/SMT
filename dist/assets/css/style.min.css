@@ -5137,26 +5137,35 @@ svg {
       flex-direction: column;
   gap: 1rem;
 }
-.vacancy-info-list-item__title {
+.vacancy-info-list-item > h5 {
   font-size: 2.4rem;
   font-weight: 400;
   margin-bottom: 1rem;
 }
 @media (max-width: 1024px) {
-  .vacancy-info-list-item__title {
+  .vacancy-info-list-item > h5 {
     font-size: 2rem;
   }
 }
-.vacancy-info-list-item__text {
+.vacancy-info-list-item > p {
   font-size: 2rem;
   font-weight: 400;
 }
 @media (max-width: 1024px) {
-  .vacancy-info-list-item__text {
+  .vacancy-info-list-item > p {
     font-size: 1.4rem;
   }
 }
-.vacancy-info-list-item__text_mark {
+.vacancy-info-list-item > ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  gap: 1rem;
+}
+.vacancy-info-list-item > ul > li {
+  font-size: 2rem;
+  font-weight: 400;
   padding-left: 3.2rem;
   position: relative;
   display: -ms-flexbox;
@@ -5164,7 +5173,7 @@ svg {
   -ms-flex-align: center;
       align-items: center;
 }
-.vacancy-info-list-item__text_mark::before {
+.vacancy-info-list-item > ul > li::before {
   content: "";
   position: absolute;
   width: 1.6rem;
@@ -5172,6 +5181,11 @@ svg {
   border: 0.2rem solid #006B51;
   border-radius: 50%;
   left: 0;
+}
+@media (max-width: 1024px) {
+  .vacancy-info-list-item > ul > li {
+    font-size: 1.4rem;
+  }
 }
 @media (max-width: 650px) {
   .vacancy-info-form {
