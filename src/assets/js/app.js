@@ -139,10 +139,14 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  const newsSwiperTitleList = gsap.utils.toArray(".news-swiper .news-swiper-slide__title");
+  const newsSwiperTitle = document.querySelector(".news-swiper .news-control__title");
+
   const newsSwiper = new Swiper('.news-swiper', {
     direction: 'horizontal',
     loop: true,
-    effect: 'coverflow',
+    effect: 'slide',
+    // effect: 'coverflow',
     speed: 1300,
 
     pagination: {
@@ -154,6 +158,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currEl.innerHTML = current < 10 ? `0${current}` : current;
         totalEl.innerHTML = total < 10 ? `0${total}` : total;
+
+        if (newsSwiperTitle && newsSwiperTitleList.length >= total) {
+          newsSwiperTitle.innerText = newsSwiperTitleList[current - 1].innerText;
+        }
       }
     },
 
