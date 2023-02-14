@@ -10351,6 +10351,11 @@ svg {
 .material-main-list-item > h4 {
     font-size: 4rem;
     margin-bottom: 1rem;
+    margin-top: 6rem;
+}
+
+.material-main-list-item > h4:first-child {
+    margin-top: 0;
 }
 
 @media (max-width: 1024px) {
