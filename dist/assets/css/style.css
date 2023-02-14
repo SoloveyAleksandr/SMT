@@ -10348,63 +10348,80 @@ svg {
     }
 }
 
-.material-main-list-item__title {
+.material-main-list-item > h4 {
     font-size: 4rem;
     margin-bottom: 1rem;
 }
 
 @media (max-width: 1024px) {
-    .material-main-list-item__title {
+    .material-main-list-item > h4 {
         font-size: 2.8rem;
         margin-bottom: 0;
     }
 }
 
-.material-main-list-item__title_green {
-    display: inline-block;
+.material-main-list-item > h4 > span {
     font-size: inherit;
     font-weight: inherit;
+    line-height: inherit;
     color: #006B51;
 }
 
-.material-main-list-item__description {
+.material-main-list-item > h6 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #CCCCCC;
+}
+
+@media (max-width: 1024px) {
+    .material-main-list-item > h6 {
+        font-size: 1.4rem;
+    }
+}
+
+.material-main-list-item > p {
     font-size: 2rem;
     font-weight: 400;
 }
 
 @media (max-width: 1024px) {
-    .material-main-list-item__description {
+    .material-main-list-item > p {
         font-size: 1.4rem;
     }
 }
 
-.material-main-list-item__info {
+.material-main-list-item > ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.material-main-list-item > ul > li {
     font-size: 2rem;
     font-weight: 400;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    gap: 1.6rem;
+    gap: 0.5rem;
 }
 
 @media (max-width: 1024px) {
-    .material-main-list-item__info {
+    .material-main-list-item > ul > li {
         font-size: 1.4rem;
     }
 }
 
 @media (max-width: 500px) {
-    .material-main-list-item__info {
-        gap: 0.3rem;
-    }
-
-    .material-main-list-item__info::before {
+    .material-main-list-item > ul > li::before {
         margin-right: 1.3rem;
     }
 }
 
-.material-main-list-item__info::before {
+.material-main-list-item > ul > li::before {
     content: "";
     -ms-flex: none;
     flex: none;
@@ -10412,27 +10429,17 @@ svg {
     height: 1.6rem;
     border: 0.2rem solid #006B51;
     border-radius: 50%;
+    margin-right: 1.1rem;
 }
 
-.material-main-list-item__info-container {
-    font-size: 2rem;
-    font-weight: 400;
-}
-
-@media (max-width: 1024px) {
-    .material-main-list-item__info-container {
-        font-size: 1.4rem;
-    }
-}
-
-.material-main-list-item__info_green {
+.material-main-list-item > ul > li > a {
     font-size: inherit;
     font-weight: inherit;
     color: #006B51;
     transition: 0.3s;
 }
 
-.material-main-list-item__info_green:hover {
+.material-main-list-item > ul > li > a:hover {
     opacity: 0.8;
 }
 
