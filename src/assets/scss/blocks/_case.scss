@@ -53,11 +53,49 @@
 
     &__text {
       flex: 1;
-      font-size: 2rem;
-      font-weight: $font-reg;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
 
       @include breakpoint($xl-bp) {
-        font-size: 1.4rem;
+        gap: 1.4rem;
+      }
+
+      p {
+        font-size: 2rem;
+        font-weight: $font-reg;
+
+        @include breakpoint($xl-bp) {
+          font-size: 1.4rem;
+        }
+
+        strong {
+          font-weight: inherit;
+          line-height: inherit;
+          font-size: inherit;
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+
+        li {
+          font-size: 2rem;
+          font-weight: $font-reg;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding-left: 1rem;
+
+          &::before {
+            content: "-";
+          }
+
+          @include breakpoint($xl-bp) {
+            font-size: 1.4rem;
+          }
+        }
       }
     }
 

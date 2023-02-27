@@ -7178,12 +7178,60 @@ svg {
 .case-description__text {
     -ms-flex: 1;
     flex: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .case-description__text {
+        gap: 1.4rem;
+    }
+}
+
+.case-description__text p {
     font-size: 2rem;
     font-weight: 400;
 }
 
 @media (max-width: 1024px) {
-    .case-description__text {
+    .case-description__text p {
+        font-size: 1.4rem;
+    }
+}
+
+.case-description__text p strong {
+    font-weight: inherit;
+    line-height: inherit;
+    font-size: inherit;
+}
+
+.case-description__text ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.case-description__text ul li {
+    font-size: 2rem;
+    font-weight: 400;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+.case-description__text ul li::before {
+    content: "-";
+}
+
+@media (max-width: 1024px) {
+    .case-description__text ul li {
         font-size: 1.4rem;
     }
 }
