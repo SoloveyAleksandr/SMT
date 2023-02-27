@@ -183,28 +183,28 @@
             &-img {
                 display: block;
                 width: 100%;
-                height: 60rem;
+                // height: 60rem;
 
                 @include breakpoint($xl-bp) {
-                    height: 50rem;
+                    // height: 50rem;
                 }
 
                 @include breakpoint($lb-bp) {
-                    height: 40rem;
+                    // height: 40rem;
                 }
 
                 @include breakpoint($sm-bp) {
-                    height: 30rem;
+                    // height: 30rem;
                 }
 
                 @include breakpoint($xs-bp) {
-                    height: 26rem;
+                    // height: 26rem;
                 }
 
                 &__img {
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                    // height: 100%;
+                    object-fit: contain;
                     object-position: center center;
                 }
             }
