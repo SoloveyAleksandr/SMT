@@ -12572,6 +12572,23 @@ svg {
     }
 }
 
+.type-info-main-item > p > * {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+}
+
+.type-info-main-item > p > a {
+    color: #006B51;
+}
+
+.type-info-main-item > p > a > * {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
 .type-info-main-item > ul {
     display: -ms-flexbox;
     display: flex;
