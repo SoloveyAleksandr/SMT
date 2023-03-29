@@ -390,6 +390,9 @@
       &-item {
         height: 16rem;
         background-color: var(--bgColor);
+        background-image: var(--bgImg);
+        background-position: center center;
+        background-size: cover;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
