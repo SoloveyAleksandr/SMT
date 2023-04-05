@@ -46,7 +46,7 @@
       transition: 0.5s;
       overflow: hidden;
 
-      & li + li {
+      & li+li {
         padding-top: 2rem;
       }
 
@@ -230,14 +230,21 @@
           padding: 2rem 1rem;
           border-bottom: 0.1rem solid $grey;
 
+          gap: 2rem;
+
           @include breakpoint($xl-bp) {
             padding: 1rem 1rem;
           }
 
           &__box {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
+            flex: 1;
+            // display: flex;
+            // align-items: center;
+            // justify-content: flex-end;
+            // gap: 4rem;
+            display: grid;
+            grid-template-columns: 3fr 1.4fr;
+            column-gap: 2rem;
 
             @include breakpoint($lb-bp) {
               gap: 2rem;
@@ -251,10 +258,15 @@
           &__text {
             font-size: 2rem;
             font-weight: $font-reg;
+            text-align: right;
+            margin-left: auto;
 
             &_green {
               color: $green;
               transition: 0.3s;
+              text-align: left;
+              margin-left: 0;
+              margin-right: auto;
 
               &:hover {
                 opacity: 0.8;
@@ -268,7 +280,7 @@
 
           &__info {
             display: inline-block;
-            width: 14rem;
+            // width: 14rem;
 
             @include breakpoint($xs-bp) {
               width: 12rem;
@@ -300,54 +312,7 @@
         flex-direction: column;
         gap: 2rem;
 
-        // &__text {
-        //   font-size: 2rem;
-        //   font-weight: $font-reg;
-
-        //   &_green {
-        //     color: $green;
-        //     transition: .3s;
-
-        //     &:hover {
-        //       opacity: 0.8;
-        //     }
-        //   }
-
-        //   @include breakpoint($xl-bp) {
-        //     font-size: 1.4rem;
-        //   }
-        // }
-
-        // &-info {
-        //   display: flex;
-        //   flex-direction: column;
-        //   gap: 1rem;
-        // }
-
-        // &__info {
-        //   display: flex;
-        //   align-items: center;
-
-        //   &::before {
-        //     content: "";
-        //     width: 1.6rem;
-        //     height: 1.6rem;
-        //     border: 0.2rem solid $green;
-        //     border-radius: 50%;
-        //     margin-right: 1.6rem;
-        //     flex: none;
-        //   }
-        // }
-
-        // &__link {
-        //   width: fit-content;
-
-        //   @include breakpoint($sm-bp) {
-        //     width: 100%;
-        //   }
-        // }
-
-        & > {
+        &> {
           h4 {
             font-size: 4rem;
 
@@ -364,7 +329,7 @@
               font-size: 1.4rem;
             }
 
-            & > {
+            &> {
               * {
                 font-size: inherit;
                 line-height: inherit;
@@ -374,7 +339,7 @@
               a {
                 color: $green;
 
-                & > {
+                &> {
                   * {
                     font-size: inherit;
                     line-height: inherit;
@@ -391,11 +356,15 @@
             flex-direction: column;
             gap: 1rem;
 
-            & > li {
+            &>li {
               font-size: 2rem;
               font-weight: $font-reg;
-              display: flex;
-              align-items: center;
+              // display: flex;
+              // align-items: center;
+
+              display: inline-block;
+              padding-left: 1.5em;
+              position: relative;
 
               &::before {
                 content: "";
@@ -405,13 +374,18 @@
                 border-radius: 50%;
                 margin-right: 1.6rem;
                 flex: none;
+
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
               }
 
               @include breakpoint($xl-bp) {
                 font-size: 1.4rem;
               }
 
-              & > a {
+              &>a {
                 font-size: inherit;
                 font-weight: inherit;
                 color: $green;
@@ -419,6 +393,14 @@
 
                 &:hover {
                   opacity: 0.8;
+                }
+
+                &> {
+                  * {
+                    font-size: inherit;
+                    font-weight: inherit;
+                    color: inherit;
+                  }
                 }
               }
             }
@@ -496,7 +478,7 @@
         //   }
         // }
 
-        & > {
+        &> {
           h4 {
             font-size: 4rem;
 
