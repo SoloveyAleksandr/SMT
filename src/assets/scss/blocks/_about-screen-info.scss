@@ -121,6 +121,7 @@
         }
 
         &__title {
+            white-space: nowrap;
             font-size: 5.2rem;
 
             @include breakpoint($xl-bp) {
@@ -129,6 +130,7 @@
         }
 
         &__subtitle {
+            white-space: nowrap;
             font-weight: $font-reg;
             color: $grey;
 

@@ -4756,6 +4756,7 @@ svg {
 }
 
 .about-screen-info-main__title {
+    white-space: nowrap;
     font-size: 5.2rem;
 }
 
@@ -4766,6 +4767,7 @@ svg {
 }
 
 .about-screen-info-main__subtitle {
+    white-space: nowrap;
     font-weight: 400;
     color: #CCCCCC;
 }
