@@ -11790,6 +11790,26 @@ svg {
     gap: 2rem;
 }
 
+.object-type-info-content-item > * a,
+.object-type-info-content-item > * > a {
+    color: #006B51;
+    font-size: 2rem;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.object-type-info-content-item > * a:hover,
+.object-type-info-content-item > * > a:hover {
+    opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+    .object-type-info-content-item > * a,
+.object-type-info-content-item > * > a {
+        font-size: 1.4rem;
+    }
+}
+
 .object-type-info-content-item > h5 {
     font-size: 2rem;
     font-weight: 400;
