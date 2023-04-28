@@ -11858,13 +11858,10 @@ svg {
 }
 
 .object-type-info-content-item > ul > li {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    gap: 1.6rem;
     font-size: 2rem;
     font-weight: 400;
+    position: relative;
+    padding-left: 1.5em;
 }
 
 .object-type-info-content-item > ul > li::before {
@@ -11875,6 +11872,9 @@ svg {
     border-radius: 50%;
     -ms-flex: none;
     flex: none;
+    position: absolute;
+    left: 0;
+    top: 0.2em;
 }
 
 @media (max-width: 1024px) {
