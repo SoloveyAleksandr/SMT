@@ -655,79 +655,117 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  if (document.querySelector('.history')) {
+  const historyContainer = document.querySelector(".history");
+  if (historyContainer) {
+    const historyItems = historyContainer.querySelectorAll(".history-list-item");
+
     const TL = gsap.timeline({
       scrollTrigger: {
-        trigger: ".history-timeline_grey",
-        start: "top 20%",
-        end: "bottom 20%",
+        trigger: historyContainer,
+        start: "top 40%",
+        end: "bottom 40%",
         scrub: true,
       },
-
-      onUpdate: () => {
-        timelineHeightHendler();
-      }
-    });
-
-    TL.to('.history-timeline_green', 0.1, { height: 100 + '%' });
-
-    function timelineHeightHendler() {
-      const progress = Number(TL.progress().toFixed(3));
-      TL.set(".history-timeline_green", {
-        height: progress * 100 + "%",
-      });
-    }
-
-    const lines = gsap.utils.toArray('.history-list-item__line');
-
-    lines.forEach((line) => {
-      gsap.to(line, {
-        width: '100%',
-        duration: 2,
-        scrollTrigger: {
-          trigger: line,
-          start: "top 50%",
-          end: "bottom 50%",
-        },
-      })
     })
 
-    const minTimeLines = gsap.utils.toArray('.history-list-item-img_green');
-    const minTimeLinesTrigger = gsap.utils.toArray('.history-list-item-img_grey');
-    minTimeLines.forEach((time, index) => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: minTimeLinesTrigger[index],
-          start: "top 50%",
-          end: "bottom 50%",
-          scrub: true,
-        },
-        onUpdate: () => {
-          timelineHeightHendler();
-        }
+    historyItems.forEach((item, i) => {
+      const inner = item.querySelector(".history-list-item__inner");
+      const date = item.querySelector(".history-list-item-date");
+      const clone = date.cloneNode(true);
+      clone.classList.add("_clone");
+      item.appendChild(clone);
+
+      TL.from(date, {
+        clipPath: "inset(0 0 100% 0)",
       });
 
-      tl.to(time, 0.1, { height: 100 + '%' });
-
-      function timelineHeightHendler() {
-        const progress = Number(tl.progress().toFixed(3));
-        tl.set(time, {
-          height: progress * 100 + "%",
-        });
-      }
-    })
-
-    const historyItems = gsap.utils.toArray('.history-list-item');
-    historyItems.forEach((item, index) => {
-      gsap.from(item, {
-        x: `${index % 2 > 0 ? '' : '-'}100vh`,
-        duration: 1.5,
+      gsap.from(inner, {
         scrollTrigger: {
           trigger: item,
-          start: 'top 50%',
+          start: "top 70%",
+          end: "bottom 70%",
+        },
+        x: i % 2 > 0 ? "100%" : "-100%",
+        opacity: 0,
+        duration: 1,
+        onStart: () => {
+          item.classList.add("_active");
         }
       })
-    })
+    });
+
+    // const TL = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".history-timeline_grey",
+    //     start: "top 20%",
+    //     end: "bottom 20%",
+    //     scrub: true,
+    //   },
+
+    //   onUpdate: () => {
+    //     timelineHeightHendler();
+    //   }
+    // });
+
+    // TL.to('.history-timeline_green', 0.1, { height: 100 + '%' });
+
+    // function timelineHeightHendler() {
+    //   const progress = Number(TL.progress().toFixed(3));
+    //   TL.set(".history-timeline_green", {
+    //     height: progress * 100 + "%",
+    //   });
+    // }
+
+    // const lines = gsap.utils.toArray('.history-list-item__line');
+
+    // lines.forEach((line) => {
+    //   gsap.to(line, {
+    //     width: '100%',
+    //     duration: 2,
+    //     scrollTrigger: {
+    //       trigger: line,
+    //       start: "top 50%",
+    //       end: "bottom 50%",
+    //     },
+    //   })
+    // })
+
+    // const minTimeLines = gsap.utils.toArray('.history-list-item-img_green');
+    // const minTimeLinesTrigger = gsap.utils.toArray('.history-list-item-img_grey');
+    // minTimeLines.forEach((time, index) => {
+    //   const tl = gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: minTimeLinesTrigger[index],
+    //       start: "top 50%",
+    //       end: "bottom 50%",
+    //       scrub: true,
+    //     },
+    //     onUpdate: () => {
+    //       timelineHeightHendler();
+    //     }
+    //   });
+
+    //   tl.to(time, 0.1, { height: 100 + '%' });
+
+    //   function timelineHeightHendler() {
+    //     const progress = Number(tl.progress().toFixed(3));
+    //     tl.set(time, {
+    //       height: progress * 100 + "%",
+    //     });
+    //   }
+    // })
+
+    // const historyItems = gsap.utils.toArray('.history-list-item');
+    // historyItems.forEach((item, index) => {
+    //   gsap.from(item, {
+    //     x: `${index % 2 > 0 ? '' : '-'}100vh`,
+    //     duration: 1.5,
+    //     scrollTrigger: {
+    //       trigger: item,
+    //       start: 'top 50%',
+    //     }
+    //   })
+    // })
   }
 
   if (document.querySelector('.certificate-swiper')) {
