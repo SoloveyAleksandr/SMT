@@ -64,6 +64,10 @@
             padding: 0rem;
         }
 
+        @include breakpoint($sm-bp) {
+            padding-top: 5rem;
+        }
+
         &-item {
             overflow: hidden;
             display: flex;
@@ -95,6 +99,26 @@
                 &__line {
                     width: 100%;
                 }
+            }
+
+            @include breakpoint($xl-bp) {
+                &:nth-child(even) {
+                    justify-content: flex-start;
+                }
+                &:nth-child(even) & {
+                    &__line {
+                        left: 0;
+                        right: unset;
+                    }
+                }
+            }
+
+            @include breakpoint($lb-bp) {
+                padding: 5rem 0;
+            }
+
+            @include breakpoint($sm-bp) {
+                padding: 15rem 0rem 2rem;
             }
 
             &-date {
@@ -143,6 +167,34 @@
                     bottom: 0;
                 }
 
+                @include breakpoint($xl-bp) {
+                    left: unset;
+                    transform: translateX(0);
+                    right: 5rem;
+                }
+
+                @include breakpoint($jb-bp) {
+                    right: 2.5rem;
+                }
+
+                @include breakpoint($lb-bp) {
+                    right: 0;
+                }
+
+                @include breakpoint($sm-bp) {
+                    right: 50%;
+                    transform: translateX(50%);
+                    height: 13.5rem;
+
+                    &::before {
+                        height: calc(100% - 10rem);
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
                 &__info {
                     position: absolute;
                     left: 0;
@@ -164,6 +216,12 @@
                         font-size: inherit;
                         line-height: inherit;
                         color: inherit;
+                    }
+
+                    @include breakpoint($sm-bp) {
+                        top: unset;
+                        bottom: 0;
+                        transform: translateY(0);
                     }
                 }
             }

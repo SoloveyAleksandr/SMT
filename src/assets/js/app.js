@@ -685,13 +685,13 @@ document.addEventListener("DOMContentLoaded", () => {
           start: "top 70%",
           end: "bottom 70%",
         },
-        x: i % 2 > 0 ? "100%" : "-100%",
+        x: window.matchMedia("(min-width: 1025px)").matches ? i % 2 > 0 ? "100%" : "-100%" : "-100%",
         opacity: 0,
         duration: 1,
         onStart: () => {
           item.classList.add("_active");
         }
-      })
+      });
     });
 
     // const TL = gsap.timeline({
