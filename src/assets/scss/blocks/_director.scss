@@ -65,10 +65,10 @@
 
     &-comment {
         width: 82rem;
-        transform: translateY(50%);
+        // transform: translateY(50%);
 
         @include breakpoint($cos-bp) {
-            transform: translateY(20%);
+            // transform: translateY(20%);
         }
 
         @include breakpoint($xl-bp) {

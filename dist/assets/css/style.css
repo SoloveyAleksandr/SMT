@@ -5151,15 +5151,6 @@ svg {
 
 .director-comment {
     width: 82rem;
-    -webkit-transform: translateY(50%);
-    transform: translateY(50%);
-}
-
-@media (max-width: 1330px) {
-    .director-comment {
-        -webkit-transform: translateY(20%);
-        transform: translateY(20%);
-    }
 }
 
 @media (max-width: 1024px) {
