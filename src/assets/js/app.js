@@ -1459,86 +1459,116 @@ document.addEventListener("DOMContentLoaded", () => {
     new Navigation('.object-nav-list', '.object-nav__btn');
   }
 
-  if (document.querySelector('.object-type-swiper_eco')) {
-    new Swiper('.object-type-swiper_eco', {
+  // if (document.querySelector('.object-type-swiper_eco')) {
+  //   new Swiper('.object-type-swiper_eco', {
+  //     direction: 'horizontal',
+  //     loop: true,
+  //     effect: 'slide',
+  //     speed: 800,
+
+  //     pagination: {
+  //       el: '.object-type-swiper-pagination_eco',
+  //       type: 'custom',
+  //       renderCustom: function (swiper, current, total) {
+  //         const currEl = document.querySelector('.object-type-swiper-pagination__current_eco');
+  //         const totalEl = document.querySelector('.object-type-swiper-pagination__total_eco');
+
+  //         currEl.innerHTML = current < 10 ? `0${current}` : current;
+  //         totalEl.innerHTML = total < 10 ? `0${total}` : total;
+  //       }
+  //     },
+
+  //     navigation: {
+  //       nextEl: '.object-type-swiper-btn_eco',
+  //     },
+
+  //     scrollbar: false,
+  //   });
+  // }
+
+  // if (document.querySelector('.object-type-swiper_standard')) {
+  //   new Swiper('.object-type-swiper_standard', {
+  //     direction: 'horizontal',
+  //     loop: true,
+  //     effect: 'slide',
+  //     speed: 800,
+
+  //     pagination: {
+  //       el: '.object-type-swiper-pagination_standard',
+  //       type: 'custom',
+  //       renderCustom: function (swiper, current, total) {
+  //         const currEl = document.querySelector('.object-type-swiper-pagination__current_standard');
+  //         const totalEl = document.querySelector('.object-type-swiper-pagination__total_standard');
+
+  //         currEl.innerHTML = current < 10 ? `0${current}` : current;
+  //         totalEl.innerHTML = total < 10 ? `0${total}` : total;
+  //       }
+  //     },
+
+  //     navigation: {
+  //       nextEl: '.object-type-swiper-btn_standard',
+  //     },
+
+  //     scrollbar: false,
+  //   });
+  // }
+
+  // if (document.querySelector('.object-type-swiper_vip')) {
+  //   new Swiper('.object-type-swiper_vip', {
+  //     direction: 'horizontal',
+  //     loop: true,
+  //     effect: 'slide',
+  //     speed: 800,
+
+  //     pagination: {
+  //       el: '.object-type-swiper-pagination_vip',
+  //       type: 'custom',
+  //       renderCustom: function (swiper, current, total) {
+  //         const currEl = document.querySelector('.object-type-swiper-pagination__current_vip');
+  //         const totalEl = document.querySelector('.object-type-swiper-pagination__total_vip');
+
+  //         currEl.innerHTML = current < 10 ? `0${current}` : current;
+  //         totalEl.innerHTML = total < 10 ? `0${total}` : total;
+  //       }
+  //     },
+
+  //     navigation: {
+  //       nextEl: '.object-type-swiper-btn_vip',
+  //     },
+
+  //     scrollbar: false,
+  //   });
+  // }
+
+  const objectTypeSwipers = document.querySelectorAll(".object-type-info-swiper");
+  objectTypeSwipers.forEach(container => {
+    const nextBtn = container.querySelector(".custom-swiper-btn");
+    const pagEl = container.querySelector(".custom-swiper-pagination");
+    const currEl = container.querySelector(".custom-swiper-pagination__current");
+    const totalEl = container.querySelector(".custom-swiper-pagination__total");
+
+    new Swiper(container, {
       direction: 'horizontal',
       loop: true,
       effect: 'slide',
       speed: 800,
 
       pagination: {
-        el: '.object-type-swiper-pagination_eco',
+        el: pagEl,
         type: 'custom',
         renderCustom: function (swiper, current, total) {
-          const currEl = document.querySelector('.object-type-swiper-pagination__current_eco');
-          const totalEl = document.querySelector('.object-type-swiper-pagination__total_eco');
-
           currEl.innerHTML = current < 10 ? `0${current}` : current;
           totalEl.innerHTML = total < 10 ? `0${total}` : total;
         }
       },
 
       navigation: {
-        nextEl: '.object-type-swiper-btn_eco',
+        nextEl: nextBtn,
       },
 
       scrollbar: false,
     });
-  }
-
-  if (document.querySelector('.object-type-swiper_standard')) {
-    new Swiper('.object-type-swiper_standard', {
-      direction: 'horizontal',
-      loop: true,
-      effect: 'slide',
-      speed: 800,
-
-      pagination: {
-        el: '.object-type-swiper-pagination_standard',
-        type: 'custom',
-        renderCustom: function (swiper, current, total) {
-          const currEl = document.querySelector('.object-type-swiper-pagination__current_standard');
-          const totalEl = document.querySelector('.object-type-swiper-pagination__total_standard');
-
-          currEl.innerHTML = current < 10 ? `0${current}` : current;
-          totalEl.innerHTML = total < 10 ? `0${total}` : total;
-        }
-      },
-
-      navigation: {
-        nextEl: '.object-type-swiper-btn_standard',
-      },
-
-      scrollbar: false,
-    });
-  }
-
-  if (document.querySelector('.object-type-swiper_vip')) {
-    new Swiper('.object-type-swiper_vip', {
-      direction: 'horizontal',
-      loop: true,
-      effect: 'slide',
-      speed: 800,
-
-      pagination: {
-        el: '.object-type-swiper-pagination_vip',
-        type: 'custom',
-        renderCustom: function (swiper, current, total) {
-          const currEl = document.querySelector('.object-type-swiper-pagination__current_vip');
-          const totalEl = document.querySelector('.object-type-swiper-pagination__total_vip');
-
-          currEl.innerHTML = current < 10 ? `0${current}` : current;
-          totalEl.innerHTML = total < 10 ? `0${total}` : total;
-        }
-      },
-
-      navigation: {
-        nextEl: '.object-type-swiper-btn_vip',
-      },
-
-      scrollbar: false,
-    });
-  }
+  })
 
   if (document.querySelector('.type-nav')) {
     class Navigation {
