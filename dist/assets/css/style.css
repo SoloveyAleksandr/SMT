@@ -7618,6 +7618,8 @@ svg {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 2rem;
+    max-width: 102.4rem;
+    margin: 0 auto;
 }
 
 .case-stages-list-item {
@@ -7651,7 +7653,7 @@ svg {
 }
 
 .case-stages-list-img {
-    height: 96rem;
+    height: 60rem;
 }
 
 @media (max-width: 1024px) {
