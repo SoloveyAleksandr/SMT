@@ -9,7 +9,8 @@
 
     &-head {
         margin: 19rem auto 10rem;
-        height: 80rem;
+        // height: 80rem;
+        height: 70rem;
         max-width: 138rem;
         position: relative;
 
@@ -202,10 +203,29 @@
                 }
 
                 &__img {
-                    width: 100%;
-                    // height: 100%;
                     object-fit: contain;
                     object-position: center center;
+                    // width: 100%;
+                    height: 100%;
+                    max-height: 70rem;
+                    width: 100%;
+                    max-width: 100%;
+
+                    @include breakpoint($xl-bp) {
+                        max-height: 50rem;
+                    }
+
+                    @include breakpoint($lb-bp) {
+                        max-height: 40rem;
+                    }
+
+                    @include breakpoint($sm-bp) {
+                        max-height: 30rem;
+                    }
+
+                    @include breakpoint($xs-bp) {
+                        max-height: 26rem;
+                    }
                 }
             }
         }

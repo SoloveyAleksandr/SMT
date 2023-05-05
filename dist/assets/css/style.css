@@ -4096,9 +4096,9 @@ svg {
 
 .news-swiper-slide {
     background-color: #fff;
-    padding-top: 10rem;
+    padding-top: 4rem;
     position: relative;
-    height: 96rem;
+    height: 80rem;
 }
 
 @media (max-width: 1330px) {
@@ -4141,7 +4141,7 @@ svg {
 }
 
 .news-swiper-slide__link {
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
 }
 
 @media (max-width: 1024px) {
@@ -8049,7 +8049,7 @@ svg {
 
 .news-item-head {
     margin: 19rem auto 10rem;
-    height: 80rem;
+    height: 70rem;
     max-width: 138rem;
     position: relative;
 }
@@ -8280,11 +8280,38 @@ svg {
 }
 
 .news-item-list-item-img__img {
-    width: 100%;
     -o-object-fit: contain;
     object-fit: contain;
     -o-object-position: center center;
     object-position: center center;
+    height: 100%;
+    max-height: 70rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .news-item-list-item-img__img {
+        max-height: 50rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .news-item-list-item-img__img {
+        max-height: 40rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .news-item-list-item-img__img {
+        max-height: 30rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .news-item-list-item-img__img {
+        max-height: 26rem;
+    }
 }
 
 .contacts {

@@ -287,7 +287,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".partners")) {
     const templateImgs = document.querySelector(".partners template").content.children;
     const animItems = document.querySelectorAll(".partners .partners-list-item");
-    console.log(animItems);
 
     for (let i = 0; i < animItems.length; i++) {
       const tl = gsap.timeline({ repeat: -1 });
@@ -322,7 +321,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".clients")) {
     const templateImgs = document.querySelector(".clients template").content.children;
     const animItems = document.querySelectorAll(".clients .clients-list-item");
-    console.log(animItems);
 
     for (let i = 0; i < animItems.length; i++) {
       const tl = gsap.timeline({ repeat: -1 });

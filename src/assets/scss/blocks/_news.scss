@@ -65,9 +65,11 @@
 
         &-slide {
             background-color: #fff;
-            padding-top: 10rem;
+            // padding-top: 10rem;
+            padding-top: 4rem;
             position: relative;
-            height: 96rem;
+            // height: 96rem;
+            height: 80rem;
 
             @include breakpoint($cos-bp) {
                 padding-top: 5rem;
@@ -95,7 +97,8 @@
             }
 
             &__link {
-                margin-bottom: 10rem;
+                // margin-bottom: 10rem;
+                margin-bottom: 4rem;
 
                 @include breakpoint($xl-bp) {
                     margin-bottom: 0;
