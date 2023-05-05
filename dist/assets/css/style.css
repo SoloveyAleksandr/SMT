@@ -2607,11 +2607,13 @@ svg {
 
 .samples-swiper {
     position: absolute;
-    top: 0;
     right: 0;
-    height: 100%;
     width: 50vw;
     overflow: hidden;
+    height: 65%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 @media (max-width: 850px) {
@@ -4098,7 +4100,7 @@ svg {
     background-color: #fff;
     padding-top: 4rem;
     position: relative;
-    height: 80rem;
+    height: 70rem;
 }
 
 @media (max-width: 1330px) {
@@ -8277,6 +8279,7 @@ svg {
 .news-item-list-item-img {
     display: block;
     width: 100%;
+    padding: 2rem 0;
 }
 
 .news-item-list-item-img__img {

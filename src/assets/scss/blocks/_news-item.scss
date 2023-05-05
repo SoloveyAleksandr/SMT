@@ -184,6 +184,7 @@
             &-img {
                 display: block;
                 width: 100%;
+                padding: 2rem 0;
                 // height: 60rem;
 
                 @include breakpoint($xl-bp) {

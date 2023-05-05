@@ -166,11 +166,14 @@
 
   &-swiper {
     position: absolute;
-    top: 0;
+    // top: 0;
     right: 0;
-    height: 100%;
+    // height: 100%;
     width: 50vw;
     overflow: hidden;
+    height: 65%;
+    top: 50%;
+    transform: translateY(-50%);
 
     @include breakpoint($jb-bp) {
       position: static;
