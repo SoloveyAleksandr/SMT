@@ -5518,6 +5518,7 @@ svg {
     position: absolute;
     left: 1.5rem;
     top: 10rem;
+    z-index: 2;
 }
 
 @media (max-width: 1024px) {
@@ -5551,6 +5552,7 @@ svg {
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    background-color: #fff;
 }
 
 @media (max-width: 500px) {
