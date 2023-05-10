@@ -2610,7 +2610,7 @@ svg {
     right: 0;
     width: 50vw;
     overflow: hidden;
-    height: 65%;
+    height: 70rem;
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
