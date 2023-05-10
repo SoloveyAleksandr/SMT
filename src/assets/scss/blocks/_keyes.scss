@@ -26,10 +26,12 @@
 
   &-container {
     padding-left: 50%;
-    padding-top: 10rem;
+    // padding-top: 10rem;
+    padding-top: 3rem;
 
     @include breakpoint($cos-bp) {
-      padding-top: 5rem;
+      // padding-top: 5rem;
+      padding-top: 0;
       padding-left: 55%;
     }
 
@@ -101,13 +103,15 @@
 
   &-swiper {
     position: absolute;
-    height: 96rem;
+    // height: 96rem;
+    height: 86rem;
     width: 100%;
     top: 0;
     left: 0;
 
     @include breakpoint($cos-bp) {
-      height: 90rem;
+      // height: 90rem;
+      height: 72rem;
     }
 
     @include breakpoint($xl-bp) {
@@ -131,6 +135,7 @@
       height: 100%;
       width: 100%;
       position: relative;
+      pointer-events: none;
 
       @include breakpoint($jb-bp) {
         display: flex;
@@ -140,15 +145,21 @@
       &-img {
         position: absolute;
         left: 0;
-        top: 0;
+        // top: 0;
+        top: 50%;
         width: 50vw;
-        height: 100%;
+        // height: 100%;
+        height: 70rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: translateX(-100%);
+        transform: translateX(-100%) translateY(-50%);
         opacity: 0;
         transition: 1.5s;
+
+        @include breakpoint($cos-bp) {
+          height: 62rem;
+        }
 
         @include breakpoint($jb-bp) {
           position: static;
@@ -181,11 +192,13 @@
 
       &-container {
         padding-left: 50%;
-        padding-top: 25rem;
+        // padding-top: 25rem;
+        padding-top: 18rem;
         height: 100%;
 
         @include breakpoint($cos-bp) {
-          padding-top: 20rem;
+          // padding-top: 20rem;
+          padding-top: 12rem;
           padding-left: 55%;
         }
 
@@ -235,6 +248,11 @@
         }
       }
 
+      &.swiper-slide-active,
+      &.swiper-slide-duplicate-active {
+        pointer-events: all;
+      }
+
       &.swiper-slide-active &__title {
         transition: 0.5s ease 0.51s;
         transform: translateY(0);
@@ -249,14 +267,22 @@
 
       &.swiper-slide-active &-img {
         transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) 1.5s;
-        transform: scale(1) rotate(0);
+        transform: scale(1) rotate(0) translateY(-50%);
         opacity: 1;
+
+        @include breakpoint($jb-bp) {
+          transform: scale(1) rotate(0);
+        }
       }
 
       &.swiper-slide-duplicate-active &-img {
         transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) 1.5s;
-        transform: scale(1) rotate(0);
+        transform: scale(1) rotate(0) translateY(-50%);
         opacity: 1;
+
+        @include breakpoint($jb-bp) {
+          transform: scale(1) rotate(0);
+        }
       }
 
       &.swiper-slide-active &__description {

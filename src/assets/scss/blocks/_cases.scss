@@ -39,9 +39,12 @@
 
       &-img {
         position: absolute;
-        top: 0;
+        // top: 0;
+        top: 50%;
+        transform: translateY(-50%);
         width: 50%;
-        height: 100%;
+        // height: 100%;
+        height: 60rem;
 
         &__img {
           object-fit: cover;
@@ -51,6 +54,7 @@
         }
 
         @include breakpoint($lb-bp) {
+          transform: translateY(0);
           display: none;
         }
       }
@@ -71,7 +75,8 @@
         max-width: 169rem;
         margin: 0 auto;
         padding: 0 1.5rem;
-        height: 96rem;
+        // height: 96rem;
+        min-height: 70rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -86,6 +91,7 @@
         }
 
         @include breakpoint($lb-bp) {
+          min-height: 0;
           height: fit-content;
         }
       }
@@ -120,6 +126,8 @@
       }
 
       &__link {
+        flex: none;
+
         @include breakpoint($xs-bp) {
           width: 100%;
         }
