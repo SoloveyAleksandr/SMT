@@ -3880,8 +3880,8 @@ svg {
 }
 
 .clients-list-item-img {
-    width: 25rem;
-    height: 14rem;
+    width: 90%;
+    height: 90%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -4013,8 +4013,8 @@ svg {
 
 .partners-list-item-img {
     position: absolute;
-    width: 25rem;
-    height: 14rem;
+    width: 90%;
+    height: 90%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
