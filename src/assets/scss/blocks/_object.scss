@@ -268,6 +268,10 @@
   }
 
   &-type {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 8rem;
+
     &-wrapper {
       display: flex;
       flex-direction: column;
@@ -295,6 +299,10 @@
       display: flex;
       gap: 2rem;
       margin-bottom: 4rem;
+
+      &:not(:nth-child(2)) {
+        margin-top: 8rem;
+      }
 
       @include breakpoint($lb-bp) {
         flex-direction: column-reverse;
@@ -327,7 +335,7 @@
                 color: $green;
                 font-size: 2rem;
                 font-weight: $font-reg;
-                transition: .3s;
+                transition: 0.3s;
 
                 &:hover {
                   opacity: 0.5;
@@ -360,6 +368,20 @@
 
               @include breakpoint($xl-bp) {
                 font-size: 2rem;
+              }
+            }
+
+            h3 {
+              font-size: 3rem;
+              font-weight: $font-reg;
+
+              & >,
+              * > *,
+              & > * {
+                * {
+                  font-size: inherit;
+                  font-weight: inherit;
+                }
               }
             }
 

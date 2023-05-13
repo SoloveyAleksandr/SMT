@@ -11899,6 +11899,10 @@ svg {
     margin-bottom: 4rem;
 }
 
+.object-type-info:not(:nth-child(2)) {
+    margin-top: 8rem;
+}
+
 @media (max-width: 650px) {
     .object-type-info {
         -ms-flex-direction: column-reverse;
@@ -11983,6 +11987,17 @@ svg {
     .object-type-info-content-item > h4 {
         font-size: 2rem;
     }
+}
+
+.object-type-info-content-item > h3 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.object-type-info-content-item > h3 > *,
+.object-type-info-content-item > h3 * > * *, .object-type-info-content-item > h3 > * * {
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 .object-type-info-content-item > p {
