@@ -10589,12 +10589,24 @@ svg {
     font-weight: inherit;
     font-size: inherit;
     line-height: inherit;
+    color: #006B51;
+    transition: 0.3s;
+}
+
+.material-main-list-item > p a:hover {
+    opacity: 0.8;
 }
 
 .material-main-list-item > a {
     font-weight: inherit;
     font-size: inherit;
     line-height: inherit;
+    color: #006B51;
+    transition: 0.3s;
+}
+
+.material-main-list-item > a:hover {
+    opacity: 0.8;
 }
 
 .material-main-list-item > ul {
