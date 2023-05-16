@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const keysSwiper = new Swiper('.keyes-swiper', {
     direction: 'horizontal',
     loop: true,
+    autoHeight: true,
 
     effect: 'slide',
 

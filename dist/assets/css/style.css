@@ -2653,25 +2653,11 @@ svg {
 
 .keyes {
     margin-bottom: 20rem;
-    height: 96rem;
     position: relative;
 }
 
-@media (max-width: 1330px) {
-    .keyes {
-        height: 90rem;
-    }
-}
-
 @media (max-width: 1024px) {
     .keyes {
-        height: 64rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .keyes {
-        height: 57rem;
         margin-bottom: 8rem;
     }
 }
@@ -2688,9 +2674,19 @@ svg {
     }
 }
 
+@media (max-width: 500px) {
+    .keyes {
+        padding-bottom: 6rem;
+    }
+}
+
 .keyes-container {
-    padding-left: 50%;
+    padding-left: calc(50vw + 10rem);
     padding-top: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 @media (max-width: 1330px) {
@@ -2710,6 +2706,21 @@ svg {
     .keyes-container {
         width: 100%;
         padding: 0 2.5rem;
+        left: unset;
+        top: unset;
+        bottom: 1rem;
+        right: 0;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 500px) {
+    .keyes-container {
+        -ms-flex-pack: start;
+        justify-content: flex-start;
     }
 }
 
@@ -2737,26 +2748,8 @@ svg {
     }
 }
 
-@media (max-width: 850px) {
-    .keyes-info {
-        position: absolute;
-        bottom: 1rem;
-        right: 2.5rem;
-    }
-}
-
-@media (max-width: 500px) {
-    .keyes-info {
-        left: 2.5rem;
-        bottom: 7rem;
-    }
-}
-
 @media (max-width: 375px) {
     .keyes-info {
-        left: 0;
-        right: 0;
-        bottom: 7rem;
         -ms-flex-align: center;
         align-items: center;
     }
@@ -2786,49 +2779,26 @@ svg {
 }
 
 .keyes-swiper {
-    position: absolute;
-    height: 86rem;
     width: 100%;
-    top: 0;
-    left: 0;
-}
-
-@media (max-width: 1330px) {
-    .keyes-swiper {
-        height: 72rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .keyes-swiper {
-        height: 57rem;
-    }
 }
 
 @media (max-width: 850px) {
     .keyes-swiper {
         position: static;
-        height: 73rem;
-    }
-}
-
-@media (max-width: 500px) {
-    .keyes-swiper {
-        height: 80rem;
-    }
-}
-
-@media (max-width: 375px) {
-    .keyes-swiper {
-        height: 90rem;
     }
 }
 
 .keyes-swiper-slide {
-    height: 100%;
+    min-height: 70rem;
     width: 100%;
     position: relative;
     pointer-events: none;
+}
+
+@media (max-width: 1330px) {
+    .keyes-swiper-slide {
+        min-height: 62rem;
+    }
 }
 
 @media (max-width: 850px) {
@@ -2837,13 +2807,20 @@ svg {
         display: flex;
         -ms-flex-direction: column;
         flex-direction: column;
+        min-height: 35rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .keyes-swiper-slide {
+        min-height: 30.5rem;
     }
 }
 
 .keyes-swiper-slide-img {
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 0;
     width: 50vw;
     height: 70rem;
     display: -ms-flexbox;
@@ -2852,8 +2829,8 @@ svg {
     align-items: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-transform: translateX(-100%) translateY(-50%);
-    transform: translateX(-100%) translateY(-50%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
     opacity: 0;
     transition: 1.5s;
 }
@@ -2968,6 +2945,7 @@ svg {
     transform: translateX(15rem);
     opacity: 0;
     transition: 0.8s;
+    padding-bottom: 3rem;
 }
 
 @media (max-width: 1024px) {
@@ -2996,8 +2974,8 @@ svg {
 
 .keyes-swiper-slide.swiper-slide-active .keyes-swiper-slide-img {
     transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) 1.5s;
-    -webkit-transform: scale(1) rotate(0) translateY(-50%);
-    transform: scale(1) rotate(0) translateY(-50%);
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
     opacity: 1;
 }
 
@@ -3010,8 +2988,8 @@ svg {
 
 .keyes-swiper-slide.swiper-slide-duplicate-active .keyes-swiper-slide-img {
     transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.125) 1.5s;
-    -webkit-transform: scale(1) rotate(0) translateY(-50%);
-    transform: scale(1) rotate(0) translateY(-50%);
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
     opacity: 1;
 }
 
