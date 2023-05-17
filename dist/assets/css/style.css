@@ -6687,6 +6687,11 @@ svg {
 
 .example-slider-slide {
     background-color: #FFFFFF;
+    pointer-events: none;
+}
+
+.example-slider-slide.swiper-slide-active, .example-slider-slide.swiper-slide-duplicate-active {
+    pointer-events: all;
 }
 
 @media (max-width: 500px) {
@@ -6766,6 +6771,18 @@ svg {
     display: -ms-flexbox;
     display: flex;
     gap: 2rem;
+    background-color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s;
+}
+
+.example-slide-list__item.swiper-slide-active, .example-slide-list__item.swiper-slide-duplicate-active {
+    opacity: 1;
+    pointer-events: all;
+    height: unset;
 }
 
 @media (max-width: 500px) {

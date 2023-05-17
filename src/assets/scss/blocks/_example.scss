@@ -173,6 +173,12 @@
 
     &-slide {
       background-color: $white;
+      pointer-events: none;
+
+      &.swiper-slide-active,
+      &.swiper-slide-duplicate-active {
+        pointer-events: all;
+      }
 
       &__swiper {
         @include breakpoint($sm-bp) {
@@ -235,12 +241,23 @@
   }
 
   &-slide {
-
     &-list {
-
       &__item {
         display: flex;
         gap: 2rem;
+        background-color: #fff;
+        opacity: 0;
+        pointer-events: none;
+        height: 0;
+        overflow: hidden;
+        transition: opacity 0.5s;
+
+        &.swiper-slide-active,
+        &.swiper-slide-duplicate-active {
+          opacity: 1;
+          pointer-events: all;
+          height: unset;
+        }
 
         @include breakpoint($sm-bp) {
           flex-direction: column;
@@ -295,7 +312,7 @@
           font-size: 2rem;
           font-weight: $font-reg;
           color: $green;
-          transition: .3s;
+          transition: 0.3s;
 
           &:hover {
             opacity: 0.8;
@@ -377,7 +394,7 @@
         transform: rotate(-90deg) scale(2);
         position: absolute;
         right: 2.4rem;
-        transition: .3s;
+        transition: 0.3s;
       }
     }
 
@@ -390,7 +407,7 @@
       z-index: 10;
       box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
       overflow: hidden;
-      transition: .3s;
+      transition: 0.3s;
       opacity: 0;
       pointer-events: none;
 
@@ -406,7 +423,7 @@
         font-size: 2rem;
         font-weight: $font-reg;
         cursor: pointer;
-        transition: .3s;
+        transition: 0.3s;
         border: 0.3rem solid transparent;
         display: flex;
         align-items: center;

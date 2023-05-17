@@ -869,6 +869,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const infoSlider = new Swiper('.example-slider', {
+      autoHeight: true,
       loop: true,
       effect: 'slide',
       navigation: {
@@ -898,7 +899,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       new Swiper(slider, {
         loop: true,
-        effect: 'fade',
+        // effect: 'fade',
+        autoHeight: true,
 
         navigation: {
           nextEl: btn,
