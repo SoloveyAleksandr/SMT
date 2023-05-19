@@ -1126,7 +1126,7 @@ svg {
     .modal-form-container {
         -ms-flex-pack: center;
         justify-content: center;
-        padding: 0 2.5rem;
+        padding: 12rem 2.5rem 2.5rem;
         width: 100%;
     }
 }
@@ -1343,21 +1343,11 @@ svg {
     gap: 2rem;
 }
 
-@media (max-width: 500px) {
-    .header-btns {
-        width: 100%;
-    }
-}
-
-.header-btns__btn {
-    width: 100%;
-}
-
 .header-menu {
     width: 100%;
-    max-height: calc(100vh - 10rem);
+    height: calc(100vh - 100%);
     position: absolute;
-    z-index: 1;
+    z-index: 1000;
     background-color: #FFFFFF;
     transition: 0.3s cubic-bezier(0.95, 0.05, 0.5, 0.035);
     top: -100vh;
@@ -1367,18 +1357,6 @@ svg {
 .header-menu._active {
     top: 100%;
     transition: 0.3s ease-in-out;
-}
-
-@media (max-width: 1024px) {
-    .header-menu {
-        padding-top: 7rem;
-        max-height: none;
-        height: 100vh;
-    }
-
-    .header-menu._active {
-        top: 0;
-    }
 }
 
 .header-menu-bg {
@@ -1472,12 +1450,6 @@ svg {
     }
 }
 
-@media (max-width: 1330px) and (max-width: 650px) {
-    .header-btns__btn:nth-child(1) {
-        display: none;
-    }
-}
-
 @media (max-width: 1024px) {
     .header-inner {
         padding: 1.6rem 0;
@@ -1504,6 +1476,27 @@ svg {
 
     .header-nav-info {
         max-width: 32rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .header-btns {
+        position: fixed;
+        z-index: 500;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        background-color: #fff;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+
+    .header-btns__btn {
+        -ms-flex: 1;
+        flex: 1;
+        height: 4rem;
     }
 }
 
@@ -1954,6 +1947,10 @@ svg {
 }
 
 @media (max-width: 850px) {
+    .main {
+        margin-bottom: 2rem;
+    }
+
     .main-gif {
         height: 32rem;
         padding-bottom: 0;

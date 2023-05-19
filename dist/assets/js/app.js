@@ -543,15 +543,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener('scroll', hideHeader);
 
-  const menuList = document.querySelector(".header-menu-list");
-  if (window.matchMedia("(max-width: 500px)").matches && menuList) {
-    const infoItem = menuList.querySelector(".header-menu-list__item.header-menu-list__info-item");
-    const headerBtns = document.querySelector(".header-btns");
+  // const menuList = document.querySelector(".header-menu-list");
+  // if (window.matchMedia("(max-width: 500px)").matches && menuList) {
+  //   const infoItem = menuList.querySelector(".header-menu-list__item.header-menu-list__info-item");
+  //   const headerBtns = document.querySelector(".header-btns");
 
-    if (headerBtns && infoItem) {
-      infoItem.appendChild(headerBtns);
-    }
-  }
+  //   if (headerBtns && infoItem) {
+  //     infoItem.appendChild(headerBtns);
+  //   }
+  // }
   // }
 
 

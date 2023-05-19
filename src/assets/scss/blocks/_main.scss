@@ -77,6 +77,8 @@
     }
 
     @include breakpoint ($jb-bp) {
+        margin-bottom: 2rem;
+
         &-gif {
             height: 32rem;
             padding-bottom: 0;
