@@ -1343,6 +1343,16 @@ svg {
     gap: 2rem;
 }
 
+@media (max-width: 500px) {
+    .header-btns {
+        width: 100%;
+    }
+}
+
+.header-btns__btn {
+    width: 100%;
+}
+
 .header-menu {
     width: 100%;
     max-height: calc(100vh - 10rem);
@@ -1460,8 +1470,10 @@ svg {
     .header-phone-container {
         display: none;
     }
+}
 
-    .header-btns {
+@media (max-width: 1330px) and (max-width: 650px) {
+    .header-btns__btn:nth-child(1) {
         display: none;
     }
 }
@@ -1502,22 +1514,32 @@ svg {
     }
 
     .header-menu-list {
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        padding-top: 4rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 2rem 0rem 12rem;
     }
 
     .header-menu-list__item {
         width: 100%;
         margin-bottom: 4rem;
+        -ms-flex-order: 2;
+        order: 2;
     }
 
     .header-menu-list__info-item {
-        display: block;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        gap: 2rem;
+        width: 100%;
+        -ms-flex-order: 1;
+        order: 1;
     }
 
     .header-nav-info {
-        max-width: 100%;
+        max-width: unset;
+        width: 100%;
     }
 
     .header-nav-info__contacts {

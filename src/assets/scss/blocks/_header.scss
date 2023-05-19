@@ -88,6 +88,14 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @include breakpoint($sm-bp) {
+      width: 100%;
+    }
+
+    &__btn {
+      width: 100%;
+    }
   }
 
   &-menu {
@@ -199,7 +207,15 @@
     }
 
     &-btns {
-      display: none;
+      // display: none;
+
+      &__btn {
+        &:nth-child(1) {
+          @include breakpoint($lb-bp) {
+            display: none;
+          }
+        }
+      }
     }
   }
 
@@ -238,22 +254,28 @@
 
     &-menu {
       &-list {
-        flex-wrap: wrap;
-        padding-top: 4rem;
+        flex-direction: column;
+        padding: 2rem 0rem 12rem;
 
         &__item {
           width: 100%;
           margin-bottom: 4rem;
+          order: 2;
         }
 
         &__info-item {
-          display: block;
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 2rem;
+          width: 100%;
+          order: 1;
         }
       }
     }
 
     &-nav-info {
-      max-width: 100%;
+      max-width: unset;
+      width: 100%;
 
       &__contacts {
         width: 100%;
