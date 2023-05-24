@@ -354,15 +354,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // main swiper 
   if (document.querySelector('.main-swiper')) {
-    gsap.from(".main-swiper", {
+    // gsap.from(".main-swiper", {
+    //   x: "-200vh",
+    //   opacity: 0,
+    //   delay: 0.5,
+    //   duration: 1,
+    // })
+    // gsap.from(".main-swiper-control", {
+    //   x: "200vh",
+    //   opacity: 0,
+    //   delay: 0.5,
+    //   duration: 1,
+    // })
+    gsap.fromTo(".main-swiper", {
       x: "-200vh",
       opacity: 0,
+    }, {
+      opacity: 1,
+      x: 0,
       delay: 0.5,
       duration: 1,
     })
-    gsap.from(".main-swiper-control", {
+    gsap.fromTo(".main-swiper-control", {
       x: "200vh",
       opacity: 0,
+    }, {
+      opacity: 1,
+      x: 0,
       delay: 0.5,
       duration: 1,
     })
@@ -1693,9 +1711,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       animList.forEach((item, index) => {
-        tl.from(item, {
+        // tl.from(item, {
+        //   y: "-=10rem",
+        //   opacity: 0,
+        //   duration: 2,
+        //   delay: 1.5 * index,
+        //   ease: "sine.out"
+        // }, 'sin')
+        tl.fromTo(item, {
           y: "-=10rem",
           opacity: 0,
+        }, {
+          y: 0,
+          opacity: 1,
           duration: 2,
           delay: 1.5 * index,
           ease: "sine.out"
@@ -1714,9 +1742,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       animList.forEach((item, index) => {
-        tl.from(item, {
+        // tl.from(item, {
+        //   y: "-=10rem",
+        //   opacity: 0,
+        //   duration: 2,
+        //   delay: 1.5 * index,
+        //   ease: "sine.out"
+        // }, 'sin')
+        tl.fromTo(item, {
           y: "-=10rem",
           opacity: 0,
+        }, {
+          y: 0,
+          opacity: 1,
           duration: 2,
           delay: 1.5 * index,
           ease: "sine.out"

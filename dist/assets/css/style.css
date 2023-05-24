@@ -1937,6 +1937,7 @@ svg {
     margin: 0;
     max-width: 75%;
     pointer-events: all;
+    opacity: 0;
 }
 
 .main-swiper-slide {
@@ -1965,6 +1966,7 @@ svg {
 
 .main-swiper-control {
     pointer-events: all;
+    opacity: 0;
 }
 
 @media (max-width: 1024px) {
@@ -12837,6 +12839,10 @@ svg {
         -webkit-animation: animLayerB1024 8s ease infinite;
         animation: animLayerB1024 8s ease infinite;
     }
+}
+
+.type-info-head-img_animated-js {
+    opacity: 0;
 }
 
 .type-info-head-img-container {
