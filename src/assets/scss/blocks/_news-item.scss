@@ -7,6 +7,14 @@
         margin-bottom: 8rem;
     }
 
+    @include breakpoint($jb-bp) {
+        margin-top: 15.5rem;
+      }
+    
+      @include breakpoint($sm-bp) {
+        margin-top: 14.3rem;
+      }
+
     &-head {
         margin: 19rem auto 10rem;
         // height: 80rem;

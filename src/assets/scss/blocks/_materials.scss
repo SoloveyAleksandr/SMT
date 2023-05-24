@@ -9,6 +9,14 @@
         margin-bottom: 8rem;
     }
 
+    @include breakpoint($jb-bp) {
+        margin-top: 17.5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        margin-top: 16.3rem;
+    }
+
     &-head {
         @include breakpoint($xl-bp) {
             margin-bottom: 2rem;
@@ -74,10 +82,10 @@
         }
 
         &__link {
-            transition: .3s;
+            transition: 0.3s;
 
             &:hover {
-                opacity: .8;
+                opacity: 0.8;
             }
         }
 
@@ -106,7 +114,7 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            transition: .3s;
+            transition: 0.3s;
 
             @include breakpoint($xl-bp) {
                 width: 30rem;
@@ -145,7 +153,7 @@
                     height: 4.5rem;
                     display: flex;
                     align-items: center;
-                    transition: .3s;
+                    transition: 0.3s;
 
                     @include breakpoint($xl-bp) {
                         font-size: 1.4rem;
@@ -211,7 +219,7 @@
                     width: 46rem;
                     color: $green;
                     background-color: $white;
-                    transition: .3s;
+                    transition: 0.3s;
                     margin-bottom: 1rem;
                     font-size: 1.8rem;
                     font-weight: $font-reg;
@@ -266,7 +274,7 @@
                 padding: 3rem;
                 position: relative;
                 box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
-                transition: .3s;
+                transition: 0.3s;
 
                 &:hover {
                     transform: scale(0.98);

@@ -64,19 +64,18 @@
         }
     }
 
-
-    @include breakpoint ($xl-bp) {
+    @include breakpoint($xl-bp) {
         &-gif {
             padding-bottom: 10rem;
         }
     }
 
-    @include breakpoint ($cos-bp) {
+    @include breakpoint($cos-bp) {
         margin-bottom: 8rem;
         padding-top: 7rem;
     }
 
-    @include breakpoint ($jb-bp) {
+    @include breakpoint($jb-bp) {
         margin-bottom: 2rem;
 
         &-gif {
@@ -103,5 +102,17 @@
                 padding-right: 2.5rem;
             }
         }
+    }
+
+    @include breakpoint($jb-bp) {
+        padding-top: 15.7rem;
+    }
+
+    @include breakpoint($lb-bp) {
+        padding-top: 15rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-top: 14rem;
     }
 }

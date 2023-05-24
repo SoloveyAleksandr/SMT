@@ -3,7 +3,8 @@
 .header {
   background-color: $white;
   position: fixed;
-  top: 0;
+  // position: sticky;
+  // top: 0;
   left: 0;
   z-index: 1000;
   width: 100%;
@@ -92,8 +93,8 @@
 
   &-menu {
     width: 100%;
-    // max-height: calc(100vh - 10rem);
-    height: calc(100vh - 100%);
+    max-height: calc(100vh - 10rem);
+    // height: calc(100vh - 100%);
     position: absolute;
     z-index: 1000;
     background-color: $white;
@@ -104,12 +105,6 @@
     &._active {
       top: 100%;
       transition: 0.3s ease-in-out;
-    }
-
-    @include breakpoint($xl-bp) {
-      // padding-top: 7rem;
-      // max-height: none;
-      // height: 100vh;
     }
 
     &-bg {
@@ -139,6 +134,73 @@
         color: $green;
         font-weight: $font-reg;
         margin-bottom: 2rem;
+      }
+    }
+
+    &-btn {
+      margin-left: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: none;
+      background-color: transparent;
+      width: 4rem;
+      height: 4rem;
+      position: relative;
+
+      @include breakpoint($lb-bp) {
+        margin-left: 0;
+      }
+
+      &__burger {
+        position: absolute;
+        height: 0.1rem;
+        width: 3rem;
+        background-color: $dark;
+        border-radius: 0.1rem;
+        transition: 0.3s;
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          height: 0.1rem;
+          width: 2rem;
+          background-color: $dark;
+          border-radius: 0.1rem;
+          right: 0;
+          transition: 0.3s;
+        }
+
+        &::before {
+          top: 1rem;
+        }
+
+        &::after {
+          bottom: 1rem;
+        }
+      }
+
+      &._active {
+        .header-menu-btn__burger {
+          transform: rotate(135deg);
+
+          &::before,
+          &::after {
+            transform: rotate(-90deg);
+          }
+
+          &::before {
+            top: 0.5rem;
+            left: 0.5rem;
+          }
+
+          &::after {
+            bottom: 0.5rem;
+            left: 0.5rem;
+          }
+        }
       }
     }
   }
@@ -191,14 +253,40 @@
   }
 
   @include breakpoint($cos-bp) {
-    &-phone-container {
-      display: none;
+    // &-phone-container {
+    //   display: none;
+    // }
+    &-phone {
+      &-list {
+        gap: 2rem;
+
+        &__item {
+          &:last-child {
+            display: none;
+          }
+        }
+      }
     }
   }
 
   @include breakpoint($xl-bp) {
+    &-logo {
+      margin-right: 1.5rem;
+    }
+
     &-inner {
       padding: 1.6rem 0;
+
+      // flex-direction: column;
+      // align-items: flex-start;
+      // gap: 1rem;
+      // position: relative;
+    }
+
+    &-phone-list {
+      &__link {
+        font-size: 1.6rem;
+      }
     }
 
     &-menu {
@@ -216,6 +304,12 @@
           justify-content: center;
         }
       }
+
+      &-btn {
+        // position: absolute;
+        // top: 1.6rem;
+        // right: 0;
+      }
     }
 
     &-nav-info {
@@ -223,17 +317,47 @@
     }
   }
 
+  @include breakpoint($jb-bp) {
+    &-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      position: relative;
+    }
+
+    &-menu {
+      &-btn {
+        position: absolute;
+        top: 1.6rem;
+        right: 0;
+      }
+    }
+  }
+
   @include breakpoint($lb-bp) {
-    &-btns {
-      position: fixed;
-      z-index: 500;
-      bottom: 0;
-      left: 0;
+    // &-btns {
+    //   position: fixed;
+    //   z-index: 500;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   padding: 1rem 1.5rem;
+    //   background-color: #fff;
+    //   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    //   flex-direction: row-reverse;
+
+    //   &__btn {
+    //     flex: 1;
+    //     height: 4rem;
+    //   }
+    // }
+    &-container {
       width: 100%;
-      padding: 1rem 1.5rem;
-      background-color: #fff;
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-      flex-direction: row-reverse;
+    }
+
+    &-btns {
+      width: 100%;
+      padding: 0rem 0.1rem;
 
       &__btn {
         flex: 1;
@@ -280,72 +404,72 @@
   }
 }
 
-.header-menu-btn {
-  margin-left: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border: none;
-  background-color: transparent;
-  width: 4rem;
-  height: 4rem;
-  position: relative;
+// .header-menu-btn {
+//   margin-left: 2rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   position: relative;
+//   border: none;
+//   background-color: transparent;
+//   width: 4rem;
+//   height: 4rem;
+//   position: relative;
 
-  @include breakpoint($lb-bp) {
-    margin-left: 0;
-  }
+//   @include breakpoint($lb-bp) {
+//     margin-left: 0;
+//   }
 
-  &__burger {
-    position: absolute;
-    height: 0.1rem;
-    width: 3rem;
-    background-color: $dark;
-    border-radius: 0.1rem;
-    transition: 0.3s;
+//   &__burger {
+//     position: absolute;
+//     height: 0.1rem;
+//     width: 3rem;
+//     background-color: $dark;
+//     border-radius: 0.1rem;
+//     transition: 0.3s;
 
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-      height: 0.1rem;
-      width: 2rem;
-      background-color: $dark;
-      border-radius: 0.1rem;
-      right: 0;
-      transition: 0.3s;
-    }
+//     &::before,
+//     &::after {
+//       position: absolute;
+//       content: "";
+//       height: 0.1rem;
+//       width: 2rem;
+//       background-color: $dark;
+//       border-radius: 0.1rem;
+//       right: 0;
+//       transition: 0.3s;
+//     }
 
-    &::before {
-      top: 1rem;
-    }
+//     &::before {
+//       top: 1rem;
+//     }
 
-    &::after {
-      bottom: 1rem;
-    }
-  }
+//     &::after {
+//       bottom: 1rem;
+//     }
+//   }
 
-  &._active {
-    .header-menu-btn__burger {
-      transform: rotate(135deg);
+//   &._active {
+//     .header-menu-btn__burger {
+//       transform: rotate(135deg);
 
-      &::before,
-      &::after {
-        transform: rotate(-90deg);
-      }
+//       &::before,
+//       &::after {
+//         transform: rotate(-90deg);
+//       }
 
-      &::before {
-        top: 0.5rem;
-        left: 0.5rem;
-      }
+//       &::before {
+//         top: 0.5rem;
+//         left: 0.5rem;
+//       }
 
-      &::after {
-        bottom: 0.5rem;
-        left: 0.5rem;
-      }
-    }
-  }
-}
+//       &::after {
+//         bottom: 0.5rem;
+//         left: 0.5rem;
+//       }
+//     }
+//   }
+// }
 
 //
 // v2

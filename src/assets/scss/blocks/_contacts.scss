@@ -11,6 +11,14 @@
     margin-top: 7.5rem;
   }
 
+  @include breakpoint($jb-bp) {
+    margin-top: 15.5rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-top: 14.3rem;
+  }
+
   &-container {
     @include breakpoint($xl-bp) {
       padding: 0;

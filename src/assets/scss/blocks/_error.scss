@@ -11,6 +11,10 @@
         margin-bottom: 8rem;
     }
 
+    @include breakpoint($jb-bp) {
+        margin-top: 20rem;
+    }
+
     &__title {
         font-size: 5.2rem;
         text-align: center;
@@ -74,7 +78,7 @@
         &__text {
             color: inherit;
             font-size: 46rem;
-            font-family: 'Fira Sans', sans-serif;
+            font-family: "Fira Sans", sans-serif;
 
             @include breakpoint($xl-bp) {
                 font-size: 24rem;

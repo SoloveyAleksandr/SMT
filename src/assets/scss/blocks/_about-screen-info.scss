@@ -3,6 +3,18 @@
 .about-screen-info {
     padding: 6rem 0 0 0;
 
+    @include breakpoint($jb-bp) {
+        padding-top: 15.7rem;
+    }
+
+    @include breakpoint($lb-bp) {
+        padding-top: 15rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-top: 14rem;
+    }
+
     &-container {
         padding: 0 15.5rem;
         background: linear-gradient($white 0%, $white 50%, $light-grey 50%, $light-grey 0%);

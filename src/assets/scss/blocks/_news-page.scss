@@ -14,8 +14,12 @@
     }
 
     @include breakpoint($jb-bp) {
-        margin-top: 6.5rem;
-    }
+        margin-top: 15.5rem;
+      }
+    
+      @include breakpoint($sm-bp) {
+        margin-top: 14.3rem;
+      }
 
     &-head {
         margin-bottom: 20rem;

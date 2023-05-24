@@ -12,6 +12,14 @@
     margin-bottom: 8rem;
   }
 
+  @include breakpoint($jb-bp) {
+    margin-top: 17.5rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-top: 16.3rem;
+  }
+
   &-head {
     display: flex;
     flex-direction: column;
