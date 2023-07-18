@@ -19,7 +19,7 @@
     }
 
     &-gif {
-        height: 77rem;
+        height: 90rem;
         padding-bottom: 19rem;
         display: flex;
         align-items: center;
@@ -75,6 +75,10 @@
     @include breakpoint($cos-bp) {
         margin-bottom: 8rem;
         padding-top: 7rem;
+
+        &-gif {
+            height: 80rem;
+        }
     }
 
     @include breakpoint($jb-bp) {
