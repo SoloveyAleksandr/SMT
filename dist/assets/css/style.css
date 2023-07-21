@@ -10403,6 +10403,110 @@ svg {
     flex: 1;
 }
 
+.materials-info .seo-text {
+    font-size: 1.8rem;
+    line-height: 130%;
+    font-weight: 400;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.materials-info .seo-text >,
+.materials-info .seo-text * > {
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+}
+
+.materials-info .seo-text > *,
+.materials-info .seo-text * > * {
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+}
+
+.materials-info .seo-text > * :not(strong),
+.materials-info .seo-text * > * :not(strong) {
+    font-weight: inherit;
+}
+
+.materials-info .seo-text > * strong,
+.materials-info .seo-text * > * strong {
+    font-weight: 600;
+}
+
+.materials-info .seo-text > :not(strong),
+.materials-info .seo-text * > :not(strong) {
+    font-weight: inherit;
+}
+
+.materials-info .seo-text > strong,
+.materials-info .seo-text * > strong {
+    font-weight: 600;
+}
+
+.materials-info .seo-text p {
+    margin-bottom: 1em;
+}
+
+.materials-info .seo-text h1,
+.materials-info .seo-text h2,
+.materials-info .seo-text h3,
+.materials-info .seo-text h4,
+.materials-info .seo-text h5,
+.materials-info .seo-text h6 {
+    font-weight: 600;
+}
+
+.materials-info .seo-text h1 {
+    font-size: 2em;
+}
+
+.materials-info .seo-text h2 {
+    font-size: 1.8em;
+}
+
+.materials-info .seo-text h3 {
+    font-size: 1.6em;
+}
+
+.materials-info .seo-text h4 {
+    font-size: 1.4em;
+}
+
+.materials-info .seo-text h5 {
+    font-size: 1.2em;
+}
+
+.materials-info .seo-text h6 {
+    font-size: 1em;
+}
+
+.materials-info .seo-text ul li {
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.materials-info .seo-text ul li::before {
+    content: "";
+    -ms-flex: none;
+    flex: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 0.2rem solid #006B51;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .materials-info-list {
     display: -ms-flexbox;
     display: flex;

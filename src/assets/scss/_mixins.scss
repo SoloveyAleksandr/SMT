@@ -3,3 +3,38 @@
     @content;
   }
 }
+
+@mixin text {
+  & >,
+  * > {
+    * {
+      font-size: inherit;
+      line-height: inherit;
+      font-family: inherit;
+      color: inherit;
+      letter-spacing: inherit;
+
+      :not(strong) {
+        font-weight: inherit;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+
+    :not(strong) {
+      font-weight: inherit;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
+}

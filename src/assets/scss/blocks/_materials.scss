@@ -171,6 +171,67 @@
     &-info {
         flex: 1;
 
+        .seo-text {
+            font-size: 1.8rem;
+            line-height: 130%;
+            font-weight: 400;
+            @include text;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            p {
+                margin-bottom: 1em;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-weight: 600;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.6em;
+            }
+            h4 {
+                font-size: 1.4em;
+            }
+            h5 {
+                font-size: 1.2em;
+            }
+            h6 {
+                font-size: 1em;
+            }
+
+            ul {
+                li {
+                    padding-left: 1.5em;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        flex: none;
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        border: 0.2rem solid $green;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
         &-list {
             display: flex;
             flex-direction: column;
